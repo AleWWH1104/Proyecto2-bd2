@@ -14,6 +14,8 @@ export default function AdminSeries() {
   const [form, setForm] = useState({})
   const [resenas, setResenas] = useState([])
   const [selectedIds, setSelectedIds] = useState([])
+  const [bulkForm, setBulkForm] = useState({})
+  const [propSeleccionadas, setPropSeleccionadas] = useState([])
 
   const load = async () => {
     setLoading(true); setError(null); setSelectedIds([])
@@ -83,6 +85,40 @@ export default function AdminSeries() {
     catch (e) { toast(e.message, 'error') }
   }
 
+  const editarMasivo = async () => {
+    const p = {}
+    if (bulkForm.anio) p.anio = parseInt(bulkForm.anio)
+    if (bulkForm.calificacion !== undefined && bulkForm.calificacion !== '') p.calificacion = parseFloat(bulkForm.calificacion)
+    if (bulkForm.numTemporadas) p.numTemporadas = parseInt(bulkForm.numTemporadas)
+    if (bulkForm.numEpisodios) p.numEpisodios = parseInt(bulkForm.numEpisodios)
+    if (bulkForm.estadoEmision !== '') p.estadoEmision = bulkForm.estadoEmision === 'true'
+    if (bulkForm.activa !== '') p.activa = bulkForm.activa === 'true'
+
+    if (Object.keys(p).length === 0) { toast('Completa al menos un campo', 'error'); return }
+    try {
+      const res = await api('PATCH', '/series/masivo', { ids: selectedIds, propiedades: p })
+      toast(`${res.actualizadas} series actualizadas`, 'success')
+      setModal(null); setBulkForm({}); load()
+    } catch (e) { toast(e.message, 'error') }
+  }
+
+  const PROPS_SERIE = ['titulo', 'sinopsis', 'anio', 'calificacion', 'numTemporadas', 'numEpisodios', 'estadoEmision', 'activa']
+
+  const openEliminarProps = (s) => { setSelected(s); setPropSeleccionadas([]); setModal('eliminar-props') }
+
+  const eliminarProps = async () => {
+    if (propSeleccionadas.length === 0) { toast('Selecciona al menos una propiedad', 'error'); return }
+    try {
+      await api('DELETE', `/series/${selected.id}/propiedades`, { nombres: propSeleccionadas })
+      toast(`${propSeleccionadas.length} propiedad(es) eliminada(s)`, 'success')
+      setModal(null); setPropSeleccionadas([]); load()
+    } catch (e) { toast(e.message, 'error') }
+  }
+
+  const toggleProp = (nombre) => setPropSeleccionadas(prev =>
+    prev.includes(nombre) ? prev.filter(p => p !== nombre) : [...prev, nombre]
+  )
+
   const eliminarMasivo = async () => {
     if (!confirm(`¿Eliminar ${selectedIds.length} series?`)) return
     try {
@@ -136,6 +172,7 @@ export default function AdminSeries() {
           <div style={{ fontSize: 13.5, fontWeight: 600 }}>{selectedIds.length} items seleccionados</div>
           <div style={{ display: 'flex', gap: 8 }}>
             <Btn variant="outline" size="sm" style={{ color: '#fff', borderColor: 'rgba(255,255,255,.3)' }} onClick={() => setSelectedIds([])}>Cancelar</Btn>
+            <Btn size="sm" style={{ background: 'var(--accent)', color: '#fff' }} onClick={() => { setBulkForm({ estadoEmision: '', activa: '' }); setModal('editar-masivo') }}>Editar selección</Btn>
             <Btn variant="danger" size="sm" style={{ background: '#e74c3c', color: '#fff' }} onClick={eliminarMasivo}>Eliminar selección</Btn>
           </div>
         </Card>
@@ -175,6 +212,10 @@ export default function AdminSeries() {
                 <button onClick={(e) => { e.stopPropagation(); openEditar(s) }}
                   style={{ background: 'rgba(255,255,255,.15)', border: 'none', borderRadius: 6, padding: '4px 8px', fontSize: 11, color: '#fff', cursor: 'pointer', backdropFilter: 'blur(4px)' }}>
                   Editar
+                </button>
+                <button onClick={(e) => { e.stopPropagation(); openEliminarProps(s) }}
+                  style={{ background: 'rgba(230,126,34,.7)', border: 'none', borderRadius: 6, padding: '4px 8px', fontSize: 11, color: '#fff', cursor: 'pointer' }}>
+                  Props
                 </button>
                 <button onClick={(e) => { e.stopPropagation(); eliminar(s.id) }}
                   style={{ background: 'rgba(192,57,43,.7)', border: 'none', borderRadius: 6, padding: '4px 8px', fontSize: 11, color: '#fff', cursor: 'pointer' }}>
@@ -217,6 +258,7 @@ export default function AdminSeries() {
                     <div style={{ display: 'flex', gap: 4 }}>
                       <Btn size="sm" variant="ghost" onClick={() => openVer(s)}>Ver</Btn>
                       <Btn size="sm" variant="ghost" onClick={() => openEditar(s)}>Editar</Btn>
+                      <Btn size="sm" variant="ghost" onClick={() => openEliminarProps(s)} style={{ color: 'var(--orange, #e67e22)' }}>Props</Btn>
                       <Btn size="sm" variant="danger" onClick={() => eliminar(s.id)}>✕</Btn>
                     </div>
                   </td>
@@ -318,6 +360,71 @@ export default function AdminSeries() {
           )}
           <ModalFooter>
             <Btn variant="outline" onClick={() => setModal(null)}>Cerrar</Btn>
+          </ModalFooter>
+        </Modal>
+      )}
+
+      {/* Modal: Eliminar propiedades */}
+      {modal === 'eliminar-props' && selected && (
+        <Modal title={`Eliminar propiedades — ${selected.titulo}`} onClose={() => setModal(null)}>
+          <p style={{ fontSize: 13, color: 'var(--text-xs)', marginBottom: 18 }}>
+            Selecciona las propiedades a eliminar del nodo. Esta acción no borra la serie, solo quita los campos seleccionados.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {PROPS_SERIE.map(nombre => {
+              const valor = selected[nombre]
+              const checked = propSeleccionadas.includes(nombre)
+              return (
+                <label key={nombre} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${checked ? 'var(--accent)' : 'var(--border)'}`, cursor: 'pointer', background: checked ? 'var(--g50)' : '' }}>
+                  <input type="checkbox" checked={checked} onChange={() => toggleProp(nombre)} style={{ width: 16, height: 16, cursor: 'pointer' }} />
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontWeight: 600, fontSize: 13.5 }}>{nombre}</span>
+                    <span style={{ marginLeft: 10, fontSize: 12.5, color: 'var(--text-xs)' }}>
+                      {valor === null || valor === undefined ? <em>null</em> : String(valor)}
+                    </span>
+                  </div>
+                </label>
+              )
+            })}
+          </div>
+          <ModalFooter>
+            <Btn variant="outline" onClick={() => setModal(null)}>Cancelar</Btn>
+            <Btn variant="danger" onClick={eliminarProps} style={{ background: '#e74c3c', color: '#fff' }}>
+              Eliminar {propSeleccionadas.length > 0 ? `${propSeleccionadas.length} propiedad(es)` : ''}
+            </Btn>
+          </ModalFooter>
+        </Modal>
+      )}
+
+      {/* Modal: Editar masivo */}
+      {modal === 'editar-masivo' && (
+        <Modal title={`Editar ${selectedIds.length} series`} onClose={() => setModal(null)}>
+          <p style={{ fontSize: 13, color: 'var(--text-xs)', marginBottom: 18 }}>
+            Solo los campos que completes serán aplicados a todas las series seleccionadas.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <FG label="Año"><input type="number" value={bulkForm.anio || ''} onChange={e => setBulkForm(p => ({ ...p, anio: e.target.value }))} placeholder="Dejar vacío = sin cambio" /></FG>
+            <FG label="Calificación"><input type="number" step="0.1" min="0" max="10" value={bulkForm.calificacion || ''} onChange={e => setBulkForm(p => ({ ...p, calificacion: e.target.value }))} placeholder="Dejar vacío = sin cambio" /></FG>
+            <FG label="Temporadas"><input type="number" value={bulkForm.numTemporadas || ''} onChange={e => setBulkForm(p => ({ ...p, numTemporadas: e.target.value }))} placeholder="Dejar vacío = sin cambio" /></FG>
+            <FG label="Episodios"><input type="number" value={bulkForm.numEpisodios || ''} onChange={e => setBulkForm(p => ({ ...p, numEpisodios: e.target.value }))} placeholder="Dejar vacío = sin cambio" /></FG>
+            <FG label="Estado de emisión">
+              <select value={bulkForm.estadoEmision} onChange={e => setBulkForm(p => ({ ...p, estadoEmision: e.target.value }))}>
+                <option value="">Sin cambio</option>
+                <option value="false">Finalizada</option>
+                <option value="true">En emisión</option>
+              </select>
+            </FG>
+            <FG label="Activa">
+              <select value={bulkForm.activa} onChange={e => setBulkForm(p => ({ ...p, activa: e.target.value }))}>
+                <option value="">Sin cambio</option>
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+              </select>
+            </FG>
+          </div>
+          <ModalFooter>
+            <Btn variant="outline" onClick={() => setModal(null)}>Cancelar</Btn>
+            <Btn onClick={editarMasivo}>Aplicar a {selectedIds.length} series</Btn>
           </ModalFooter>
         </Modal>
       )}

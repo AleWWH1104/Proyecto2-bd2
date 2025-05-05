@@ -324,6 +324,12 @@ export function Perfil({ user, onLogin, onRegister, onLogout, onUpdate }) {
   const [modalResena, setModalResena] = useState(false)
   const [formResena, setFormResena] = useState({})
   const [selected, setSelected] = useState(null)
+  const [vioModal, setVioModal] = useState(null)
+  const [vioForm, setVioForm] = useState({})
+  const [bulkVioOpen, setBulkVioOpen] = useState(false)
+  const [bulkVioItems, setBulkVioItems] = useState([])
+  const [likeSelecting, setLikeSelecting] = useState(false)
+  const [likeSelection, setLikeSelection] = useState([])
 
   const loadProfile = async () => {
     if (!user?.id) return
@@ -459,6 +465,67 @@ export function Perfil({ user, onLogin, onRegister, onLogout, onUpdate }) {
     } catch (e) { toast(e.message, 'error') }
   }
 
+  const toggleLikeSelect = (id) => setLikeSelection(prev =>
+    prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+  )
+
+  const removeLikeMasivo = async () => {
+    if (likeSelection.length === 0) return
+    try {
+      await api('DELETE', `/usuarios/${user.id}/le-gusta/masivo`, { serie_ids: likeSelection })
+      toast(`${likeSelection.length} like(s) eliminado(s)`, 'success')
+      setLikeSelection([]); setLikeSelecting(false); loadProfile()
+    } catch (e) { toast(e.message, 'error') }
+  }
+
+  const openBulkVio = () => {
+    setBulkVioItems((fullProfile.series_vistas || []).map(s => ({
+      serie_id: s.serie_id,
+      titulo: s.titulo,
+      porcentajeVisto: s.porcentajeVisto ?? 0,
+      completada: s.completada ?? false,
+      calificacion: s.calificacion ?? '',
+    })))
+    setBulkVioOpen(true)
+  }
+
+  const updateBulkItem = (serie_id, field, value) => {
+    setBulkVioItems(prev => prev.map(item =>
+      item.serie_id === serie_id ? { ...item, [field]: value } : item
+    ))
+  }
+
+  const saveBulkVio = async () => {
+    const items = bulkVioItems.map(item => ({
+      serie_id: item.serie_id,
+      porcentajeVisto: parseFloat(item.porcentajeVisto) || 0,
+      completada: item.completada === true || item.completada === 'true',
+      ...(item.calificacion !== '' && { calificacion: parseFloat(item.calificacion) }),
+    }))
+    try {
+      const res = await api('PATCH', `/usuarios/${user.id}/vio/masivo`, { items })
+      toast(`${res.afectados} relaciones actualizadas`, 'success')
+      setBulkVioOpen(false); loadProfile()
+    } catch (e) { toast(e.message, 'error') }
+  }
+
+  const openEditVio = (s) => {
+    setVioModal(s)
+    setVioForm({ porcentajeVisto: s.porcentajeVisto ?? '', completada: s.completada ?? false, calificacion: s.calificacion ?? '' })
+  }
+
+  const saveVio = async () => {
+    const body = {}
+    if (vioForm.porcentajeVisto !== '') body.porcentajeVisto = parseFloat(vioForm.porcentajeVisto)
+    if (vioForm.calificacion !== '') body.calificacion = parseFloat(vioForm.calificacion)
+    body.completada = vioForm.completada === true || vioForm.completada === 'true'
+    try {
+      await api('PATCH', `/usuarios/${user.id}/vio/${vioModal.serie_id}`, body)
+      toast('Progreso actualizado', 'success')
+      setVioModal(null); loadProfile()
+    } catch (e) { toast(e.message, 'error') }
+  }
+
   if (!user) return (
     <div style={{ padding: '28px 32px 48px' }}>
       <PageHeader title="Mi perfil" subtitle="Inicia sesión o crea una cuenta." />
@@ -552,22 +619,47 @@ export function Perfil({ user, onLogin, onRegister, onLogout, onUpdate }) {
                 </div>
               </Section>
 
-              <Section title={`Series que te gustan (${fullProfile.series_que_le_gustan?.length || 0})`}>
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  {fullProfile.series_que_le_gustan?.length > 0 ? fullProfile.series_que_le_gustan.map(s => (
-                    <div key={s.serie_id} style={{ display: 'flex', alignItems: 'center', background: 'var(--green-bg)', borderRadius: 6, paddingRight: 4 }}>
-                      <Badge color="green" style={{ marginRight: 0 }}>{s.titulo} <span style={{ opacity: .8, marginLeft: 4 }}>★{s.puntuacion}</span></Badge>
-                      <button onClick={() => removeLike(s.serie_id)} style={{ background: 'none', border: 'none', color: 'var(--green-text)', cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 4px', opacity: .7 }}>×</button>
+              <Section
+                title={`Series que te gustan (${fullProfile.series_que_le_gustan?.length || 0})`}
+                action={fullProfile.series_que_le_gustan?.length > 1 && (
+                  likeSelecting ? (
+                    <div style={{ display: 'flex', gap: 6 }}>
+                      <Btn size="sm" variant="outline" onClick={() => { setLikeSelecting(false); setLikeSelection([]) }}>Cancelar</Btn>
+                      <Btn size="sm" variant="danger" style={{ background: '#e74c3c', color: '#fff' }} onClick={removeLikeMasivo} disabled={likeSelection.length === 0}>
+                        Eliminar {likeSelection.length > 0 ? `(${likeSelection.length})` : ''}
+                      </Btn>
                     </div>
-                  )) : <div style={{ fontSize: 13, color: 'var(--text-xs)' }}>Aún no has dado likes.</div>}
+                  ) : (
+                    <Btn size="sm" variant="outline" onClick={() => setLikeSelecting(true)}>Seleccionar</Btn>
+                  )
+                )}
+              >
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                  {fullProfile.series_que_le_gustan?.length > 0 ? fullProfile.series_que_le_gustan.map(s => {
+                    const sel = likeSelecting && likeSelection.includes(s.serie_id)
+                    return (
+                      <div key={s.serie_id} onClick={() => likeSelecting && toggleLikeSelect(s.serie_id)}
+                        style={{ display: 'flex', alignItems: 'center', background: sel ? '#c0392b22' : 'var(--green-bg)', borderRadius: 6, paddingRight: 4, cursor: likeSelecting ? 'pointer' : 'default', outline: sel ? '2px solid #e74c3c' : 'none' }}>
+                        {likeSelecting && (
+                          <input type="checkbox" checked={sel} onChange={() => toggleLikeSelect(s.serie_id)}
+                            onClick={e => e.stopPropagation()} style={{ margin: '0 6px', cursor: 'pointer' }} />
+                        )}
+                        <Badge color="green" style={{ marginRight: 0 }}>{s.titulo} <span style={{ opacity: .8, marginLeft: 4 }}>★{s.puntuacion}</span></Badge>
+                        {!likeSelecting && (
+                          <button onClick={() => removeLike(s.serie_id)} style={{ background: 'none', border: 'none', color: 'var(--green-text)', cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 4px', opacity: .7 }}>×</button>
+                        )}
+                      </div>
+                    )
+                  }) : <div style={{ fontSize: 13, color: 'var(--text-xs)' }}>Aún no has dado likes.</div>}
                 </div>
               </Section>
 
-              <Section title={`Historial de vistas (${fullProfile.series_vistas?.length || 0})`}>
+              <Section title={`Historial de vistas (${fullProfile.series_vistas?.length || 0})`} action={fullProfile.series_vistas?.length > 1 && <Btn size="sm" variant="outline" onClick={openBulkVio}>Editar múltiple</Btn>}>
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                   {fullProfile.series_vistas?.length > 0 ? fullProfile.series_vistas.map(s => (
                     <div key={s.serie_id} style={{ display: 'flex', alignItems: 'center', background: 'var(--gray-bg)', borderRadius: 6, paddingRight: 4 }}>
                       <Badge color="gray" style={{ marginRight: 0 }}>{s.titulo} <span style={{ opacity: .6, marginLeft: 4 }}>{s.porcentajeVisto}%</span></Badge>
+                      <button onClick={() => openEditVio(s)} style={{ background: 'none', border: 'none', color: 'var(--gray-text)', cursor: 'pointer', fontSize: 13, padding: '0 5px', opacity: .8 }} title="Editar progreso">✎</button>
                       <button onClick={() => removeVio(s.serie_id)} style={{ background: 'none', border: 'none', color: 'var(--gray-text)', cursor: 'pointer', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 4px', opacity: .7 }}>×</button>
                     </div>
                   )) : <div style={{ fontSize: 13, color: 'var(--text-xs)' }}>No has marcado series como vistas.</div>}
@@ -621,6 +713,80 @@ export function Perfil({ user, onLogin, onRegister, onLogout, onUpdate }) {
           <ModalFooter>
             <Btn variant="outline" onClick={() => setModal(null)}>Cancelar</Btn>
             <Btn onClick={doUpdate}>Guardar</Btn>
+          </ModalFooter>
+        </Modal>
+      )}
+
+      {bulkVioOpen && (
+        <Modal title="Editar progreso de múltiples series" onClose={() => setBulkVioOpen(false)} wide>
+          <p style={{ fontSize: 13, color: 'var(--text-xs)', marginBottom: 16 }}>
+            Edita las propiedades de la relación <strong>VIO</strong> para varias series a la vez. Se actualizarán todas al guardar.
+          </p>
+          <div style={{ maxHeight: 420, overflowY: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <thead style={{ background: 'var(--off)', position: 'sticky', top: 0 }}>
+                <tr>
+                  {['Serie', '% Visto', 'Completada', 'Calificación'].map(h => (
+                    <th key={h} style={{ padding: '8px 12px', textAlign: 'left', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.07em', color: 'var(--text-xs)', borderBottom: '1.5px solid var(--border)' }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {bulkVioItems.map(item => (
+                  <tr key={item.serie_id} style={{ borderBottom: '1px solid var(--border)' }}>
+                    <td style={{ padding: '10px 12px', fontWeight: 600, maxWidth: 180, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.titulo}</td>
+                    <td style={{ padding: '8px 12px' }}>
+                      <input type="number" min="0" max="100" step="1" value={item.porcentajeVisto}
+                        onChange={e => updateBulkItem(item.serie_id, 'porcentajeVisto', e.target.value)}
+                        style={{ width: 70 }} />
+                    </td>
+                    <td style={{ padding: '8px 12px' }}>
+                      <select value={item.completada === true || item.completada === 'true' ? 'true' : 'false'}
+                        onChange={e => updateBulkItem(item.serie_id, 'completada', e.target.value)}
+                        style={{ width: 70 }}>
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                      </select>
+                    </td>
+                    <td style={{ padding: '8px 12px' }}>
+                      <input type="number" min="0" max="10" step="0.5" value={item.calificacion}
+                        onChange={e => updateBulkItem(item.serie_id, 'calificacion', e.target.value)}
+                        placeholder="—" style={{ width: 70 }} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <ModalFooter>
+            <Btn variant="outline" onClick={() => setBulkVioOpen(false)}>Cancelar</Btn>
+            <Btn onClick={saveBulkVio}>Guardar {bulkVioItems.length} relaciones</Btn>
+          </ModalFooter>
+        </Modal>
+      )}
+
+      {vioModal && (
+        <Modal title={`Editar progreso — ${vioModal.titulo}`} onClose={() => setVioModal(null)}>
+          <p style={{ fontSize: 13, color: 'var(--text-xs)', marginBottom: 18 }}>
+            Actualiza las propiedades de la relación <strong>VIO</strong> entre tu usuario y esta serie.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <FG label="% Visto (0–100)">
+              <input type="number" min="0" max="100" step="1" value={vioForm.porcentajeVisto} onChange={e => setVioForm(p => ({ ...p, porcentajeVisto: e.target.value }))} />
+            </FG>
+            <FG label="Calificación (0–10)">
+              <input type="number" min="0" max="10" step="0.5" value={vioForm.calificacion} onChange={e => setVioForm(p => ({ ...p, calificacion: e.target.value }))} />
+            </FG>
+            <FG label="Completada">
+              <select value={vioForm.completada === true || vioForm.completada === 'true' ? 'true' : 'false'} onChange={e => setVioForm(p => ({ ...p, completada: e.target.value }))}>
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+              </select>
+            </FG>
+          </div>
+          <ModalFooter>
+            <Btn variant="outline" onClick={() => setVioModal(null)}>Cancelar</Btn>
+            <Btn onClick={saveVio}>Guardar cambios</Btn>
           </ModalFooter>
         </Modal>
       )}
@@ -744,10 +910,13 @@ export function BuscarUsuarios({ user, onLogin }) {
   )
 }
 
-function Section({ title, children }) {
+function Section({ title, children, action }) {
   return (
     <div style={{ marginBottom: 10 }}>
-      <h3 style={{ fontSize: 13, textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--text-xs)', fontWeight: 600, marginBottom: 12, borderBottom: '1px solid var(--border)', paddingBottom: 8 }}>{title}</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)', paddingBottom: 8, marginBottom: 12 }}>
+        <h3 style={{ fontSize: 13, textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--text-xs)', fontWeight: 600, margin: 0 }}>{title}</h3>
+        {action}
+      </div>
       {children}
     </div>
   )

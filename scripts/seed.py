@@ -477,13 +477,18 @@ TIPOS_VALIDOS = [
 ]
 
 
+def _limpiar_fila(row: dict) -> dict:
+    """Elimina claves None o vacías que rompen Cypher (Map keys must be strings)."""
+    return {str(k): v for k, v in row.items() if k is not None}
+
+
 def procesar_csv(session, tipo: str, rows: list) -> int:
     """Inserta/actualiza filas de un CSV subido según el tipo de entidad o relación."""
     if not rows:
         return 0
 
     if tipo == "series":
-        procesados = [{**r, "estadoEmision": to_bool(r.get("estadoEmision", "")), "activa": to_bool(r.get("activa", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "estadoEmision": to_bool(r.get("estadoEmision", "")), "activa": to_bool(r.get("activa", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MERGE (s:Serie {id: row.id})
@@ -497,7 +502,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         solo_actor = [r for r in rows if "Director" not in r.get("labels", "")]
         actor_director = [r for r in rows if "Director" in r.get("labels", "")]
         if solo_actor:
-            p = [{**r, "activo": to_bool(r.get("activo", "")), "papeles": to_list(r.get("papeles", ""))} for r in solo_actor]
+            p = [_limpiar_fila({**r, "activo": to_bool(r.get("activo", "")), "papeles": to_list(r.get("papeles", ""))}) for r in solo_actor]
             session.run("""
                 UNWIND $rows AS row
                 MERGE (a:Actor {id: row.id})
@@ -507,7 +512,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
                     a.popularidad = toFloat(row.popularidad), a.papeles = row.papeles
             """, rows=p)
         if actor_director:
-            p = [{**r, "activo": to_bool(r.get("activo", "")), "papeles": to_list(r.get("papeles", ""))} for r in actor_director]
+            p = [_limpiar_fila({**r, "activo": to_bool(r.get("activo", "")), "papeles": to_list(r.get("papeles", ""))}) for r in actor_director]
             session.run("""
                 UNWIND $rows AS row
                 MERGE (a:Actor:Director {id: row.id})
@@ -518,7 +523,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
             """, rows=p)
 
     elif tipo == "usuarios":
-        procesados = [{**r, "activo": to_bool(r.get("activo", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "activo": to_bool(r.get("activo", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MERGE (u:Usuario {id: row.id})
@@ -528,7 +533,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "generos":
-        procesados = [{**r, "tendencia": to_bool(r.get("tendencia", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "tendencia": to_bool(r.get("tendencia", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MERGE (g:Genero {id: row.id})
@@ -538,16 +543,17 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "plataformas":
+        procesados = [_limpiar_fila(r) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MERGE (p:Plataforma {id: row.id})
             SET p.nombre = row.nombre, p.pais = row.pais,
                 p.precio = toFloat(row.precio), p.fechaFundacion = date(row.fechaFundacion),
                 p.suscriptores = toInteger(row.suscriptores)
-        """, rows=rows)
+        """, rows=procesados)
 
     elif tipo == "estudios":
-        procesados = [{**r, "activo": to_bool(r.get("activo", "")), "generosPrincipales": to_list(r.get("generosPrincipales", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "activo": to_bool(r.get("activo", "")), "generosPrincipales": to_list(r.get("generosPrincipales", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MERGE (e:EstudioProduccion {id: row.id})
@@ -558,7 +564,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "resenas":
-        procesados = [{**r, "etiquetas": to_list(r.get("etiquetas", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "etiquetas": to_list(r.get("etiquetas", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MERGE (r:Resena {id: row.id})
@@ -568,7 +574,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "pertenece_a":
-        procesados = [{**r, "esPrincipal": to_bool(r.get("esPrincipal", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "esPrincipal": to_bool(r.get("esPrincipal", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (s:Serie {id: row.serie_id}), (g:Genero {id: row.genero_id})
@@ -578,7 +584,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "transmite":
-        procesados = [{**r, "exclusiva": to_bool(r.get("exclusiva", "")), "regiones": to_list(r.get("regiones", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "exclusiva": to_bool(r.get("exclusiva", "")), "regiones": to_list(r.get("regiones", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (p:Plataforma {id: row.plataforma_id}), (s:Serie {id: row.serie_id})
@@ -588,7 +594,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "actua_en":
-        procesados = [{**r, "protagonista": to_bool(r.get("protagonista", "")), "temporadas": [int(t) for t in to_list(r.get("temporadas", ""))]} for r in rows]
+        procesados = [_limpiar_fila({**r, "protagonista": to_bool(r.get("protagonista", "")), "temporadas": [int(t) for t in to_list(r.get("temporadas", "")) if t.isdigit()]}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (a:Actor {id: row.actor_id}), (s:Serie {id: row.serie_id})
@@ -598,7 +604,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "dirige":
-        procesados = [{**r, "esPrincipal": to_bool(r.get("esPrincipal", "")), "temporadas": [int(t) for t in to_list(r.get("temporadas", ""))]} for r in rows]
+        procesados = [_limpiar_fila({**r, "esPrincipal": to_bool(r.get("esPrincipal", "")), "temporadas": [int(t) for t in to_list(r.get("temporadas", "")) if t.isdigit()]}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (a:Director {id: row.actor_id}), (s:Serie {id: row.serie_id})
@@ -608,7 +614,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "vio":
-        procesados = [{**r, "completada": to_bool(r.get("completada", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "completada": to_bool(r.get("completada", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (u:Usuario {id: row.usuario_id}), (s:Serie {id: row.serie_id})
@@ -618,7 +624,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "le_gusta":
-        procesados = [{**r, "notificado": to_bool(r.get("notificado", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "notificado": to_bool(r.get("notificado", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (u:Usuario {id: row.usuario_id}), (s:Serie {id: row.serie_id})
@@ -628,7 +634,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "en_lista":
-        procesados = [{**r, "notificaciones": to_bool(r.get("notificaciones", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "notificaciones": to_bool(r.get("notificaciones", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (u:Usuario {id: row.usuario_id}), (s:Serie {id: row.serie_id})
@@ -638,7 +644,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "sigue_a":
-        procesados = [{**r, "mutuo": to_bool(r.get("mutuo", "")), "notificaciones": to_bool(r.get("notificaciones", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "mutuo": to_bool(r.get("mutuo", "")), "notificaciones": to_bool(r.get("notificaciones", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (u1:Usuario {id: row.usuario1_id}), (u2:Usuario {id: row.usuario2_id})
@@ -648,16 +654,17 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "similar_a":
+        procesados = [_limpiar_fila(r) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (s1:Serie {id: row.serie1_id}), (s2:Serie {id: row.serie2_id})
             MERGE (s1)-[r:SIMILAR_A]->(s2)
             SET r.puntuacionSimilitud = toFloat(row.puntuacionSimilitud),
                 r.algoritmo = row.algoritmo, r.fechaCalculada = date(row.fechaCalculada)
-        """, rows=rows)
+        """, rows=procesados)
 
     elif tipo == "escribio":
-        procesados = [{**r, "editada": to_bool(r.get("editada", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "editada": to_bool(r.get("editada", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (u:Usuario {id: row.usuario_id}), (r:Resena {id: row.resena_id})
@@ -667,7 +674,7 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "sobre":
-        procesados = [{**r, "verificada": to_bool(r.get("verificada", "")), "contieneSpoilers": to_bool(r.get("contieneSpoilers", ""))} for r in rows]
+        procesados = [_limpiar_fila({**r, "verificada": to_bool(r.get("verificada", "")), "contieneSpoilers": to_bool(r.get("contieneSpoilers", ""))}) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (r:Resena {id: row.resena_id}), (s:Serie {id: row.serie_id})
@@ -677,13 +684,14 @@ def procesar_csv(session, tipo: str, rows: list) -> int:
         """, rows=procesados)
 
     elif tipo == "produjo":
+        procesados = [_limpiar_fila(r) for r in rows]
         session.run("""
             UNWIND $rows AS row
             MATCH (e:EstudioProduccion {id: row.estudio_id}), (s:Serie {id: row.serie_id})
             MERGE (e)-[r:PRODUJO]->(s)
             SET r.anio = toInteger(row.anio), r.presupuesto = toFloat(row.presupuesto),
                 r.distribucion = row.distribucion
-        """, rows=rows)
+        """, rows=procesados)
 
     else:
         raise ValueError(f"Tipo desconocido: '{tipo}'. Válidos: {', '.join(TIPOS_VALIDOS)}")

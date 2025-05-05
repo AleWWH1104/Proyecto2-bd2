@@ -30,8 +30,16 @@ class SeriesMasivoPatchRequest(BaseModel):
     propiedades: dict
 
 
-class SerieResponse(SerieBase):
+class SerieResponse(BaseModel):
     id: str
+    titulo: Optional[str] = None
+    sinopsis: Optional[str] = None
+    anio: Optional[int] = None
+    calificacion: Optional[float] = None
+    numTemporadas: Optional[int] = None
+    numEpisodios: Optional[int] = None
+    estadoEmision: Optional[bool] = None
+    activa: Optional[bool] = None
 
 
 class SerieDetalleResponse(SerieResponse):
@@ -45,14 +53,14 @@ class SerieDetalleResponse(SerieResponse):
 
 class SerieListItem(BaseModel):
     id: str
-    titulo: str
-    sinopsis: str
-    anio: int
-    calificacion: float
-    numTemporadas: int
-    numEpisodios: int
-    estadoEmision: bool
-    activa: bool
+    titulo: Optional[str] = None
+    sinopsis: Optional[str] = None
+    anio: Optional[int] = None
+    calificacion: Optional[float] = None
+    numTemporadas: Optional[int] = None
+    numEpisodios: Optional[int] = None
+    estadoEmision: Optional[bool] = None
+    activa: Optional[bool] = None
 
 
 class ConteoPorNombre(BaseModel):
