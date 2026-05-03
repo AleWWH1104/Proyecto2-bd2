@@ -1,0 +1,41 @@
+id,nombre,pais,anioFundacion,activo,presupuestoPromedio,premios,generosPrincipales
+est_001,HBO,Reino Unido,1989,True,82.8,95,Procedimental|Cyberpunk|Crimen|Musical|Western
+est_002,Netflix Studios,Canadá,1928,True,119.72,58,Drama|Fantasía|Independiente
+est_003,Disney Television,Estados Unidos,2000,True,18.14,8,Fantasía|Antología|Musical|Biográfico
+est_004,Warner Bros TV,Japón,2005,True,110.15,146,Musical|Slice of Life|Postapocalíptico|Histórico|Misterio
+est_005,Universal Television,Japón,1932,True,87.6,119,Adulto|Infantil
+est_006,20th Century Studios,Estados Unidos,2002,True,83.51,86,Musical|Histórico
+est_007,Sony Pictures TV,Japón,1944,True,87.27,71,Musical|Fantasía|Cyberpunk|Dramedia|Misterio
+est_008,Paramount Television,Estados Unidos,1926,True,185.64,60,Postapocalíptico|Psicológico|Slice of Life
+est_009,Lionsgate Television,Japón,1947,True,37.1,0,Deportes|Steampunk|Político|Superhéroes|Internacional
+est_010,MGM Television,Japón,2013,True,42.03,55,Reality|Noir
+est_011,BBC Studios,Estados Unidos,1989,True,16.15,149,Antología|Procedimental|Animación|Ciencia Ficción|Terror
+est_012,ITV Studios,Estados Unidos,1943,True,136.67,60,Crimen|Thriller|Musical|Reality|Talk Show
+est_013,Channel 4,Estados Unidos,1925,False,133.19,144,Deportes|Guerra|Juvenil|Independiente
+est_014,FX Productions,Reino Unido,1960,True,82.18,76,Adolescente|Neo-Noir|Fantasía|Drama|Steampunk
+est_015,AMC Studios,Estados Unidos,1999,True,109.84,129,Romance|Médico|Fantasía|Musical
+est_016,Showtime Networks,Canadá,1967,True,90.45,139,Variedades|Infantil|Procedimental|Drama
+est_017,Bad Robot Productions,Canadá,2005,True,188.09,34,Crimen|Misterio|Noir|Dramedia
+est_018,Bad Wolf,Canadá,1939,True,122.94,87,Adulto|Educativo|Deportes
+est_019,A24,Japón,1984,True,181.54,13,Educativo|Superhéroes
+est_020,Bron Studios,Estados Unidos,1955,True,70.04,33,Animación|Noir|Cyberpunk|Dramedia
+est_021,Skydance Television,Japón,2010,True,26.82,38,Legal|Reality
+est_022,Amblin Television,Reino Unido,1990,False,29.85,78,Acción|Médico|Guerra|Adulto
+est_023,Imagine Television,Estados Unidos,1951,True,157.12,104,Musical|Animación|Documental
+est_024,Annapurna Pictures,Estados Unidos,1972,True,148.63,85,Juvenil|Noir|Musical|Biográfico|Animación
+est_025,Plan B Entertainment,Estados Unidos,2009,False,175.07,120,Histórico|Steampunk|Médico
+est_026,Apatow Productions,Reino Unido,1959,True,9.61,49,Familiar|Biográfico|Fantasía|Mockumentary|Médico
+est_027,Bright/Kauffman/Crane,Japón,2002,True,188.15,29,Documental|Reality|Deportes|Acción
+est_028,Imagine Entertainment,Japón,1933,True,147.07,80,Talk Show|Antología|Crimen|Espionaje|Thriller
+est_029,Studio Ghibli,Canadá,1944,True,143.21,0,Legal|Superhéroes|Fantasía
+est_030,Toei Animation,Canadá,2005,True,134.36,31,Antología|Sobrenatural|Juvenil|Postapocalíptico
+est_031,Madhouse,Japón,1961,True,113.11,49,Juvenil|Espionaje|Adulto|Noir|Documental
+est_032,Bones,Canadá,1998,False,111.85,0,Político|Guerra|Superhéroes|Reality
+est_033,MAPPA,Canadá,1997,False,91.15,54,Noir|Animación|Juvenil|Terror|Político
+est_034,Ufotable,Canadá,1985,True,164.59,60,Western|Histórico|Aventura|Comedia
+est_035,Pixar Television,Reino Unido,1925,False,124.2,18,Postapocalíptico|Educativo|Thriller|Histórico|Independiente
+est_036,Walt Disney Animation,Japón,2009,False,82.93,37,Neo-Noir|Mockumentary
+est_037,Cartoon Network Studios,Japón,1933,True,39.3,132,Ciencia Ficción|Dramedia|Musical|Crimen|Steampunk
+est_038,Nickelodeon Animation,Japón,1937,True,190.26,113,Dramedia|Cyberpunk|Animación|Noir|Slice of Life
+est_039,Fox Television Animation,Canadá,1977,True,168.77,70,Educativo|Musical|Biográfico|Cyberpunk|Fantasía
+est_040,DreamWorks Animation Television,Canadá,2011,True,57.98,81,Romance|Aventura

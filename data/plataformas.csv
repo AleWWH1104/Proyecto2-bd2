@@ -1,0 +1,31 @@
+id,nombre,pais,precio,fechaFundacion,suscriptores
+plat_001,Netflix,Estados Unidos,15.99,1997-08-29,230000000
+plat_002,HBO Max,Estados Unidos,14.99,2020-05-27,95000000
+plat_003,Disney+,Estados Unidos,10.99,2019-11-12,150000000
+plat_004,Amazon Prime Video,Estados Unidos,8.99,2006-09-07,200000000
+plat_005,Apple TV+,Estados Unidos,9.99,2019-11-01,50000000
+plat_006,Hulu,Estados Unidos,7.99,2007-10-29,48000000
+plat_007,Paramount+,Estados Unidos,9.99,2014-10-28,67000000
+plat_008,Peacock,Estados Unidos,5.99,2020-07-15,28000000
+plat_009,Crunchyroll,Estados Unidos,7.99,2006-05-14,12000000
+plat_010,Movistar Plus+,España,11.0,2015-07-08,4500000
+plat_011,Star+,Estados Unidos,7.99,2021-08-31,18000000
+plat_012,Discovery+,Estados Unidos,6.99,2021-01-04,24000000
+plat_013,Showtime,Estados Unidos,10.99,1976-07-01,27000000
+plat_014,Starz,Estados Unidos,8.99,1994-02-01,13000000
+plat_015,Vix,México,6.99,2022-07-21,6000000
+plat_016,Pluto TV,Estados Unidos,0.0,2014-03-31,80000000
+plat_017,Tubi,Estados Unidos,0.0,2014-04-01,64000000
+plat_018,Kocowa,Corea del Sur,6.99,2017-04-13,1500000
+plat_019,Viki,Singapur,5.99,2007-12-01,4500000
+plat_020,MUBI,Reino Unido,11.99,2007-04-09,13000000
+plat_021,BritBox,Reino Unido,8.99,2017-03-07,4500000
+plat_022,Acorn TV,Estados Unidos,6.99,2011-07-26,2000000
+plat_023,Curiosity Stream,Estados Unidos,4.99,2015-03-18,26000000
+plat_024,Shudder,Estados Unidos,5.99,2015-06-01,1500000
+plat_025,Crave,Canadá,9.99,2014-12-11,3000000
+plat_026,Stan,Australia,10.0,2015-01-26,2700000
+plat_027,Now TV,Reino Unido,9.99,2012-07-17,2500000
+plat_028,Globoplay,Brasil,5.5,2015-11-02,28000000
+plat_029,Claro Video,México,4.99,2014-11-01,8500000
+plat_030,Blim TV,México,3.99,2016-02-29,1200000

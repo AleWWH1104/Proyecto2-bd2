@@ -1,0 +1,3001 @@
+estudio_id,serie_id,anio,presupuesto,distribucion
+est_014,ser_0001,2018,126.82,Regional
+est_010,ser_0002,2020,53.18,Global
+est_016,ser_0003,2008,182.28,Global
+est_016,ser_0004,1997,104.17,Streaming exclusivo
+est_029,ser_0005,2018,46.74,Global
+est_011,ser_0006,1991,78.34,Global
+est_004,ser_0007,2016,91.57,Regional
+est_019,ser_0008,2024,10.19,Nacional
+est_007,ser_0009,2012,27.5,Nacional
+est_021,ser_0010,2018,70.29,Regional
+est_007,ser_0011,2009,26.31,Streaming exclusivo
+est_011,ser_0012,2003,84.07,Global
+est_029,ser_0013,2021,134.19,Streaming exclusivo
+est_009,ser_0014,1994,4.85,Regional
+est_023,ser_0015,2024,165.49,Regional
+est_038,ser_0016,2010,164.7,Nacional
+est_033,ser_0017,2023,83.0,Streaming exclusivo
+est_010,ser_0018,2010,141.78,Nacional
+est_028,ser_0019,2005,20.65,Streaming exclusivo
+est_031,ser_0020,1991,176.91,Nacional
+est_021,ser_0021,2011,37.89,Nacional
+est_008,ser_0022,1997,146.99,Streaming exclusivo
+est_003,ser_0023,2018,170.93,Regional
+est_024,ser_0024,1993,13.27,Nacional
+est_032,ser_0025,1990,141.21,Regional
+est_004,ser_0026,2019,47.18,Regional
+est_031,ser_0027,2002,76.88,Nacional
+est_020,ser_0028,2018,92.1,Regional
+est_039,ser_0029,2022,132.67,Nacional
+est_014,ser_0030,2011,45.87,Streaming exclusivo
+est_039,ser_0031,1993,83.09,Global
+est_015,ser_0032,2020,112.65,Nacional
+est_002,ser_0033,2000,64.76,Streaming exclusivo
+est_004,ser_0034,2004,3.75,Global
+est_035,ser_0035,2001,80.75,Streaming exclusivo
+est_020,ser_0036,2018,48.84,Streaming exclusivo
+est_040,ser_0037,2001,195.59,Regional
+est_034,ser_0038,1991,153.13,Nacional
+est_021,ser_0039,2011,114.5,Regional
+est_008,ser_0040,2017,173.75,Global
+est_005,ser_0041,2017,5.01,Global
+est_008,ser_0042,2005,10.23,Regional
+est_037,ser_0043,1994,165.18,Global
+est_031,ser_0044,2001,102.88,Nacional
+est_002,ser_0045,2015,23.5,Nacional
+est_039,ser_0046,2003,103.29,Regional
+est_030,ser_0047,1995,97.03,Regional
+est_035,ser_0048,2019,145.49,Global
+est_030,ser_0049,2021,71.84,Regional
+est_034,ser_0050,2012,157.39,Regional
+est_033,ser_0051,1997,156.18,Nacional
+est_014,ser_0052,2007,25.7,Streaming exclusivo
+est_002,ser_0053,2012,53.33,Nacional
+est_024,ser_0054,1999,183.76,Regional
+est_035,ser_0055,2019,98.73,Streaming exclusivo
+est_034,ser_0056,2018,89.48,Nacional
+est_014,ser_0057,2021,66.47,Global
+est_019,ser_0058,1991,137.38,Nacional
+est_027,ser_0059,2015,170.87,Regional
+est_006,ser_0060,2009,16.85,Nacional
+est_002,ser_0061,1991,63.48,Nacional
+est_006,ser_0062,1994,69.89,Streaming exclusivo
+est_002,ser_0063,2000,39.66,Nacional
+est_038,ser_0064,2003,139.41,Global
+est_018,ser_0065,2009,81.59,Regional
+est_022,ser_0066,1999,87.64,Streaming exclusivo
+est_036,ser_0067,2019,174.03,Streaming exclusivo
+est_023,ser_0068,2015,59.99,Regional
+est_001,ser_0069,2019,44.91,Global
+est_016,ser_0070,2000,192.35,Nacional
+est_029,ser_0071,1997,83.76,Streaming exclusivo
+est_014,ser_0072,2006,116.71,Regional
+est_040,ser_0073,2015,117.37,Regional
+est_016,ser_0074,2021,37.61,Global
+est_027,ser_0075,2007,199.87,Regional
+est_029,ser_0076,2024,119.82,Regional
+est_001,ser_0077,2001,189.82,Streaming exclusivo
+est_030,ser_0078,1996,43.18,Regional
+est_022,ser_0079,2005,156.91,Global
+est_012,ser_0080,2011,8.44,Nacional
+est_006,ser_0081,2016,2.77,Global
+est_018,ser_0082,2017,121.49,Streaming exclusivo
+est_035,ser_0083,2010,154.74,Regional
+est_029,ser_0084,2013,54.25,Nacional
+est_010,ser_0085,2000,27.93,Global
+est_035,ser_0086,2010,54.1,Global
+est_025,ser_0087,2022,113.05,Streaming exclusivo
+est_018,ser_0088,2017,76.04,Streaming exclusivo
+est_017,ser_0089,1999,195.84,Streaming exclusivo
+est_027,ser_0090,2010,95.64,Global
+est_021,ser_0091,2011,73.77,Streaming exclusivo
+est_009,ser_0092,2023,145.3,Nacional
+est_019,ser_0093,1993,133.91,Streaming exclusivo
+est_015,ser_0094,2019,145.73,Regional
+est_027,ser_0095,2009,92.27,Regional
+est_032,ser_0096,2015,191.88,Regional
+est_002,ser_0097,2014,101.25,Nacional
+est_018,ser_0098,2019,76.79,Nacional
+est_008,ser_0099,2020,87.95,Streaming exclusivo
+est_003,ser_0100,2016,12.11,Nacional
+est_007,ser_0101,1994,14.73,Nacional
+est_012,ser_0102,2012,95.92,Nacional
+est_016,ser_0103,2017,180.9,Streaming exclusivo
+est_022,ser_0104,2019,70.02,Global
+est_015,ser_0105,2014,57.92,Nacional
+est_032,ser_0106,2006,81.47,Streaming exclusivo
+est_028,ser_0107,1996,171.95,Regional
+est_006,ser_0108,1990,197.88,Streaming exclusivo
+est_001,ser_0109,2008,97.03,Global
+est_039,ser_0110,2022,86.66,Nacional
+est_038,ser_0111,2006,166.77,Streaming exclusivo
+est_018,ser_0112,2014,3.73,Nacional
+est_037,ser_0113,1990,194.26,Nacional
+est_026,ser_0114,1990,179.17,Streaming exclusivo
+est_005,ser_0115,2011,48.91,Regional
+est_003,ser_0116,2014,125.16,Regional
+est_003,ser_0117,1998,178.76,Nacional
+est_027,ser_0118,2020,57.24,Global
+est_035,ser_0119,1992,89.6,Nacional
+est_015,ser_0120,2012,107.65,Streaming exclusivo
+est_037,ser_0121,2002,159.68,Streaming exclusivo
+est_005,ser_0122,2009,70.31,Nacional
+est_002,ser_0123,2005,83.84,Regional
+est_011,ser_0124,2000,40.6,Nacional
+est_008,ser_0125,1998,112.27,Global
+est_008,ser_0126,1994,199.5,Streaming exclusivo
+est_035,ser_0127,2006,193.07,Streaming exclusivo
+est_020,ser_0128,2013,165.5,Streaming exclusivo
+est_001,ser_0129,2024,185.56,Nacional
+est_040,ser_0130,2004,135.11,Nacional
+est_010,ser_0131,2021,40.41,Streaming exclusivo
+est_011,ser_0132,1997,186.82,Global
+est_033,ser_0133,2014,155.67,Nacional
+est_017,ser_0134,2021,136.28,Streaming exclusivo
+est_003,ser_0135,2020,190.53,Global
+est_019,ser_0136,2015,159.06,Streaming exclusivo
+est_003,ser_0137,1998,38.12,Nacional
+est_017,ser_0138,1996,151.54,Nacional
+est_019,ser_0139,2020,38.2,Nacional
+est_003,ser_0140,2005,65.79,Streaming exclusivo
+est_033,ser_0141,2019,146.64,Global
+est_008,ser_0142,1995,13.6,Nacional
+est_014,ser_0143,2020,15.0,Nacional
+est_035,ser_0144,1998,180.22,Streaming exclusivo
+est_039,ser_0145,2024,15.34,Nacional
+est_028,ser_0146,2001,58.26,Global
+est_015,ser_0147,1998,190.36,Nacional
+est_025,ser_0148,2022,170.71,Global
+est_009,ser_0149,1992,34.08,Nacional
+est_022,ser_0150,2010,97.91,Global
+est_003,ser_0151,2005,11.4,Nacional
+est_027,ser_0152,2007,36.53,Nacional
+est_006,ser_0153,2015,194.57,Streaming exclusivo
+est_032,ser_0154,1994,158.03,Regional
+est_016,ser_0155,2016,82.01,Regional
+est_034,ser_0156,1997,137.54,Regional
+est_033,ser_0157,2013,74.23,Global
+est_011,ser_0158,2004,112.72,Regional
+est_038,ser_0159,2012,122.18,Streaming exclusivo
+est_026,ser_0160,2014,176.93,Streaming exclusivo
+est_028,ser_0161,2022,39.67,Regional
+est_017,ser_0162,2016,36.27,Global
+est_008,ser_0163,2004,95.66,Nacional
+est_035,ser_0164,1994,119.89,Nacional
+est_006,ser_0165,2021,57.3,Global
+est_006,ser_0166,2024,117.48,Nacional
+est_037,ser_0167,2005,25.06,Nacional
+est_019,ser_0168,2004,35.22,Nacional
+est_008,ser_0169,2014,66.7,Global
+est_028,ser_0170,2020,22.08,Regional
+est_013,ser_0171,2021,155.51,Nacional
+est_016,ser_0172,1990,149.06,Global
+est_011,ser_0173,2021,12.17,Regional
+est_034,ser_0174,1999,94.35,Nacional
+est_023,ser_0175,2024,59.5,Streaming exclusivo
+est_010,ser_0176,2017,76.22,Streaming exclusivo
+est_018,ser_0177,1998,175.71,Global
+est_021,ser_0178,1997,22.36,Global
+est_019,ser_0179,2014,139.78,Regional
+est_026,ser_0180,1990,31.6,Nacional
+est_023,ser_0181,2008,172.59,Regional
+est_018,ser_0182,1997,5.81,Nacional
+est_022,ser_0183,2022,87.81,Global
+est_008,ser_0184,2015,58.19,Regional
+est_007,ser_0185,1995,81.95,Streaming exclusivo
+est_027,ser_0186,2022,91.96,Streaming exclusivo
+est_033,ser_0187,2016,56.69,Global
+est_026,ser_0188,2003,171.99,Nacional
+est_024,ser_0189,2013,144.0,Global
+est_019,ser_0190,2013,73.68,Nacional
+est_002,ser_0191,1995,125.68,Regional
+est_035,ser_0192,2002,104.04,Regional
+est_010,ser_0193,2024,15.01,Global
+est_032,ser_0194,1997,195.95,Nacional
+est_035,ser_0195,1998,191.28,Nacional
+est_027,ser_0196,2022,26.28,Regional
+est_025,ser_0197,2003,176.85,Nacional
+est_025,ser_0198,2006,54.74,Regional
+est_040,ser_0199,1992,157.04,Regional
+est_002,ser_0200,2003,159.6,Nacional
+est_019,ser_0201,2006,42.56,Regional
+est_035,ser_0202,2012,17.93,Streaming exclusivo
+est_017,ser_0203,1996,67.83,Global
+est_026,ser_0204,2007,38.89,Global
+est_002,ser_0205,1999,53.89,Nacional
+est_010,ser_0206,2021,94.59,Streaming exclusivo
+est_020,ser_0207,2002,20.84,Regional
+est_001,ser_0208,1996,167.53,Nacional
+est_008,ser_0209,2007,169.76,Global
+est_033,ser_0210,1995,23.45,Global
+est_038,ser_0211,1999,28.54,Global
+est_024,ser_0212,2024,31.45,Global
+est_001,ser_0213,2017,118.5,Global
+est_037,ser_0214,2000,87.73,Streaming exclusivo
+est_033,ser_0215,1995,65.46,Streaming exclusivo
+est_034,ser_0216,1999,41.39,Regional
+est_031,ser_0217,1999,103.73,Streaming exclusivo
+est_008,ser_0218,1999,37.84,Streaming exclusivo
+est_029,ser_0219,2017,129.11,Streaming exclusivo
+est_012,ser_0220,2014,96.46,Global
+est_028,ser_0221,2016,91.04,Regional
+est_013,ser_0222,1990,89.82,Nacional
+est_026,ser_0223,2012,155.59,Streaming exclusivo
+est_034,ser_0224,2005,102.02,Streaming exclusivo
+est_010,ser_0225,1991,38.34,Streaming exclusivo
+est_027,ser_0226,1991,118.81,Streaming exclusivo
+est_030,ser_0227,1999,53.46,Regional
+est_010,ser_0228,2018,147.75,Streaming exclusivo
+est_012,ser_0229,1990,45.88,Streaming exclusivo
+est_021,ser_0230,2000,101.3,Streaming exclusivo
+est_035,ser_0231,1993,56.7,Streaming exclusivo
+est_035,ser_0232,2015,82.22,Global
+est_016,ser_0233,1996,53.78,Nacional
+est_010,ser_0234,1996,62.28,Global
+est_037,ser_0235,1992,188.56,Nacional
+est_006,ser_0236,2010,17.46,Streaming exclusivo
+est_003,ser_0237,2010,13.53,Streaming exclusivo
+est_033,ser_0238,1996,179.51,Nacional
+est_036,ser_0239,2008,168.04,Global
+est_010,ser_0240,2000,89.36,Global
+est_037,ser_0241,2008,192.95,Regional
+est_001,ser_0242,1994,109.16,Nacional
+est_004,ser_0243,1995,63.26,Streaming exclusivo
+est_024,ser_0244,2013,160.5,Global
+est_036,ser_0245,2018,113.23,Nacional
+est_023,ser_0246,2016,12.86,Streaming exclusivo
+est_003,ser_0247,2016,154.56,Streaming exclusivo
+est_019,ser_0248,1999,197.15,Streaming exclusivo
+est_035,ser_0249,2019,174.69,Nacional
+est_026,ser_0250,1996,102.42,Nacional
+est_032,ser_0251,2021,151.83,Regional
+est_007,ser_0252,1999,163.01,Streaming exclusivo
+est_017,ser_0253,2017,165.13,Regional
+est_014,ser_0254,1995,113.89,Regional
+est_024,ser_0255,2003,101.04,Global
+est_019,ser_0256,2002,47.48,Streaming exclusivo
+est_018,ser_0257,2014,15.37,Regional
+est_029,ser_0258,1990,31.89,Global
+est_012,ser_0259,2006,29.98,Regional
+est_030,ser_0260,2002,105.39,Regional
+est_034,ser_0261,2002,180.7,Streaming exclusivo
+est_013,ser_0262,2019,173.31,Regional
+est_010,ser_0263,2019,169.29,Regional
+est_032,ser_0264,2017,187.21,Nacional
+est_035,ser_0265,1996,113.31,Streaming exclusivo
+est_037,ser_0266,1992,86.84,Global
+est_001,ser_0267,2020,23.99,Nacional
+est_019,ser_0268,2022,44.08,Regional
+est_020,ser_0269,1990,38.52,Regional
+est_023,ser_0270,2017,125.71,Streaming exclusivo
+est_038,ser_0271,1998,173.16,Streaming exclusivo
+est_038,ser_0272,1996,54.09,Nacional
+est_015,ser_0273,2010,157.4,Streaming exclusivo
+est_008,ser_0274,2024,41.25,Global
+est_005,ser_0275,2001,84.65,Global
+est_016,ser_0276,1993,69.25,Global
+est_028,ser_0277,1997,83.23,Global
+est_033,ser_0278,1991,60.36,Global
+est_032,ser_0279,2018,188.58,Global
+est_004,ser_0280,2020,155.33,Regional
+est_021,ser_0281,1991,73.11,Regional
+est_004,ser_0282,2003,177.12,Streaming exclusivo
+est_018,ser_0283,2002,39.23,Regional
+est_035,ser_0284,2022,86.14,Global
+est_036,ser_0285,2009,41.81,Streaming exclusivo
+est_016,ser_0286,2007,154.7,Regional
+est_005,ser_0287,2013,171.34,Streaming exclusivo
+est_010,ser_0288,2012,169.04,Streaming exclusivo
+est_012,ser_0289,1994,32.88,Streaming exclusivo
+est_038,ser_0290,1990,123.58,Global
+est_026,ser_0291,2003,166.3,Streaming exclusivo
+est_006,ser_0292,2010,195.68,Nacional
+est_006,ser_0293,1997,20.23,Regional
+est_007,ser_0294,2008,6.78,Regional
+est_013,ser_0295,1992,40.98,Nacional
+est_027,ser_0296,2007,7.4,Streaming exclusivo
+est_012,ser_0297,2015,32.23,Streaming exclusivo
+est_035,ser_0298,1991,106.09,Streaming exclusivo
+est_001,ser_0299,2002,114.05,Global
+est_003,ser_0300,1993,111.38,Streaming exclusivo
+est_016,ser_0301,2019,161.65,Streaming exclusivo
+est_003,ser_0302,2005,169.42,Global
+est_024,ser_0303,2006,36.61,Regional
+est_037,ser_0304,2021,175.75,Nacional
+est_024,ser_0305,1996,184.93,Global
+est_014,ser_0306,2022,101.34,Global
+est_024,ser_0307,2002,171.73,Streaming exclusivo
+est_011,ser_0308,1999,134.76,Global
+est_004,ser_0309,2007,158.29,Nacional
+est_011,ser_0310,1995,20.84,Regional
+est_021,ser_0311,2007,95.69,Nacional
+est_009,ser_0312,2007,158.16,Global
+est_031,ser_0313,1997,12.68,Streaming exclusivo
+est_007,ser_0314,1996,57.55,Regional
+est_034,ser_0315,2021,154.55,Nacional
+est_014,ser_0316,2001,44.39,Global
+est_014,ser_0317,2001,183.81,Global
+est_039,ser_0318,2001,74.04,Global
+est_032,ser_0319,1990,163.58,Global
+est_001,ser_0320,2004,25.36,Regional
+est_039,ser_0321,2021,67.57,Global
+est_038,ser_0322,1990,110.92,Regional
+est_037,ser_0323,1991,95.58,Nacional
+est_030,ser_0324,2005,33.67,Regional
+est_001,ser_0325,1996,104.79,Nacional
+est_040,ser_0326,2011,72.82,Regional
+est_027,ser_0327,2011,4.66,Regional
+est_008,ser_0328,2021,117.41,Nacional
+est_015,ser_0329,2008,182.89,Streaming exclusivo
+est_022,ser_0330,1997,68.24,Global
+est_024,ser_0331,1998,75.72,Nacional
+est_029,ser_0332,2002,196.49,Global
+est_013,ser_0333,2005,79.34,Streaming exclusivo
+est_005,ser_0334,2017,115.28,Regional
+est_039,ser_0335,2002,65.06,Nacional
+est_018,ser_0336,1996,195.88,Nacional
+est_003,ser_0337,2019,88.3,Nacional
+est_026,ser_0338,2009,154.5,Nacional
+est_040,ser_0339,2015,40.88,Streaming exclusivo
+est_015,ser_0340,1996,153.72,Regional
+est_017,ser_0341,2022,139.61,Global
+est_024,ser_0342,2009,75.69,Streaming exclusivo
+est_014,ser_0343,1999,100.53,Global
+est_011,ser_0344,1991,93.05,Global
+est_011,ser_0345,2005,66.32,Global
+est_023,ser_0346,1991,33.57,Streaming exclusivo
+est_028,ser_0347,2002,22.7,Regional
+est_031,ser_0348,2015,177.05,Regional
+est_025,ser_0349,2008,17.86,Nacional
+est_029,ser_0350,2018,67.9,Regional
+est_002,ser_0351,2000,157.91,Nacional
+est_027,ser_0352,2001,189.08,Nacional
+est_025,ser_0353,2015,170.82,Nacional
+est_013,ser_0354,2022,10.19,Global
+est_032,ser_0355,1991,85.71,Global
+est_008,ser_0356,2005,176.33,Nacional
+est_034,ser_0357,2006,127.41,Streaming exclusivo
+est_030,ser_0358,2001,33.88,Nacional
+est_006,ser_0359,2021,30.54,Nacional
+est_031,ser_0360,1995,88.0,Nacional
+est_022,ser_0361,2024,17.5,Regional
+est_010,ser_0362,2020,86.41,Nacional
+est_037,ser_0363,2014,5.88,Regional
+est_008,ser_0364,2024,44.73,Global
+est_012,ser_0365,2024,28.81,Regional
+est_026,ser_0366,2024,20.95,Regional
+est_026,ser_0367,2006,146.37,Streaming exclusivo
+est_031,ser_0368,2005,20.13,Streaming exclusivo
+est_001,ser_0369,1995,42.69,Regional
+est_028,ser_0370,2022,118.0,Streaming exclusivo
+est_006,ser_0371,1991,181.44,Regional
+est_019,ser_0372,2014,80.81,Nacional
+est_034,ser_0373,2013,107.71,Global
+est_020,ser_0374,1990,179.69,Global
+est_011,ser_0375,1994,122.09,Nacional
+est_030,ser_0376,2005,162.04,Regional
+est_025,ser_0377,2024,75.53,Global
+est_006,ser_0378,2008,124.88,Regional
+est_035,ser_0379,2021,177.39,Global
+est_006,ser_0380,1997,195.4,Nacional
+est_023,ser_0381,1997,128.42,Streaming exclusivo
+est_031,ser_0382,1993,101.73,Streaming exclusivo
+est_018,ser_0383,1992,137.73,Nacional
+est_013,ser_0384,2011,156.49,Regional
+est_040,ser_0385,1996,15.98,Regional
+est_026,ser_0386,2023,89.56,Streaming exclusivo
+est_032,ser_0387,2007,16.15,Regional
+est_009,ser_0388,2007,94.11,Streaming exclusivo
+est_015,ser_0389,2010,11.34,Global
+est_021,ser_0390,1992,96.01,Nacional
+est_027,ser_0391,2007,120.4,Streaming exclusivo
+est_039,ser_0392,2021,41.4,Regional
+est_023,ser_0393,2001,184.77,Nacional
+est_025,ser_0394,2006,146.66,Global
+est_021,ser_0395,1994,18.15,Global
+est_002,ser_0396,2013,22.3,Regional
+est_023,ser_0397,2013,176.76,Streaming exclusivo
+est_016,ser_0398,2000,63.49,Regional
+est_023,ser_0399,2010,67.4,Nacional
+est_013,ser_0400,1992,154.88,Nacional
+est_012,ser_0401,2016,161.25,Streaming exclusivo
+est_018,ser_0402,2002,34.36,Nacional
+est_008,ser_0403,2010,85.45,Global
+est_028,ser_0404,2022,6.27,Regional
+est_001,ser_0405,1998,91.18,Regional
+est_006,ser_0406,2010,144.29,Global
+est_030,ser_0407,2001,187.93,Nacional
+est_034,ser_0408,1992,131.6,Regional
+est_019,ser_0409,1998,34.81,Streaming exclusivo
+est_021,ser_0410,1996,150.21,Nacional
+est_037,ser_0411,2020,147.88,Nacional
+est_002,ser_0412,2013,167.59,Regional
+est_010,ser_0413,2021,153.65,Global
+est_032,ser_0414,2010,199.3,Global
+est_001,ser_0415,2010,50.82,Regional
+est_010,ser_0416,2004,26.61,Global
+est_025,ser_0417,1999,70.68,Global
+est_015,ser_0418,2024,120.01,Regional
+est_039,ser_0419,2017,67.13,Streaming exclusivo
+est_004,ser_0420,1995,128.53,Regional
+est_019,ser_0421,1994,71.45,Global
+est_021,ser_0422,2017,63.96,Nacional
+est_023,ser_0423,2005,16.7,Streaming exclusivo
+est_022,ser_0424,2021,5.73,Regional
+est_023,ser_0425,1990,182.12,Global
+est_025,ser_0426,2006,187.78,Streaming exclusivo
+est_018,ser_0427,2009,111.94,Nacional
+est_018,ser_0428,2024,148.73,Nacional
+est_019,ser_0429,2005,121.49,Nacional
+est_035,ser_0430,2016,104.51,Nacional
+est_023,ser_0431,2010,4.71,Global
+est_001,ser_0432,1993,173.3,Regional
+est_027,ser_0433,2004,44.3,Streaming exclusivo
+est_006,ser_0434,2024,138.04,Regional
+est_032,ser_0435,1994,102.7,Streaming exclusivo
+est_015,ser_0436,2004,33.68,Global
+est_028,ser_0437,1990,92.51,Global
+est_024,ser_0438,2008,6.02,Global
+est_027,ser_0439,2014,143.08,Streaming exclusivo
+est_039,ser_0440,2016,27.28,Nacional
+est_011,ser_0441,2002,143.35,Regional
+est_013,ser_0442,2002,160.5,Nacional
+est_005,ser_0443,1995,135.43,Regional
+est_001,ser_0444,2005,190.15,Streaming exclusivo
+est_031,ser_0445,2018,141.53,Streaming exclusivo
+est_014,ser_0446,1996,22.08,Global
+est_017,ser_0447,2005,38.16,Nacional
+est_034,ser_0448,2011,71.18,Streaming exclusivo
+est_016,ser_0449,2021,90.63,Streaming exclusivo
+est_033,ser_0450,1995,139.71,Streaming exclusivo
+est_039,ser_0451,1997,178.95,Nacional
+est_023,ser_0452,2021,18.54,Nacional
+est_005,ser_0453,2013,105.16,Global
+est_010,ser_0454,2019,59.88,Regional
+est_005,ser_0455,1990,85.62,Nacional
+est_019,ser_0456,2002,176.24,Nacional
+est_030,ser_0457,2004,151.86,Regional
+est_039,ser_0458,2013,40.74,Global
+est_037,ser_0459,1996,6.81,Regional
+est_026,ser_0460,2014,83.49,Global
+est_010,ser_0461,1990,149.98,Streaming exclusivo
+est_038,ser_0462,1990,198.43,Nacional
+est_015,ser_0463,2010,26.18,Regional
+est_007,ser_0464,2012,141.31,Streaming exclusivo
+est_023,ser_0465,1999,191.16,Streaming exclusivo
+est_024,ser_0466,2012,95.71,Global
+est_009,ser_0467,2002,49.26,Streaming exclusivo
+est_011,ser_0468,2002,108.98,Nacional
+est_040,ser_0469,2007,107.73,Nacional
+est_007,ser_0470,1993,199.77,Nacional
+est_016,ser_0471,2024,68.84,Regional
+est_009,ser_0472,2016,153.63,Global
+est_035,ser_0473,2007,133.15,Global
+est_038,ser_0474,2013,93.39,Streaming exclusivo
+est_022,ser_0475,2007,6.51,Regional
+est_036,ser_0476,2009,155.57,Regional
+est_039,ser_0477,1995,137.62,Streaming exclusivo
+est_016,ser_0478,1991,74.68,Nacional
+est_018,ser_0479,2009,128.76,Global
+est_028,ser_0480,1998,96.84,Nacional
+est_038,ser_0481,2006,129.05,Global
+est_015,ser_0482,2014,145.94,Regional
+est_003,ser_0483,2003,183.26,Nacional
+est_023,ser_0484,2006,185.71,Streaming exclusivo
+est_012,ser_0485,2010,27.02,Streaming exclusivo
+est_019,ser_0486,1990,182.64,Nacional
+est_026,ser_0487,2000,89.98,Global
+est_023,ser_0488,2005,65.33,Nacional
+est_003,ser_0489,2004,130.45,Regional
+est_007,ser_0490,2000,162.77,Streaming exclusivo
+est_038,ser_0491,2009,153.13,Regional
+est_030,ser_0492,2009,84.87,Global
+est_008,ser_0493,2013,16.71,Global
+est_033,ser_0494,2014,74.48,Global
+est_037,ser_0495,2010,147.51,Regional
+est_025,ser_0496,1991,128.03,Regional
+est_001,ser_0497,1990,191.72,Nacional
+est_005,ser_0498,1992,158.15,Streaming exclusivo
+est_005,ser_0499,2008,56.61,Nacional
+est_031,ser_0500,2015,161.41,Global
+est_012,ser_0501,1990,75.36,Regional
+est_010,ser_0502,2015,171.21,Streaming exclusivo
+est_014,ser_0503,2022,135.66,Streaming exclusivo
+est_027,ser_0504,2024,24.91,Streaming exclusivo
+est_032,ser_0505,2002,63.13,Global
+est_017,ser_0506,1992,104.74,Nacional
+est_007,ser_0507,2011,68.2,Global
+est_023,ser_0508,2016,147.38,Nacional
+est_027,ser_0509,2024,13.69,Streaming exclusivo
+est_020,ser_0510,2017,52.02,Global
+est_003,ser_0511,2010,46.31,Global
+est_003,ser_0512,2011,90.99,Regional
+est_017,ser_0513,2002,76.51,Regional
+est_040,ser_0514,2020,88.35,Global
+est_020,ser_0515,2015,163.21,Streaming exclusivo
+est_035,ser_0516,1998,173.41,Global
+est_020,ser_0517,1991,169.83,Global
+est_010,ser_0518,2011,51.3,Global
+est_023,ser_0519,2018,35.08,Streaming exclusivo
+est_037,ser_0520,2006,155.34,Regional
+est_035,ser_0521,2023,43.04,Nacional
+est_009,ser_0522,2000,4.25,Streaming exclusivo
+est_029,ser_0523,2005,146.95,Nacional
+est_005,ser_0524,2003,136.36,Regional
+est_032,ser_0525,2016,148.84,Nacional
+est_025,ser_0526,2024,173.96,Global
+est_007,ser_0527,2008,91.81,Streaming exclusivo
+est_014,ser_0528,2016,104.53,Streaming exclusivo
+est_034,ser_0529,2022,69.06,Nacional
+est_039,ser_0530,2000,197.59,Global
+est_026,ser_0531,2002,93.98,Nacional
+est_017,ser_0532,1998,151.02,Global
+est_039,ser_0533,2001,85.08,Regional
+est_010,ser_0534,1994,120.43,Nacional
+est_016,ser_0535,2016,113.43,Global
+est_012,ser_0536,1992,35.68,Regional
+est_026,ser_0537,1999,44.38,Global
+est_040,ser_0538,1999,95.31,Regional
+est_039,ser_0539,2019,164.18,Global
+est_026,ser_0540,2007,161.11,Global
+est_026,ser_0541,2013,150.18,Streaming exclusivo
+est_015,ser_0542,1999,42.55,Global
+est_008,ser_0543,2009,163.62,Nacional
+est_015,ser_0544,2012,190.11,Nacional
+est_020,ser_0545,2023,145.78,Nacional
+est_015,ser_0546,2003,88.13,Nacional
+est_005,ser_0547,2019,31.11,Nacional
+est_038,ser_0548,2015,163.83,Nacional
+est_010,ser_0549,2023,4.44,Regional
+est_003,ser_0550,2007,104.1,Nacional
+est_020,ser_0551,1993,62.54,Regional
+est_017,ser_0552,2002,107.26,Streaming exclusivo
+est_036,ser_0553,2003,46.63,Nacional
+est_037,ser_0554,2019,156.89,Streaming exclusivo
+est_032,ser_0555,2011,25.86,Nacional
+est_017,ser_0556,2011,174.27,Global
+est_020,ser_0557,1990,156.38,Regional
+est_018,ser_0558,2017,36.66,Nacional
+est_017,ser_0559,2003,137.9,Nacional
+est_014,ser_0560,2003,107.48,Nacional
+est_027,ser_0561,2000,175.19,Global
+est_001,ser_0562,2020,40.67,Global
+est_017,ser_0563,2017,190.05,Nacional
+est_025,ser_0564,1998,13.21,Global
+est_024,ser_0565,2008,95.0,Regional
+est_006,ser_0566,2007,158.27,Regional
+est_017,ser_0567,2021,154.41,Nacional
+est_005,ser_0568,2011,198.88,Regional
+est_027,ser_0569,2010,173.6,Nacional
+est_023,ser_0570,2018,100.82,Global
+est_028,ser_0571,1994,65.56,Nacional
+est_012,ser_0572,2002,8.15,Nacional
+est_030,ser_0573,2017,60.07,Regional
+est_010,ser_0574,2017,156.6,Global
+est_018,ser_0575,1994,99.36,Global
+est_036,ser_0576,2002,17.81,Nacional
+est_037,ser_0577,1994,29.8,Global
+est_039,ser_0578,2008,35.48,Nacional
+est_030,ser_0579,1999,18.06,Nacional
+est_020,ser_0580,2012,52.54,Nacional
+est_016,ser_0581,2024,27.42,Nacional
+est_024,ser_0582,2002,165.97,Nacional
+est_029,ser_0583,2018,115.42,Streaming exclusivo
+est_003,ser_0584,2018,12.1,Nacional
+est_013,ser_0585,2023,13.26,Global
+est_024,ser_0586,2002,70.03,Streaming exclusivo
+est_015,ser_0587,2019,135.23,Nacional
+est_013,ser_0588,1994,106.64,Regional
+est_003,ser_0589,2007,118.21,Nacional
+est_037,ser_0590,1998,169.43,Global
+est_001,ser_0591,2016,141.05,Regional
+est_038,ser_0592,2021,180.46,Streaming exclusivo
+est_030,ser_0593,2011,108.0,Global
+est_028,ser_0594,2014,30.53,Regional
+est_012,ser_0595,1995,114.65,Streaming exclusivo
+est_029,ser_0596,1990,43.7,Nacional
+est_010,ser_0597,2020,160.85,Nacional
+est_031,ser_0598,1999,99.82,Global
+est_016,ser_0599,2006,31.01,Regional
+est_006,ser_0600,2017,96.23,Global
+est_031,ser_0601,2002,134.08,Streaming exclusivo
+est_030,ser_0602,1990,71.42,Regional
+est_032,ser_0603,2006,94.03,Regional
+est_034,ser_0604,2011,133.88,Nacional
+est_007,ser_0605,1994,73.97,Streaming exclusivo
+est_013,ser_0606,2008,29.59,Nacional
+est_029,ser_0607,2015,50.22,Global
+est_012,ser_0608,1999,145.81,Streaming exclusivo
+est_028,ser_0609,2013,31.61,Global
+est_031,ser_0610,2007,177.36,Streaming exclusivo
+est_013,ser_0611,2010,170.72,Global
+est_004,ser_0612,2003,128.4,Global
+est_021,ser_0613,2000,195.82,Regional
+est_017,ser_0614,1994,133.92,Regional
+est_018,ser_0615,2003,133.35,Nacional
+est_013,ser_0616,2023,89.25,Streaming exclusivo
+est_020,ser_0617,2009,197.59,Streaming exclusivo
+est_036,ser_0618,1992,46.95,Streaming exclusivo
+est_008,ser_0619,2021,29.97,Global
+est_026,ser_0620,2017,165.8,Regional
+est_028,ser_0621,2011,70.95,Regional
+est_017,ser_0622,2021,54.01,Global
+est_038,ser_0623,2014,32.04,Nacional
+est_001,ser_0624,1996,175.5,Nacional
+est_011,ser_0625,2018,141.4,Streaming exclusivo
+est_001,ser_0626,2003,101.29,Nacional
+est_003,ser_0627,2019,168.87,Global
+est_029,ser_0628,1993,17.99,Nacional
+est_019,ser_0629,2010,62.58,Streaming exclusivo
+est_026,ser_0630,2024,21.4,Streaming exclusivo
+est_002,ser_0631,2021,144.48,Regional
+est_035,ser_0632,2013,188.05,Regional
+est_040,ser_0633,2008,127.85,Nacional
+est_017,ser_0634,2006,127.01,Streaming exclusivo
+est_004,ser_0635,2008,30.28,Global
+est_038,ser_0636,2007,170.11,Nacional
+est_001,ser_0637,1999,55.4,Nacional
+est_006,ser_0638,2002,185.17,Nacional
+est_014,ser_0639,2006,51.6,Global
+est_035,ser_0640,2005,58.0,Streaming exclusivo
+est_018,ser_0641,2004,187.14,Nacional
+est_020,ser_0642,1993,114.51,Streaming exclusivo
+est_017,ser_0643,2018,145.58,Regional
+est_030,ser_0644,2007,54.66,Nacional
+est_028,ser_0645,2009,140.26,Global
+est_016,ser_0646,2010,37.48,Global
+est_034,ser_0647,1994,116.26,Regional
+est_008,ser_0648,2001,168.21,Regional
+est_031,ser_0649,2015,17.01,Nacional
+est_020,ser_0650,2011,35.45,Global
+est_005,ser_0651,2004,10.99,Regional
+est_036,ser_0652,1993,107.17,Nacional
+est_033,ser_0653,1990,168.37,Streaming exclusivo
+est_010,ser_0654,2021,53.32,Global
+est_027,ser_0655,2018,178.33,Regional
+est_026,ser_0656,1996,132.91,Streaming exclusivo
+est_027,ser_0657,2011,110.84,Regional
+est_002,ser_0658,1994,114.68,Global
+est_005,ser_0659,2012,136.2,Nacional
+est_028,ser_0660,2023,82.53,Global
+est_033,ser_0661,1998,43.85,Regional
+est_004,ser_0662,1995,123.79,Nacional
+est_011,ser_0663,2008,192.38,Global
+est_019,ser_0664,2010,74.11,Global
+est_009,ser_0665,1993,13.28,Global
+est_024,ser_0666,2021,57.85,Regional
+est_016,ser_0667,2008,24.46,Streaming exclusivo
+est_004,ser_0668,2015,191.14,Regional
+est_008,ser_0669,2003,27.94,Streaming exclusivo
+est_033,ser_0670,2021,7.17,Streaming exclusivo
+est_011,ser_0671,2004,103.62,Global
+est_039,ser_0672,2010,12.68,Streaming exclusivo
+est_012,ser_0673,2008,2.41,Nacional
+est_031,ser_0674,2023,43.82,Streaming exclusivo
+est_016,ser_0675,1995,51.96,Regional
+est_016,ser_0676,1992,86.42,Nacional
+est_037,ser_0677,1999,117.64,Nacional
+est_038,ser_0678,2015,60.42,Global
+est_007,ser_0679,1994,132.47,Nacional
+est_037,ser_0680,1993,97.25,Streaming exclusivo
+est_017,ser_0681,1992,3.5,Streaming exclusivo
+est_009,ser_0682,1993,175.03,Regional
+est_007,ser_0683,2014,196.17,Regional
+est_015,ser_0684,2012,44.36,Global
+est_021,ser_0685,2014,58.79,Global
+est_037,ser_0686,1992,52.15,Regional
+est_027,ser_0687,2003,183.61,Global
+est_013,ser_0688,2013,173.65,Global
+est_001,ser_0689,2002,10.92,Nacional
+est_004,ser_0690,2003,197.18,Streaming exclusivo
+est_035,ser_0691,1993,120.58,Global
+est_016,ser_0692,1991,83.01,Streaming exclusivo
+est_002,ser_0693,2002,198.81,Streaming exclusivo
+est_006,ser_0694,1992,87.1,Nacional
+est_015,ser_0695,2010,199.65,Nacional
+est_028,ser_0696,2010,160.1,Streaming exclusivo
+est_010,ser_0697,2000,115.49,Streaming exclusivo
+est_018,ser_0698,2007,175.43,Global
+est_009,ser_0699,2014,161.64,Global
+est_033,ser_0700,2001,171.39,Nacional
+est_024,ser_0701,1998,60.54,Streaming exclusivo
+est_034,ser_0702,2008,60.08,Global
+est_031,ser_0703,2002,34.11,Global
+est_012,ser_0704,2005,156.18,Streaming exclusivo
+est_011,ser_0705,1995,51.98,Streaming exclusivo
+est_024,ser_0706,2002,76.79,Nacional
+est_022,ser_0707,2016,88.33,Nacional
+est_020,ser_0708,2007,29.41,Regional
+est_010,ser_0709,1994,172.48,Streaming exclusivo
+est_032,ser_0710,1990,58.36,Streaming exclusivo
+est_007,ser_0711,1996,174.73,Global
+est_002,ser_0712,1995,64.0,Streaming exclusivo
+est_016,ser_0713,2010,5.76,Regional
+est_036,ser_0714,1993,34.52,Nacional
+est_003,ser_0715,2024,64.32,Global
+est_034,ser_0716,2004,79.52,Nacional
+est_024,ser_0717,2006,57.75,Streaming exclusivo
+est_023,ser_0718,1993,187.14,Streaming exclusivo
+est_024,ser_0719,1990,24.15,Streaming exclusivo
+est_024,ser_0720,2012,78.64,Streaming exclusivo
+est_040,ser_0721,2000,35.55,Streaming exclusivo
+est_036,ser_0722,2019,167.74,Nacional
+est_002,ser_0723,1999,119.67,Nacional
+est_012,ser_0724,2003,160.96,Global
+est_015,ser_0725,2021,86.76,Regional
+est_031,ser_0726,2021,134.32,Streaming exclusivo
+est_040,ser_0727,2010,137.49,Streaming exclusivo
+est_004,ser_0728,1990,28.03,Streaming exclusivo
+est_009,ser_0729,1998,125.63,Nacional
+est_017,ser_0730,1994,166.2,Nacional
+est_011,ser_0731,2020,30.38,Global
+est_017,ser_0732,2020,94.59,Streaming exclusivo
+est_015,ser_0733,2021,123.03,Regional
+est_024,ser_0734,2007,92.1,Nacional
+est_025,ser_0735,2020,182.32,Streaming exclusivo
+est_031,ser_0736,2002,117.8,Streaming exclusivo
+est_040,ser_0737,2023,35.73,Nacional
+est_023,ser_0738,1999,114.75,Regional
+est_039,ser_0739,1999,111.19,Global
+est_006,ser_0740,2019,100.97,Regional
+est_024,ser_0741,1997,88.11,Nacional
+est_008,ser_0742,2017,140.83,Global
+est_019,ser_0743,2022,86.02,Regional
+est_008,ser_0744,1999,108.92,Global
+est_021,ser_0745,1995,7.83,Nacional
+est_035,ser_0746,1995,121.06,Global
+est_018,ser_0747,2004,82.18,Global
+est_033,ser_0748,2010,193.42,Regional
+est_007,ser_0749,2021,96.88,Regional
+est_032,ser_0750,1992,75.45,Global
+est_007,ser_0751,2022,110.93,Nacional
+est_028,ser_0752,2013,187.53,Global
+est_030,ser_0753,1997,80.82,Nacional
+est_028,ser_0754,1992,194.26,Streaming exclusivo
+est_013,ser_0755,2009,31.14,Streaming exclusivo
+est_007,ser_0756,1991,61.94,Nacional
+est_037,ser_0757,2019,163.05,Streaming exclusivo
+est_015,ser_0758,1994,32.06,Regional
+est_005,ser_0759,2014,55.31,Regional
+est_027,ser_0760,2017,178.64,Streaming exclusivo
+est_004,ser_0761,2009,188.31,Streaming exclusivo
+est_017,ser_0762,2007,184.77,Global
+est_015,ser_0763,2015,141.2,Streaming exclusivo
+est_037,ser_0764,1994,163.7,Regional
+est_020,ser_0765,2002,120.81,Streaming exclusivo
+est_003,ser_0766,1995,92.87,Regional
+est_022,ser_0767,2024,182.81,Regional
+est_036,ser_0768,2013,158.63,Nacional
+est_008,ser_0769,1995,48.57,Regional
+est_038,ser_0770,2000,197.16,Streaming exclusivo
+est_023,ser_0771,2003,113.68,Nacional
+est_024,ser_0772,2006,41.16,Regional
+est_037,ser_0773,2010,173.91,Global
+est_012,ser_0774,2016,154.42,Regional
+est_021,ser_0775,1996,69.55,Nacional
+est_012,ser_0776,2003,16.57,Regional
+est_026,ser_0777,1994,41.32,Nacional
+est_035,ser_0778,2009,94.96,Global
+est_005,ser_0779,1992,85.82,Regional
+est_039,ser_0780,2017,173.38,Nacional
+est_037,ser_0781,2021,22.46,Regional
+est_004,ser_0782,2019,101.94,Nacional
+est_011,ser_0783,2018,182.55,Nacional
+est_010,ser_0784,2001,47.12,Regional
+est_038,ser_0785,2023,17.64,Streaming exclusivo
+est_025,ser_0786,1997,132.6,Global
+est_004,ser_0787,2014,94.46,Regional
+est_025,ser_0788,2021,59.32,Regional
+est_014,ser_0789,1991,123.51,Nacional
+est_001,ser_0790,1996,168.91,Streaming exclusivo
+est_008,ser_0791,2006,159.58,Global
+est_018,ser_0792,1995,190.31,Streaming exclusivo
+est_021,ser_0793,2001,100.13,Nacional
+est_040,ser_0794,1998,185.72,Regional
+est_030,ser_0795,2023,107.2,Streaming exclusivo
+est_031,ser_0796,2020,67.75,Global
+est_030,ser_0797,2022,22.8,Global
+est_001,ser_0798,2013,37.2,Regional
+est_003,ser_0799,1991,109.37,Nacional
+est_011,ser_0800,2022,41.2,Regional
+est_038,ser_0801,2017,94.13,Nacional
+est_032,ser_0802,2013,164.38,Regional
+est_021,ser_0803,2010,87.08,Global
+est_031,ser_0804,1998,160.86,Global
+est_027,ser_0805,2022,17.06,Global
+est_035,ser_0806,2016,162.44,Regional
+est_028,ser_0807,2010,7.96,Regional
+est_023,ser_0808,2003,80.3,Regional
+est_036,ser_0809,2020,5.95,Regional
+est_035,ser_0810,1994,45.16,Global
+est_005,ser_0811,2007,41.94,Regional
+est_037,ser_0812,1996,10.14,Regional
+est_019,ser_0813,1994,197.08,Global
+est_005,ser_0814,1992,179.29,Nacional
+est_010,ser_0815,2004,58.19,Global
+est_009,ser_0816,1991,152.27,Streaming exclusivo
+est_019,ser_0817,1995,4.01,Nacional
+est_019,ser_0818,2019,196.88,Global
+est_017,ser_0819,2009,185.52,Global
+est_009,ser_0820,2018,73.72,Global
+est_037,ser_0821,2003,4.45,Regional
+est_018,ser_0822,2018,165.6,Global
+est_013,ser_0823,2003,197.88,Global
+est_027,ser_0824,2020,94.69,Streaming exclusivo
+est_034,ser_0825,2012,131.41,Streaming exclusivo
+est_031,ser_0826,2006,170.77,Nacional
+est_001,ser_0827,2014,151.03,Streaming exclusivo
+est_036,ser_0828,1993,159.06,Nacional
+est_019,ser_0829,2007,182.52,Nacional
+est_023,ser_0830,1993,82.93,Global
+est_007,ser_0831,2005,188.96,Global
+est_029,ser_0832,2001,45.9,Streaming exclusivo
+est_006,ser_0833,2001,113.79,Nacional
+est_033,ser_0834,1993,196.82,Nacional
+est_013,ser_0835,2013,35.89,Streaming exclusivo
+est_027,ser_0836,2000,160.89,Streaming exclusivo
+est_030,ser_0837,2023,49.46,Streaming exclusivo
+est_003,ser_0838,2015,147.89,Streaming exclusivo
+est_008,ser_0839,2013,97.66,Nacional
+est_034,ser_0840,2010,85.5,Regional
+est_029,ser_0841,1998,94.36,Nacional
+est_009,ser_0842,2003,97.94,Regional
+est_012,ser_0843,1993,105.82,Nacional
+est_001,ser_0844,2012,119.5,Global
+est_040,ser_0845,2009,182.78,Regional
+est_038,ser_0846,2003,183.89,Global
+est_022,ser_0847,2010,102.35,Streaming exclusivo
+est_004,ser_0848,2022,127.94,Global
+est_039,ser_0849,1999,153.27,Regional
+est_034,ser_0850,1992,111.64,Regional
+est_023,ser_0851,2017,38.22,Regional
+est_018,ser_0852,2020,82.63,Streaming exclusivo
+est_022,ser_0853,2011,173.91,Global
+est_001,ser_0854,2023,107.12,Global
+est_038,ser_0855,2017,22.43,Regional
+est_014,ser_0856,2009,157.99,Global
+est_012,ser_0857,2024,7.0,Streaming exclusivo
+est_031,ser_0858,2020,158.91,Global
+est_038,ser_0859,2020,153.0,Streaming exclusivo
+est_004,ser_0860,2015,180.29,Global
+est_009,ser_0861,2011,78.81,Streaming exclusivo
+est_022,ser_0862,1990,49.66,Regional
+est_014,ser_0863,2001,28.05,Nacional
+est_031,ser_0864,1996,6.97,Streaming exclusivo
+est_023,ser_0865,2008,102.27,Streaming exclusivo
+est_006,ser_0866,2006,145.26,Nacional
+est_027,ser_0867,2008,97.35,Regional
+est_008,ser_0868,2022,119.02,Global
+est_037,ser_0869,2003,164.28,Streaming exclusivo
+est_019,ser_0870,1996,128.34,Global
+est_040,ser_0871,2017,25.38,Regional
+est_039,ser_0872,2013,176.6,Streaming exclusivo
+est_033,ser_0873,2010,18.04,Regional
+est_026,ser_0874,1990,75.75,Streaming exclusivo
+est_014,ser_0875,1998,92.21,Global
+est_030,ser_0876,1990,5.88,Global
+est_031,ser_0877,2007,141.45,Nacional
+est_034,ser_0878,2008,24.47,Streaming exclusivo
+est_022,ser_0879,2020,121.05,Nacional
+est_013,ser_0880,2018,146.53,Regional
+est_027,ser_0881,1990,70.05,Streaming exclusivo
+est_014,ser_0882,1993,116.06,Global
+est_012,ser_0883,1993,167.64,Streaming exclusivo
+est_002,ser_0884,2011,143.85,Streaming exclusivo
+est_012,ser_0885,2020,188.15,Streaming exclusivo
+est_034,ser_0886,2006,107.75,Global
+est_019,ser_0887,2009,93.75,Regional
+est_013,ser_0888,2005,165.54,Global
+est_012,ser_0889,2022,156.65,Regional
+est_031,ser_0890,2012,164.41,Streaming exclusivo
+est_034,ser_0891,1994,103.63,Global
+est_009,ser_0892,2014,82.95,Global
+est_034,ser_0893,2020,163.3,Global
+est_030,ser_0894,2014,113.88,Global
+est_029,ser_0895,2012,89.64,Regional
+est_034,ser_0896,2019,71.05,Global
+est_005,ser_0897,2011,91.69,Regional
+est_007,ser_0898,2017,199.63,Streaming exclusivo
+est_025,ser_0899,1999,157.01,Nacional
+est_019,ser_0900,2009,154.35,Streaming exclusivo
+est_040,ser_0901,1996,145.31,Global
+est_016,ser_0902,2003,74.23,Global
+est_005,ser_0903,1995,12.5,Regional
+est_006,ser_0904,1992,65.71,Global
+est_015,ser_0905,1994,103.24,Nacional
+est_037,ser_0906,2013,187.29,Streaming exclusivo
+est_022,ser_0907,2020,89.66,Global
+est_026,ser_0908,2007,179.21,Global
+est_014,ser_0909,2014,4.28,Regional
+est_004,ser_0910,2008,58.15,Streaming exclusivo
+est_019,ser_0911,2021,79.63,Streaming exclusivo
+est_007,ser_0912,2001,156.67,Regional
+est_038,ser_0913,1992,124.9,Nacional
+est_016,ser_0914,1997,179.81,Streaming exclusivo
+est_031,ser_0915,2013,96.07,Streaming exclusivo
+est_003,ser_0916,1999,66.47,Streaming exclusivo
+est_023,ser_0917,2017,69.68,Nacional
+est_001,ser_0918,2023,66.63,Nacional
+est_030,ser_0919,2017,161.53,Regional
+est_026,ser_0920,2018,183.09,Global
+est_028,ser_0921,2004,151.68,Streaming exclusivo
+est_027,ser_0922,2022,51.86,Regional
+est_040,ser_0923,1991,2.18,Regional
+est_017,ser_0924,2023,4.59,Nacional
+est_013,ser_0925,2016,147.49,Streaming exclusivo
+est_038,ser_0926,2006,188.23,Global
+est_022,ser_0927,2002,168.19,Nacional
+est_027,ser_0928,2021,10.08,Streaming exclusivo
+est_020,ser_0929,2004,63.0,Global
+est_028,ser_0930,2018,29.6,Global
+est_013,ser_0931,2016,53.73,Regional
+est_015,ser_0932,2005,166.14,Regional
+est_017,ser_0933,1990,100.52,Global
+est_025,ser_0934,2004,195.49,Global
+est_017,ser_0935,2000,106.35,Regional
+est_030,ser_0936,2000,169.49,Nacional
+est_021,ser_0937,1993,109.76,Regional
+est_017,ser_0938,1990,70.25,Global
+est_009,ser_0939,2003,63.69,Global
+est_021,ser_0940,2011,92.91,Nacional
+est_031,ser_0941,2007,28.08,Global
+est_034,ser_0942,2014,114.42,Global
+est_014,ser_0943,2024,25.69,Global
+est_013,ser_0944,2024,73.38,Global
+est_002,ser_0945,1995,137.78,Nacional
+est_037,ser_0946,2001,13.01,Global
+est_015,ser_0947,1994,35.81,Regional
+est_019,ser_0948,1992,191.21,Streaming exclusivo
+est_020,ser_0949,2000,128.51,Regional
+est_017,ser_0950,2013,172.44,Regional
+est_031,ser_0951,2014,156.1,Streaming exclusivo
+est_006,ser_0952,1995,178.7,Regional
+est_012,ser_0953,1994,67.68,Regional
+est_032,ser_0954,2017,123.4,Nacional
+est_020,ser_0955,2012,93.03,Streaming exclusivo
+est_023,ser_0956,1997,20.32,Nacional
+est_017,ser_0957,2013,16.6,Streaming exclusivo
+est_039,ser_0958,2003,63.17,Regional
+est_022,ser_0959,2023,9.94,Nacional
+est_003,ser_0960,2023,49.45,Global
+est_040,ser_0961,2023,71.38,Nacional
+est_035,ser_0962,1999,185.2,Global
+est_010,ser_0963,2009,157.31,Streaming exclusivo
+est_007,ser_0964,2017,73.85,Streaming exclusivo
+est_025,ser_0965,2000,50.39,Streaming exclusivo
+est_025,ser_0966,2004,188.25,Streaming exclusivo
+est_002,ser_0967,2020,118.01,Global
+est_019,ser_0968,2005,72.36,Nacional
+est_040,ser_0969,1993,190.3,Streaming exclusivo
+est_012,ser_0970,2010,164.45,Streaming exclusivo
+est_027,ser_0971,2019,115.88,Nacional
+est_026,ser_0972,1995,109.38,Nacional
+est_012,ser_0973,1992,34.79,Streaming exclusivo
+est_034,ser_0974,2016,39.95,Nacional
+est_025,ser_0975,1991,196.94,Streaming exclusivo
+est_003,ser_0976,2006,45.77,Streaming exclusivo
+est_030,ser_0977,2015,72.66,Global
+est_014,ser_0978,2023,190.49,Nacional
+est_036,ser_0979,2020,135.72,Regional
+est_040,ser_0980,2022,7.88,Streaming exclusivo
+est_027,ser_0981,1995,72.46,Regional
+est_021,ser_0982,2016,196.18,Global
+est_004,ser_0983,2017,119.18,Nacional
+est_038,ser_0984,1991,142.22,Regional
+est_039,ser_0985,1995,160.67,Global
+est_019,ser_0986,2006,195.91,Streaming exclusivo
+est_004,ser_0987,1999,143.55,Regional
+est_001,ser_0988,1990,68.19,Regional
+est_005,ser_0989,2023,117.09,Regional
+est_022,ser_0990,2013,187.7,Nacional
+est_040,ser_0991,1994,91.62,Nacional
+est_003,ser_0992,2016,174.85,Global
+est_034,ser_0993,2008,193.62,Streaming exclusivo
+est_014,ser_0994,1996,79.37,Streaming exclusivo
+est_011,ser_0995,2001,142.95,Global
+est_015,ser_0996,1991,141.81,Global
+est_015,ser_0997,2018,9.98,Global
+est_027,ser_0998,2023,119.79,Nacional
+est_005,ser_0999,2016,71.97,Global
+est_023,ser_1000,1999,77.56,Streaming exclusivo
+est_015,ser_1001,1995,67.7,Nacional
+est_027,ser_1002,2020,113.69,Global
+est_037,ser_1003,2002,175.15,Global
+est_020,ser_1004,1991,101.9,Streaming exclusivo
+est_024,ser_1005,2002,60.72,Regional
+est_006,ser_1006,2014,23.54,Regional
+est_032,ser_1007,1994,67.94,Streaming exclusivo
+est_015,ser_1008,1993,142.66,Nacional
+est_033,ser_1009,2008,184.24,Streaming exclusivo
+est_038,ser_1010,1998,46.93,Nacional
+est_012,ser_1011,2000,46.64,Streaming exclusivo
+est_040,ser_1012,2006,117.1,Global
+est_004,ser_1013,2012,92.04,Global
+est_032,ser_1014,1995,31.96,Streaming exclusivo
+est_017,ser_1015,1998,76.11,Nacional
+est_039,ser_1016,2018,35.08,Global
+est_009,ser_1017,2000,29.26,Global
+est_026,ser_1018,1993,197.7,Regional
+est_014,ser_1019,1996,93.48,Streaming exclusivo
+est_009,ser_1020,2021,88.68,Regional
+est_027,ser_1021,2000,55.46,Streaming exclusivo
+est_034,ser_1022,2024,162.03,Streaming exclusivo
+est_033,ser_1023,2018,90.23,Regional
+est_035,ser_1024,2020,136.76,Regional
+est_036,ser_1025,1990,186.02,Nacional
+est_014,ser_1026,2010,139.01,Nacional
+est_003,ser_1027,2018,184.84,Streaming exclusivo
+est_009,ser_1028,1998,91.59,Streaming exclusivo
+est_033,ser_1029,2024,120.71,Nacional
+est_036,ser_1030,2004,109.16,Nacional
+est_039,ser_1031,2009,107.99,Regional
+est_025,ser_1032,2018,29.55,Global
+est_006,ser_1033,2005,76.41,Streaming exclusivo
+est_039,ser_1034,2014,74.82,Nacional
+est_009,ser_1035,2021,165.09,Streaming exclusivo
+est_037,ser_1036,2010,81.7,Global
+est_029,ser_1037,2013,114.22,Streaming exclusivo
+est_017,ser_1038,2011,197.62,Streaming exclusivo
+est_039,ser_1039,2001,59.7,Streaming exclusivo
+est_007,ser_1040,2015,19.39,Regional
+est_026,ser_1041,2024,160.76,Nacional
+est_035,ser_1042,2000,76.41,Streaming exclusivo
+est_032,ser_1043,2000,60.9,Regional
+est_030,ser_1044,2013,88.0,Nacional
+est_037,ser_1045,2021,177.28,Streaming exclusivo
+est_010,ser_1046,2021,17.77,Nacional
+est_022,ser_1047,1997,121.35,Nacional
+est_017,ser_1048,2011,116.57,Streaming exclusivo
+est_007,ser_1049,2008,78.45,Nacional
+est_026,ser_1050,2003,84.36,Global
+est_034,ser_1051,2007,27.72,Nacional
+est_017,ser_1052,2001,72.08,Streaming exclusivo
+est_020,ser_1053,2020,155.19,Nacional
+est_012,ser_1054,2011,122.13,Global
+est_025,ser_1055,2024,89.78,Nacional
+est_035,ser_1056,2007,74.79,Nacional
+est_024,ser_1057,2022,150.68,Regional
+est_003,ser_1058,1999,64.96,Streaming exclusivo
+est_022,ser_1059,1997,72.88,Global
+est_001,ser_1060,1992,190.08,Global
+est_005,ser_1061,2008,87.8,Regional
+est_018,ser_1062,2017,116.49,Regional
+est_008,ser_1063,1998,50.57,Global
+est_012,ser_1064,1994,59.01,Nacional
+est_030,ser_1065,1998,139.2,Streaming exclusivo
+est_007,ser_1066,1990,38.86,Nacional
+est_011,ser_1067,2019,97.7,Regional
+est_014,ser_1068,2001,34.59,Streaming exclusivo
+est_011,ser_1069,2007,79.93,Global
+est_012,ser_1070,1995,8.23,Regional
+est_028,ser_1071,2005,116.76,Streaming exclusivo
+est_026,ser_1072,2001,61.3,Streaming exclusivo
+est_029,ser_1073,2010,28.32,Nacional
+est_020,ser_1074,2017,70.46,Regional
+est_026,ser_1075,1999,86.25,Global
+est_035,ser_1076,2003,62.43,Nacional
+est_003,ser_1077,2021,135.16,Global
+est_013,ser_1078,2021,31.03,Regional
+est_010,ser_1079,2001,134.4,Nacional
+est_017,ser_1080,1997,160.74,Nacional
+est_032,ser_1081,1996,159.11,Regional
+est_001,ser_1082,1992,31.61,Global
+est_040,ser_1083,2012,2.16,Nacional
+est_017,ser_1084,2005,179.28,Global
+est_016,ser_1085,2012,47.48,Nacional
+est_017,ser_1086,2000,151.19,Regional
+est_031,ser_1087,2007,97.58,Nacional
+est_014,ser_1088,2003,183.22,Nacional
+est_031,ser_1089,1999,2.71,Streaming exclusivo
+est_013,ser_1090,1993,103.42,Nacional
+est_038,ser_1091,2015,167.3,Regional
+est_009,ser_1092,2018,179.98,Regional
+est_037,ser_1093,2002,177.49,Streaming exclusivo
+est_012,ser_1094,2023,19.48,Global
+est_013,ser_1095,2015,189.69,Global
+est_036,ser_1096,2008,22.8,Regional
+est_017,ser_1097,1990,32.33,Regional
+est_002,ser_1098,1991,5.03,Global
+est_040,ser_1099,2012,138.67,Regional
+est_028,ser_1100,2006,109.0,Streaming exclusivo
+est_015,ser_1101,1997,89.51,Regional
+est_028,ser_1102,1993,165.56,Streaming exclusivo
+est_036,ser_1103,1998,150.99,Regional
+est_013,ser_1104,2000,143.78,Streaming exclusivo
+est_023,ser_1105,2021,52.07,Streaming exclusivo
+est_018,ser_1106,1994,3.06,Global
+est_020,ser_1107,2020,11.64,Nacional
+est_022,ser_1108,1997,54.09,Nacional
+est_026,ser_1109,1995,48.2,Global
+est_040,ser_1110,2018,36.33,Nacional
+est_026,ser_1111,2022,119.17,Nacional
+est_025,ser_1112,2008,110.38,Global
+est_030,ser_1113,2001,96.4,Streaming exclusivo
+est_016,ser_1114,2006,7.36,Nacional
+est_012,ser_1115,2015,99.74,Regional
+est_014,ser_1116,2023,109.61,Nacional
+est_010,ser_1117,2017,197.76,Regional
+est_001,ser_1118,2006,137.45,Global
+est_036,ser_1119,1994,162.29,Global
+est_019,ser_1120,2021,58.58,Nacional
+est_040,ser_1121,2008,93.35,Global
+est_014,ser_1122,2020,52.29,Global
+est_005,ser_1123,2022,100.97,Nacional
+est_035,ser_1124,2006,81.43,Regional
+est_022,ser_1125,2022,130.84,Nacional
+est_007,ser_1126,2000,192.02,Regional
+est_040,ser_1127,2005,179.14,Nacional
+est_002,ser_1128,2024,61.36,Streaming exclusivo
+est_006,ser_1129,2024,155.8,Streaming exclusivo
+est_025,ser_1130,2022,93.52,Global
+est_040,ser_1131,2024,129.76,Regional
+est_004,ser_1132,2009,185.12,Nacional
+est_029,ser_1133,2007,15.78,Nacional
+est_038,ser_1134,2020,8.53,Streaming exclusivo
+est_016,ser_1135,2017,26.5,Streaming exclusivo
+est_037,ser_1136,2004,15.37,Nacional
+est_038,ser_1137,1992,53.86,Regional
+est_031,ser_1138,2005,100.29,Regional
+est_006,ser_1139,1999,45.04,Nacional
+est_019,ser_1140,2000,58.73,Nacional
+est_040,ser_1141,1998,198.98,Regional
+est_021,ser_1142,1992,53.83,Streaming exclusivo
+est_011,ser_1143,1994,199.8,Streaming exclusivo
+est_027,ser_1144,2005,192.96,Streaming exclusivo
+est_021,ser_1145,2004,58.35,Global
+est_030,ser_1146,2006,177.68,Global
+est_039,ser_1147,2007,63.2,Global
+est_016,ser_1148,2007,11.51,Global
+est_021,ser_1149,2006,197.49,Regional
+est_039,ser_1150,2007,58.28,Nacional
+est_008,ser_1151,2006,63.68,Global
+est_027,ser_1152,2018,95.17,Regional
+est_015,ser_1153,2006,39.91,Global
+est_015,ser_1154,2013,26.2,Global
+est_002,ser_1155,2020,146.0,Streaming exclusivo
+est_021,ser_1156,2010,32.58,Nacional
+est_010,ser_1157,2006,14.89,Nacional
+est_011,ser_1158,2009,50.9,Global
+est_019,ser_1159,2014,148.6,Nacional
+est_020,ser_1160,2009,63.02,Global
+est_018,ser_1161,2018,115.47,Streaming exclusivo
+est_008,ser_1162,2013,100.2,Nacional
+est_013,ser_1163,1993,49.69,Nacional
+est_040,ser_1164,2017,118.04,Regional
+est_013,ser_1165,2020,75.01,Global
+est_026,ser_1166,1995,189.17,Nacional
+est_002,ser_1167,2014,158.9,Streaming exclusivo
+est_024,ser_1168,2015,112.43,Regional
+est_008,ser_1169,2007,148.62,Global
+est_030,ser_1170,1994,72.67,Global
+est_005,ser_1171,2011,129.17,Nacional
+est_026,ser_1172,2012,24.47,Global
+est_031,ser_1173,2004,19.07,Nacional
+est_009,ser_1174,2006,174.09,Nacional
+est_013,ser_1175,1994,144.06,Streaming exclusivo
+est_033,ser_1176,2021,109.61,Regional
+est_008,ser_1177,2008,135.86,Streaming exclusivo
+est_013,ser_1178,2012,31.18,Global
+est_024,ser_1179,2011,61.99,Nacional
+est_031,ser_1180,2004,82.69,Regional
+est_008,ser_1181,2020,79.58,Global
+est_014,ser_1182,2006,72.68,Global
+est_033,ser_1183,2003,151.34,Streaming exclusivo
+est_037,ser_1184,2022,96.29,Regional
+est_028,ser_1185,1993,28.94,Streaming exclusivo
+est_021,ser_1186,1995,39.89,Global
+est_014,ser_1187,2003,104.17,Nacional
+est_022,ser_1188,1996,54.99,Streaming exclusivo
+est_018,ser_1189,2003,163.55,Regional
+est_020,ser_1190,1990,19.63,Global
+est_004,ser_1191,1992,168.56,Global
+est_039,ser_1192,2008,180.13,Nacional
+est_005,ser_1193,2010,6.38,Streaming exclusivo
+est_007,ser_1194,1998,52.02,Global
+est_035,ser_1195,2002,31.62,Nacional
+est_035,ser_1196,2014,83.99,Global
+est_017,ser_1197,1990,32.73,Global
+est_005,ser_1198,2018,183.6,Global
+est_002,ser_1199,1990,84.3,Regional
+est_020,ser_1200,1999,99.87,Nacional
+est_039,ser_1201,2019,62.66,Global
+est_025,ser_1202,2013,19.38,Regional
+est_034,ser_1203,2005,188.78,Streaming exclusivo
+est_018,ser_1204,2001,46.59,Regional
+est_031,ser_1205,2019,92.0,Nacional
+est_013,ser_1206,2024,111.41,Nacional
+est_006,ser_1207,2001,41.3,Global
+est_003,ser_1208,1998,171.91,Streaming exclusivo
+est_040,ser_1209,2010,119.65,Streaming exclusivo
+est_022,ser_1210,1990,125.04,Streaming exclusivo
+est_031,ser_1211,2016,130.62,Regional
+est_030,ser_1212,2010,39.72,Regional
+est_038,ser_1213,2005,78.64,Nacional
+est_005,ser_1214,1993,195.39,Global
+est_017,ser_1215,2010,97.5,Streaming exclusivo
+est_007,ser_1216,1998,86.92,Streaming exclusivo
+est_011,ser_1217,2020,199.63,Nacional
+est_016,ser_1218,2023,194.86,Nacional
+est_020,ser_1219,2006,109.35,Streaming exclusivo
+est_009,ser_1220,2006,25.7,Regional
+est_034,ser_1221,2019,196.24,Nacional
+est_004,ser_1222,2011,101.14,Streaming exclusivo
+est_003,ser_1223,2004,21.58,Regional
+est_023,ser_1224,2004,73.37,Global
+est_006,ser_1225,2011,73.92,Regional
+est_014,ser_1226,2012,102.99,Regional
+est_014,ser_1227,1996,24.04,Nacional
+est_020,ser_1228,2019,103.09,Regional
+est_032,ser_1229,2018,134.19,Streaming exclusivo
+est_016,ser_1230,1998,167.66,Regional
+est_008,ser_1231,2016,89.73,Global
+est_039,ser_1232,2006,16.55,Streaming exclusivo
+est_039,ser_1233,2018,37.88,Global
+est_001,ser_1234,1991,185.84,Streaming exclusivo
+est_033,ser_1235,2003,91.12,Streaming exclusivo
+est_017,ser_1236,2003,26.45,Regional
+est_008,ser_1237,2009,116.62,Regional
+est_014,ser_1238,2012,88.38,Nacional
+est_029,ser_1239,2014,157.32,Global
+est_010,ser_1240,2017,16.17,Streaming exclusivo
+est_007,ser_1241,2005,61.07,Global
+est_040,ser_1242,2013,41.7,Nacional
+est_030,ser_1243,2010,116.81,Regional
+est_038,ser_1244,2014,58.42,Streaming exclusivo
+est_026,ser_1245,2006,170.6,Global
+est_011,ser_1246,1994,153.6,Global
+est_022,ser_1247,2016,133.94,Global
+est_003,ser_1248,1998,125.92,Regional
+est_007,ser_1249,2024,136.81,Streaming exclusivo
+est_028,ser_1250,2017,130.59,Regional
+est_040,ser_1251,1990,81.62,Global
+est_006,ser_1252,2019,115.74,Global
+est_019,ser_1253,2000,9.66,Global
+est_020,ser_1254,1996,65.3,Streaming exclusivo
+est_033,ser_1255,2022,158.6,Regional
+est_029,ser_1256,1996,128.63,Nacional
+est_026,ser_1257,1999,91.91,Global
+est_022,ser_1258,1996,28.88,Nacional
+est_010,ser_1259,2003,86.33,Nacional
+est_028,ser_1260,1993,156.57,Nacional
+est_012,ser_1261,1997,77.71,Streaming exclusivo
+est_020,ser_1262,1990,2.79,Global
+est_017,ser_1263,1998,185.3,Global
+est_031,ser_1264,2016,81.79,Regional
+est_028,ser_1265,2019,142.81,Nacional
+est_010,ser_1266,2000,2.58,Global
+est_005,ser_1267,2000,116.7,Regional
+est_022,ser_1268,2024,177.2,Streaming exclusivo
+est_032,ser_1269,2016,78.91,Nacional
+est_040,ser_1270,2019,158.94,Streaming exclusivo
+est_032,ser_1271,2015,23.14,Streaming exclusivo
+est_013,ser_1272,2009,122.05,Streaming exclusivo
+est_033,ser_1273,2014,193.29,Regional
+est_032,ser_1274,1999,58.31,Regional
+est_008,ser_1275,2010,28.25,Regional
+est_008,ser_1276,2016,134.28,Nacional
+est_001,ser_1277,2002,175.86,Global
+est_032,ser_1278,1993,112.84,Regional
+est_015,ser_1279,1994,71.53,Streaming exclusivo
+est_016,ser_1280,2007,175.99,Global
+est_039,ser_1281,2015,102.09,Global
+est_001,ser_1282,2014,38.85,Streaming exclusivo
+est_024,ser_1283,1995,178.94,Global
+est_036,ser_1284,2022,9.5,Global
+est_021,ser_1285,2015,135.02,Regional
+est_040,ser_1286,1998,136.35,Nacional
+est_023,ser_1287,1997,160.82,Nacional
+est_034,ser_1288,1997,91.66,Nacional
+est_007,ser_1289,2004,58.39,Streaming exclusivo
+est_002,ser_1290,2012,8.07,Nacional
+est_034,ser_1291,2007,169.39,Streaming exclusivo
+est_014,ser_1292,2019,117.48,Global
+est_001,ser_1293,1991,179.82,Streaming exclusivo
+est_028,ser_1294,2018,52.24,Regional
+est_028,ser_1295,2019,102.61,Global
+est_009,ser_1296,2024,176.95,Streaming exclusivo
+est_038,ser_1297,2020,139.79,Streaming exclusivo
+est_021,ser_1298,1997,154.79,Nacional
+est_003,ser_1299,2021,24.64,Streaming exclusivo
+est_003,ser_1300,2012,13.27,Nacional
+est_018,ser_1301,2012,73.41,Streaming exclusivo
+est_018,ser_1302,2001,199.87,Streaming exclusivo
+est_021,ser_1303,2022,35.3,Nacional
+est_011,ser_1304,1992,8.97,Global
+est_012,ser_1305,1992,136.47,Streaming exclusivo
+est_008,ser_1306,2017,46.77,Nacional
+est_016,ser_1307,2006,149.88,Regional
+est_031,ser_1308,2008,88.18,Global
+est_018,ser_1309,2015,172.7,Regional
+est_035,ser_1310,2014,96.71,Regional
+est_008,ser_1311,2024,151.24,Nacional
+est_013,ser_1312,2021,61.57,Streaming exclusivo
+est_035,ser_1313,2004,88.19,Streaming exclusivo
+est_018,ser_1314,2014,169.95,Nacional
+est_017,ser_1315,2001,66.46,Global
+est_021,ser_1316,1995,80.49,Regional
+est_005,ser_1317,2012,87.67,Regional
+est_004,ser_1318,1996,73.51,Streaming exclusivo
+est_005,ser_1319,2005,130.43,Nacional
+est_031,ser_1320,2020,53.59,Nacional
+est_012,ser_1321,2001,32.8,Regional
+est_018,ser_1322,2023,159.77,Nacional
+est_033,ser_1323,2009,130.29,Global
+est_025,ser_1324,2011,124.32,Streaming exclusivo
+est_025,ser_1325,2012,82.35,Global
+est_020,ser_1326,1993,4.54,Regional
+est_030,ser_1327,2021,19.02,Streaming exclusivo
+est_026,ser_1328,2002,104.6,Nacional
+est_028,ser_1329,2020,70.15,Regional
+est_006,ser_1330,2019,99.18,Nacional
+est_021,ser_1331,2004,28.45,Global
+est_012,ser_1332,2000,39.9,Streaming exclusivo
+est_007,ser_1333,1995,118.92,Nacional
+est_010,ser_1334,2016,169.81,Streaming exclusivo
+est_027,ser_1335,2009,120.26,Nacional
+est_028,ser_1336,2018,53.43,Global
+est_011,ser_1337,2000,176.66,Streaming exclusivo
+est_009,ser_1338,2003,20.51,Global
+est_012,ser_1339,2018,91.64,Nacional
+est_025,ser_1340,2012,53.3,Nacional
+est_010,ser_1341,1992,48.17,Nacional
+est_015,ser_1342,1993,150.02,Nacional
+est_035,ser_1343,2019,161.87,Nacional
+est_034,ser_1344,2011,133.43,Nacional
+est_019,ser_1345,2013,114.93,Nacional
+est_035,ser_1346,1995,96.02,Global
+est_016,ser_1347,1998,29.74,Global
+est_017,ser_1348,1996,102.1,Global
+est_010,ser_1349,2010,154.34,Regional
+est_010,ser_1350,2021,148.8,Nacional
+est_040,ser_1351,2003,168.9,Nacional
+est_033,ser_1352,2007,117.75,Streaming exclusivo
+est_037,ser_1353,1998,113.68,Regional
+est_024,ser_1354,2004,106.05,Global
+est_014,ser_1355,1990,31.36,Nacional
+est_015,ser_1356,2003,155.06,Streaming exclusivo
+est_022,ser_1357,1991,99.48,Streaming exclusivo
+est_031,ser_1358,1995,44.07,Nacional
+est_011,ser_1359,1993,98.22,Nacional
+est_006,ser_1360,2010,93.3,Regional
+est_006,ser_1361,2018,151.3,Nacional
+est_026,ser_1362,2001,5.7,Regional
+est_037,ser_1363,2008,141.44,Nacional
+est_007,ser_1364,2002,51.13,Nacional
+est_034,ser_1365,2023,179.42,Streaming exclusivo
+est_022,ser_1366,2019,70.62,Streaming exclusivo
+est_027,ser_1367,2012,151.1,Global
+est_003,ser_1368,2010,77.9,Nacional
+est_002,ser_1369,2005,50.71,Streaming exclusivo
+est_019,ser_1370,1999,81.1,Global
+est_003,ser_1371,2002,184.66,Streaming exclusivo
+est_031,ser_1372,2009,92.97,Nacional
+est_023,ser_1373,2000,82.46,Regional
+est_017,ser_1374,2018,112.77,Streaming exclusivo
+est_035,ser_1375,2000,123.58,Regional
+est_033,ser_1376,2020,134.3,Streaming exclusivo
+est_004,ser_1377,2015,48.59,Streaming exclusivo
+est_040,ser_1378,2000,11.26,Regional
+est_024,ser_1379,1999,131.25,Regional
+est_026,ser_1380,2016,80.67,Global
+est_037,ser_1381,2006,87.49,Regional
+est_034,ser_1382,1992,173.63,Streaming exclusivo
+est_018,ser_1383,2001,151.35,Global
+est_024,ser_1384,1999,82.91,Global
+est_004,ser_1385,1997,118.84,Streaming exclusivo
+est_021,ser_1386,1998,126.86,Nacional
+est_030,ser_1387,2020,129.49,Nacional
+est_023,ser_1388,2017,137.06,Global
+est_021,ser_1389,1994,157.74,Streaming exclusivo
+est_017,ser_1390,2022,108.59,Global
+est_031,ser_1391,2007,43.18,Streaming exclusivo
+est_035,ser_1392,1991,82.89,Nacional
+est_036,ser_1393,1993,77.47,Global
+est_002,ser_1394,2015,9.0,Streaming exclusivo
+est_039,ser_1395,2005,88.39,Regional
+est_035,ser_1396,1993,47.5,Regional
+est_020,ser_1397,2005,16.09,Regional
+est_015,ser_1398,1997,48.43,Streaming exclusivo
+est_027,ser_1399,2009,86.02,Global
+est_028,ser_1400,1999,197.83,Streaming exclusivo
+est_009,ser_1401,1994,172.14,Regional
+est_013,ser_1402,2017,123.82,Streaming exclusivo
+est_011,ser_1403,1998,162.35,Nacional
+est_039,ser_1404,2016,96.29,Nacional
+est_006,ser_1405,2001,180.09,Global
+est_008,ser_1406,2024,65.92,Global
+est_009,ser_1407,2022,49.95,Global
+est_033,ser_1408,1998,63.36,Streaming exclusivo
+est_029,ser_1409,2009,172.83,Nacional
+est_014,ser_1410,1990,51.82,Global
+est_019,ser_1411,2008,56.89,Global
+est_008,ser_1412,2005,35.3,Regional
+est_003,ser_1413,2024,98.79,Streaming exclusivo
+est_038,ser_1414,1990,19.93,Streaming exclusivo
+est_027,ser_1415,1997,6.67,Regional
+est_037,ser_1416,1993,38.12,Regional
+est_025,ser_1417,2004,15.49,Global
+est_020,ser_1418,2020,195.81,Nacional
+est_014,ser_1419,1993,95.62,Global
+est_008,ser_1420,2012,53.78,Regional
+est_022,ser_1421,2002,68.16,Regional
+est_018,ser_1422,2022,62.06,Regional
+est_037,ser_1423,2003,118.31,Nacional
+est_021,ser_1424,1998,116.64,Streaming exclusivo
+est_019,ser_1425,2017,144.46,Nacional
+est_018,ser_1426,1999,54.58,Nacional
+est_039,ser_1427,1997,27.91,Nacional
+est_038,ser_1428,2009,45.3,Streaming exclusivo
+est_017,ser_1429,2024,181.21,Streaming exclusivo
+est_017,ser_1430,2003,110.94,Streaming exclusivo
+est_021,ser_1431,1995,162.48,Global
+est_013,ser_1432,2017,143.12,Regional
+est_037,ser_1433,2010,63.47,Regional
+est_003,ser_1434,2015,160.76,Streaming exclusivo
+est_023,ser_1435,1993,123.69,Regional
+est_021,ser_1436,2018,119.67,Regional
+est_007,ser_1437,2009,39.62,Nacional
+est_034,ser_1438,2012,8.9,Global
+est_023,ser_1439,2011,145.45,Global
+est_021,ser_1440,2003,43.67,Regional
+est_013,ser_1441,2022,80.04,Nacional
+est_035,ser_1442,2010,60.62,Streaming exclusivo
+est_024,ser_1443,2010,131.19,Streaming exclusivo
+est_018,ser_1444,2008,168.59,Global
+est_038,ser_1445,2003,163.58,Regional
+est_025,ser_1446,2006,182.11,Regional
+est_005,ser_1447,2020,66.48,Global
+est_010,ser_1448,2024,30.3,Nacional
+est_009,ser_1449,2014,141.31,Global
+est_039,ser_1450,2013,69.72,Regional
+est_004,ser_1451,1993,35.37,Streaming exclusivo
+est_005,ser_1452,2023,121.64,Streaming exclusivo
+est_022,ser_1453,2023,156.73,Global
+est_040,ser_1454,2021,43.73,Streaming exclusivo
+est_029,ser_1455,2003,51.03,Nacional
+est_033,ser_1456,2021,83.06,Streaming exclusivo
+est_034,ser_1457,2000,127.15,Streaming exclusivo
+est_012,ser_1458,2017,154.23,Streaming exclusivo
+est_005,ser_1459,1990,183.52,Regional
+est_002,ser_1460,2005,66.93,Regional
+est_022,ser_1461,2010,54.28,Nacional
+est_016,ser_1462,2024,27.55,Streaming exclusivo
+est_011,ser_1463,1998,184.43,Streaming exclusivo
+est_001,ser_1464,1998,38.35,Streaming exclusivo
+est_018,ser_1465,2005,116.77,Nacional
+est_015,ser_1466,2013,185.2,Streaming exclusivo
+est_005,ser_1467,2021,150.28,Regional
+est_023,ser_1468,1992,188.29,Streaming exclusivo
+est_017,ser_1469,2000,98.39,Global
+est_021,ser_1470,2008,67.58,Nacional
+est_023,ser_1471,1992,56.41,Global
+est_012,ser_1472,2016,87.58,Nacional
+est_030,ser_1473,2003,163.68,Global
+est_033,ser_1474,2006,85.87,Global
+est_019,ser_1475,1992,180.45,Regional
+est_016,ser_1476,2022,151.46,Nacional
+est_015,ser_1477,2024,88.57,Streaming exclusivo
+est_004,ser_1478,1997,33.25,Regional
+est_001,ser_1479,2022,148.78,Nacional
+est_023,ser_1480,1990,15.88,Regional
+est_023,ser_1481,2022,94.11,Streaming exclusivo
+est_018,ser_1482,1992,109.62,Streaming exclusivo
+est_007,ser_1483,1993,124.71,Global
+est_040,ser_1484,2013,161.09,Global
+est_007,ser_1485,1996,8.16,Global
+est_018,ser_1486,2009,65.14,Streaming exclusivo
+est_006,ser_1487,1996,81.39,Global
+est_022,ser_1488,2017,10.58,Nacional
+est_037,ser_1489,2000,22.59,Streaming exclusivo
+est_004,ser_1490,1994,129.11,Streaming exclusivo
+est_007,ser_1491,2020,55.38,Regional
+est_039,ser_1492,1990,59.76,Nacional
+est_010,ser_1493,2018,4.54,Streaming exclusivo
+est_030,ser_1494,1994,74.46,Regional
+est_007,ser_1495,2021,163.86,Nacional
+est_022,ser_1496,2009,105.73,Nacional
+est_009,ser_1497,2013,91.27,Global
+est_026,ser_1498,1995,51.85,Streaming exclusivo
+est_005,ser_1499,2020,189.89,Nacional
+est_006,ser_1500,2010,29.01,Global
+est_034,ser_1501,1991,135.51,Regional
+est_032,ser_1502,1996,181.5,Global
+est_025,ser_1503,2015,184.84,Global
+est_003,ser_1504,1998,46.07,Global
+est_003,ser_1505,1997,163.11,Nacional
+est_013,ser_1506,1992,131.06,Streaming exclusivo
+est_001,ser_1507,2024,45.36,Regional
+est_007,ser_1508,2023,196.07,Regional
+est_024,ser_1509,2000,98.04,Regional
+est_015,ser_1510,2003,138.53,Streaming exclusivo
+est_017,ser_1511,1997,148.12,Global
+est_014,ser_1512,2015,136.41,Global
+est_008,ser_1513,2024,146.04,Regional
+est_025,ser_1514,2011,188.79,Streaming exclusivo
+est_006,ser_1515,2004,196.33,Global
+est_036,ser_1516,2010,186.29,Regional
+est_003,ser_1517,2009,90.32,Streaming exclusivo
+est_040,ser_1518,2003,94.38,Global
+est_031,ser_1519,2006,107.18,Streaming exclusivo
+est_020,ser_1520,1993,80.32,Regional
+est_016,ser_1521,2022,101.42,Global
+est_014,ser_1522,2022,187.48,Streaming exclusivo
+est_010,ser_1523,2002,39.9,Global
+est_030,ser_1524,1995,123.39,Regional
+est_017,ser_1525,2016,76.46,Global
+est_027,ser_1526,2006,131.17,Global
+est_022,ser_1527,1991,58.59,Nacional
+est_029,ser_1528,1990,188.69,Nacional
+est_012,ser_1529,1999,3.89,Streaming exclusivo
+est_040,ser_1530,2021,94.75,Streaming exclusivo
+est_033,ser_1531,2016,57.82,Global
+est_004,ser_1532,2014,132.2,Streaming exclusivo
+est_017,ser_1533,2024,86.97,Regional
+est_012,ser_1534,2000,110.72,Streaming exclusivo
+est_021,ser_1535,2020,58.22,Global
+est_007,ser_1536,2016,141.28,Nacional
+est_038,ser_1537,2012,154.37,Regional
+est_030,ser_1538,1997,127.76,Nacional
+est_035,ser_1539,2019,136.92,Nacional
+est_018,ser_1540,2022,26.63,Global
+est_015,ser_1541,2006,195.59,Global
+est_019,ser_1542,2013,7.21,Regional
+est_023,ser_1543,1997,87.44,Global
+est_011,ser_1544,1999,144.44,Regional
+est_040,ser_1545,2002,128.42,Global
+est_008,ser_1546,1992,152.51,Global
+est_024,ser_1547,2016,43.79,Nacional
+est_038,ser_1548,2006,97.93,Nacional
+est_027,ser_1549,1997,18.21,Regional
+est_030,ser_1550,2020,167.84,Streaming exclusivo
+est_032,ser_1551,1996,119.13,Regional
+est_007,ser_1552,2014,33.18,Regional
+est_006,ser_1553,1992,97.75,Regional
+est_014,ser_1554,2013,198.87,Nacional
+est_007,ser_1555,2008,130.33,Global
+est_020,ser_1556,2015,142.04,Global
+est_037,ser_1557,1991,35.0,Nacional
+est_018,ser_1558,1997,145.54,Global
+est_026,ser_1559,2002,52.43,Nacional
+est_016,ser_1560,2024,159.25,Regional
+est_008,ser_1561,1994,84.81,Streaming exclusivo
+est_003,ser_1562,2014,35.48,Global
+est_005,ser_1563,2004,79.58,Streaming exclusivo
+est_022,ser_1564,2007,192.9,Global
+est_009,ser_1565,2005,31.09,Nacional
+est_017,ser_1566,2011,197.8,Global
+est_030,ser_1567,2014,166.53,Nacional
+est_028,ser_1568,2019,42.64,Nacional
+est_029,ser_1569,1993,51.72,Nacional
+est_023,ser_1570,2020,76.61,Nacional
+est_035,ser_1571,2001,65.9,Nacional
+est_014,ser_1572,2001,25.19,Nacional
+est_012,ser_1573,2023,11.85,Nacional
+est_003,ser_1574,2003,178.92,Regional
+est_036,ser_1575,2023,22.3,Streaming exclusivo
+est_025,ser_1576,2023,119.78,Global
+est_016,ser_1577,2006,77.56,Nacional
+est_039,ser_1578,2006,22.12,Streaming exclusivo
+est_008,ser_1579,2020,85.98,Regional
+est_030,ser_1580,2017,78.58,Regional
+est_032,ser_1581,2003,159.57,Streaming exclusivo
+est_022,ser_1582,2001,134.1,Global
+est_039,ser_1583,2017,157.23,Global
+est_022,ser_1584,2000,155.54,Regional
+est_004,ser_1585,2004,129.77,Global
+est_014,ser_1586,2001,16.72,Nacional
+est_029,ser_1587,2015,149.5,Nacional
+est_008,ser_1588,2019,78.6,Global
+est_038,ser_1589,1990,173.09,Regional
+est_024,ser_1590,2018,165.09,Streaming exclusivo
+est_014,ser_1591,1992,60.8,Global
+est_002,ser_1592,2004,196.19,Global
+est_013,ser_1593,2014,58.09,Regional
+est_033,ser_1594,2000,187.71,Regional
+est_020,ser_1595,2021,146.86,Regional
+est_029,ser_1596,2022,46.72,Streaming exclusivo
+est_034,ser_1597,2000,102.9,Streaming exclusivo
+est_036,ser_1598,1992,164.11,Nacional
+est_013,ser_1599,2002,113.71,Streaming exclusivo
+est_034,ser_1600,2011,38.53,Streaming exclusivo
+est_005,ser_1601,2015,16.72,Streaming exclusivo
+est_024,ser_1602,2005,173.02,Streaming exclusivo
+est_026,ser_1603,1998,45.39,Regional
+est_014,ser_1604,2007,133.78,Global
+est_007,ser_1605,1997,64.15,Global
+est_014,ser_1606,2009,8.82,Nacional
+est_031,ser_1607,2007,62.27,Streaming exclusivo
+est_026,ser_1608,2004,61.94,Regional
+est_040,ser_1609,2015,136.5,Streaming exclusivo
+est_010,ser_1610,2004,103.59,Regional
+est_005,ser_1611,2010,53.97,Regional
+est_010,ser_1612,2023,103.96,Streaming exclusivo
+est_027,ser_1613,1998,166.75,Nacional
+est_008,ser_1614,2010,4.07,Nacional
+est_040,ser_1615,2017,146.37,Regional
+est_032,ser_1616,1996,28.93,Nacional
+est_021,ser_1617,2017,67.59,Nacional
+est_027,ser_1618,2015,135.48,Regional
+est_015,ser_1619,2000,80.51,Regional
+est_032,ser_1620,2015,164.0,Regional
+est_016,ser_1621,2015,2.78,Nacional
+est_014,ser_1622,2006,157.05,Regional
+est_020,ser_1623,2008,65.14,Regional
+est_034,ser_1624,1998,14.96,Global
+est_019,ser_1625,2001,91.95,Nacional
+est_009,ser_1626,1995,25.87,Global
+est_003,ser_1627,2019,114.09,Global
+est_004,ser_1628,1999,184.01,Nacional
+est_030,ser_1629,2016,100.64,Global
+est_036,ser_1630,2010,89.89,Global
+est_018,ser_1631,2016,186.76,Nacional
+est_024,ser_1632,1996,131.36,Nacional
+est_038,ser_1633,2020,135.21,Regional
+est_028,ser_1634,2008,146.33,Regional
+est_039,ser_1635,2011,87.72,Nacional
+est_032,ser_1636,2002,193.97,Regional
+est_034,ser_1637,2018,179.73,Nacional
+est_011,ser_1638,2011,9.6,Nacional
+est_020,ser_1639,2008,49.32,Regional
+est_036,ser_1640,1992,46.1,Nacional
+est_019,ser_1641,2011,50.01,Global
+est_037,ser_1642,2010,133.85,Global
+est_024,ser_1643,2006,152.06,Nacional
+est_029,ser_1644,2023,182.0,Regional
+est_029,ser_1645,2018,123.81,Global
+est_033,ser_1646,1994,115.34,Nacional
+est_009,ser_1647,2018,59.78,Regional
+est_037,ser_1648,2008,186.12,Streaming exclusivo
+est_002,ser_1649,2017,92.8,Streaming exclusivo
+est_018,ser_1650,2003,54.99,Global
+est_035,ser_1651,2020,56.46,Regional
+est_018,ser_1652,2017,8.36,Nacional
+est_030,ser_1653,2016,18.86,Nacional
+est_032,ser_1654,2010,114.81,Regional
+est_030,ser_1655,2017,166.35,Nacional
+est_035,ser_1656,2015,32.36,Streaming exclusivo
+est_014,ser_1657,2001,152.31,Nacional
+est_017,ser_1658,1990,173.09,Regional
+est_034,ser_1659,1991,170.03,Global
+est_025,ser_1660,2016,84.16,Regional
+est_030,ser_1661,2024,124.54,Nacional
+est_032,ser_1662,2022,11.74,Global
+est_002,ser_1663,1997,77.13,Nacional
+est_037,ser_1664,1997,64.53,Regional
+est_007,ser_1665,2018,28.09,Nacional
+est_027,ser_1666,1992,87.61,Nacional
+est_015,ser_1667,2015,98.28,Global
+est_017,ser_1668,2019,8.61,Streaming exclusivo
+est_037,ser_1669,2007,130.27,Regional
+est_031,ser_1670,2020,69.45,Streaming exclusivo
+est_005,ser_1671,1997,172.96,Regional
+est_035,ser_1672,2003,131.12,Streaming exclusivo
+est_002,ser_1673,2003,159.49,Global
+est_025,ser_1674,2007,197.68,Nacional
+est_023,ser_1675,1990,21.76,Regional
+est_007,ser_1676,2017,37.5,Nacional
+est_005,ser_1677,2005,102.73,Nacional
+est_010,ser_1678,1998,49.33,Regional
+est_008,ser_1679,2013,158.71,Nacional
+est_023,ser_1680,2001,154.1,Global
+est_036,ser_1681,2015,64.15,Streaming exclusivo
+est_029,ser_1682,2014,195.08,Global
+est_022,ser_1683,2020,59.7,Nacional
+est_033,ser_1684,1990,160.07,Nacional
+est_017,ser_1685,2002,152.92,Regional
+est_014,ser_1686,1990,73.0,Global
+est_032,ser_1687,2004,30.59,Nacional
+est_006,ser_1688,1991,130.78,Regional
+est_001,ser_1689,2009,52.18,Global
+est_007,ser_1690,1993,175.18,Nacional
+est_034,ser_1691,2006,11.82,Regional
+est_031,ser_1692,1998,117.88,Nacional
+est_017,ser_1693,1996,170.27,Global
+est_023,ser_1694,2005,15.01,Streaming exclusivo
+est_029,ser_1695,2002,107.02,Regional
+est_012,ser_1696,1994,78.05,Streaming exclusivo
+est_016,ser_1697,2011,14.06,Nacional
+est_022,ser_1698,2002,69.65,Nacional
+est_013,ser_1699,2018,99.58,Nacional
+est_006,ser_1700,1998,64.82,Global
+est_012,ser_1701,1994,120.1,Regional
+est_006,ser_1702,2000,65.86,Global
+est_037,ser_1703,1992,21.74,Nacional
+est_027,ser_1704,1995,20.85,Nacional
+est_014,ser_1705,2021,98.82,Nacional
+est_001,ser_1706,1995,22.71,Global
+est_007,ser_1707,2005,52.76,Global
+est_020,ser_1708,2018,185.15,Global
+est_017,ser_1709,1995,52.37,Streaming exclusivo
+est_025,ser_1710,2006,134.47,Nacional
+est_014,ser_1711,2020,145.2,Nacional
+est_014,ser_1712,1999,168.12,Nacional
+est_025,ser_1713,2015,141.12,Global
+est_039,ser_1714,1990,14.71,Nacional
+est_008,ser_1715,2002,158.04,Global
+est_034,ser_1716,2016,11.34,Regional
+est_024,ser_1717,2014,14.12,Regional
+est_018,ser_1718,1991,199.4,Nacional
+est_037,ser_1719,2015,171.72,Streaming exclusivo
+est_019,ser_1720,2005,88.53,Global
+est_024,ser_1721,2024,65.41,Nacional
+est_029,ser_1722,1999,63.7,Global
+est_004,ser_1723,1997,47.64,Global
+est_007,ser_1724,2017,133.03,Regional
+est_038,ser_1725,1998,121.5,Nacional
+est_010,ser_1726,2022,94.8,Global
+est_024,ser_1727,2023,122.2,Streaming exclusivo
+est_026,ser_1728,1999,122.31,Nacional
+est_022,ser_1729,2005,58.22,Global
+est_015,ser_1730,2016,81.85,Regional
+est_003,ser_1731,1991,108.07,Streaming exclusivo
+est_011,ser_1732,2017,47.42,Nacional
+est_030,ser_1733,2013,199.19,Global
+est_018,ser_1734,2009,196.07,Global
+est_003,ser_1735,1996,9.49,Nacional
+est_010,ser_1736,1995,56.71,Global
+est_012,ser_1737,1997,143.63,Global
+est_012,ser_1738,2019,116.8,Streaming exclusivo
+est_014,ser_1739,2020,107.12,Regional
+est_022,ser_1740,2017,17.74,Nacional
+est_007,ser_1741,2015,109.23,Regional
+est_028,ser_1742,2015,19.3,Streaming exclusivo
+est_007,ser_1743,2020,136.86,Nacional
+est_020,ser_1744,1992,53.51,Nacional
+est_015,ser_1745,2017,112.67,Regional
+est_019,ser_1746,2023,74.03,Nacional
+est_026,ser_1747,2011,38.56,Global
+est_022,ser_1748,1994,110.08,Nacional
+est_039,ser_1749,2005,137.74,Global
+est_006,ser_1750,2018,105.11,Global
+est_012,ser_1751,1991,23.95,Streaming exclusivo
+est_004,ser_1752,2010,140.49,Nacional
+est_004,ser_1753,2009,71.01,Regional
+est_017,ser_1754,1992,156.49,Regional
+est_002,ser_1755,1994,80.99,Regional
+est_008,ser_1756,2003,29.72,Global
+est_020,ser_1757,1992,57.88,Regional
+est_010,ser_1758,2017,37.23,Nacional
+est_019,ser_1759,1998,178.9,Regional
+est_001,ser_1760,1998,26.41,Nacional
+est_020,ser_1761,2000,121.48,Streaming exclusivo
+est_026,ser_1762,2024,33.28,Nacional
+est_017,ser_1763,2006,71.06,Streaming exclusivo
+est_036,ser_1764,2010,150.17,Global
+est_002,ser_1765,1993,65.15,Global
+est_019,ser_1766,1990,89.0,Regional
+est_013,ser_1767,2010,117.74,Nacional
+est_039,ser_1768,2007,28.18,Regional
+est_015,ser_1769,2008,106.0,Global
+est_014,ser_1770,2008,100.19,Global
+est_030,ser_1771,2004,97.27,Nacional
+est_032,ser_1772,1992,183.47,Global
+est_036,ser_1773,2024,101.33,Global
+est_001,ser_1774,2020,115.19,Global
+est_029,ser_1775,2007,170.4,Nacional
+est_025,ser_1776,1992,129.15,Streaming exclusivo
+est_033,ser_1777,2010,124.97,Global
+est_003,ser_1778,1990,20.72,Global
+est_039,ser_1779,1991,20.19,Regional
+est_002,ser_1780,2018,116.96,Nacional
+est_027,ser_1781,1997,155.37,Regional
+est_008,ser_1782,2015,49.51,Nacional
+est_032,ser_1783,2000,41.75,Nacional
+est_037,ser_1784,2015,135.85,Regional
+est_027,ser_1785,1999,160.39,Regional
+est_014,ser_1786,2016,146.02,Regional
+est_019,ser_1787,1997,174.08,Streaming exclusivo
+est_034,ser_1788,1993,8.71,Regional
+est_035,ser_1789,1994,177.18,Global
+est_039,ser_1790,2018,180.23,Regional
+est_028,ser_1791,2022,70.16,Streaming exclusivo
+est_015,ser_1792,1995,84.31,Global
+est_039,ser_1793,1991,124.5,Streaming exclusivo
+est_027,ser_1794,2023,127.99,Regional
+est_024,ser_1795,2014,74.08,Regional
+est_015,ser_1796,1999,84.98,Streaming exclusivo
+est_008,ser_1797,2017,11.83,Streaming exclusivo
+est_031,ser_1798,2019,3.66,Streaming exclusivo
+est_029,ser_1799,2000,13.69,Global
+est_012,ser_1800,1995,46.67,Regional
+est_027,ser_1801,2013,77.66,Global
+est_012,ser_1802,1993,41.78,Streaming exclusivo
+est_006,ser_1803,2024,119.0,Nacional
+est_030,ser_1804,2018,80.67,Streaming exclusivo
+est_026,ser_1805,2012,95.43,Regional
+est_008,ser_1806,1994,133.56,Nacional
+est_008,ser_1807,2022,192.73,Regional
+est_025,ser_1808,2003,22.95,Nacional
+est_015,ser_1809,2004,57.39,Regional
+est_026,ser_1810,2006,45.91,Streaming exclusivo
+est_004,ser_1811,2012,184.42,Global
+est_018,ser_1812,2000,138.73,Streaming exclusivo
+est_018,ser_1813,2020,153.15,Global
+est_038,ser_1814,2015,107.34,Global
+est_034,ser_1815,2014,199.59,Regional
+est_025,ser_1816,2010,172.02,Nacional
+est_038,ser_1817,2024,143.38,Global
+est_007,ser_1818,2016,118.26,Global
+est_014,ser_1819,1999,45.93,Global
+est_040,ser_1820,2005,139.22,Streaming exclusivo
+est_032,ser_1821,2021,188.89,Regional
+est_025,ser_1822,2021,101.19,Global
+est_013,ser_1823,1994,159.54,Global
+est_031,ser_1824,2001,128.81,Regional
+est_027,ser_1825,2006,182.01,Global
+est_006,ser_1826,1999,45.44,Global
+est_020,ser_1827,2010,147.53,Global
+est_027,ser_1828,2002,30.83,Streaming exclusivo
+est_020,ser_1829,2003,153.17,Global
+est_029,ser_1830,2024,57.18,Regional
+est_021,ser_1831,2015,59.12,Global
+est_022,ser_1832,1999,120.53,Regional
+est_029,ser_1833,2001,175.55,Streaming exclusivo
+est_011,ser_1834,1998,71.87,Streaming exclusivo
+est_027,ser_1835,2016,136.66,Nacional
+est_003,ser_1836,2003,51.86,Streaming exclusivo
+est_025,ser_1837,2004,145.07,Global
+est_015,ser_1838,1991,160.18,Global
+est_023,ser_1839,2009,44.49,Global
+est_025,ser_1840,2023,182.12,Global
+est_033,ser_1841,2011,69.86,Streaming exclusivo
+est_037,ser_1842,2015,53.21,Global
+est_020,ser_1843,2022,102.56,Global
+est_034,ser_1844,2019,44.64,Nacional
+est_018,ser_1845,2004,186.89,Streaming exclusivo
+est_027,ser_1846,2011,60.4,Streaming exclusivo
+est_006,ser_1847,2016,18.78,Nacional
+est_037,ser_1848,2018,104.34,Nacional
+est_014,ser_1849,2016,45.35,Streaming exclusivo
+est_008,ser_1850,1999,82.8,Global
+est_002,ser_1851,2004,176.29,Global
+est_006,ser_1852,1991,148.15,Streaming exclusivo
+est_029,ser_1853,2024,142.03,Global
+est_011,ser_1854,2002,163.7,Global
+est_035,ser_1855,2020,176.22,Nacional
+est_018,ser_1856,2003,36.82,Global
+est_014,ser_1857,2018,107.39,Streaming exclusivo
+est_038,ser_1858,2003,162.26,Regional
+est_006,ser_1859,2022,41.82,Global
+est_006,ser_1860,2016,99.26,Streaming exclusivo
+est_039,ser_1861,1996,185.61,Global
+est_008,ser_1862,2003,8.64,Global
+est_001,ser_1863,2003,5.74,Streaming exclusivo
+est_031,ser_1864,2008,120.01,Nacional
+est_021,ser_1865,2023,139.52,Global
+est_008,ser_1866,1999,134.41,Streaming exclusivo
+est_028,ser_1867,1999,195.44,Nacional
+est_006,ser_1868,1996,184.53,Streaming exclusivo
+est_027,ser_1869,2010,16.28,Streaming exclusivo
+est_037,ser_1870,2009,175.28,Streaming exclusivo
+est_002,ser_1871,1995,25.03,Regional
+est_011,ser_1872,2021,121.79,Streaming exclusivo
+est_009,ser_1873,2021,117.72,Global
+est_017,ser_1874,2005,190.23,Global
+est_003,ser_1875,2003,64.98,Streaming exclusivo
+est_009,ser_1876,2006,70.58,Regional
+est_038,ser_1877,2008,7.84,Streaming exclusivo
+est_036,ser_1878,1996,10.82,Regional
+est_033,ser_1879,2003,103.0,Global
+est_007,ser_1880,2019,52.05,Global
+est_038,ser_1881,1991,119.17,Global
+est_009,ser_1882,1990,135.0,Regional
+est_001,ser_1883,1999,46.73,Regional
+est_020,ser_1884,1998,67.86,Regional
+est_036,ser_1885,2002,10.84,Global
+est_007,ser_1886,1995,67.82,Regional
+est_022,ser_1887,2023,127.91,Regional
+est_040,ser_1888,1992,11.38,Nacional
+est_017,ser_1889,2008,99.08,Regional
+est_031,ser_1890,2006,92.4,Regional
+est_026,ser_1891,2001,45.76,Streaming exclusivo
+est_010,ser_1892,2004,29.01,Regional
+est_021,ser_1893,2018,155.18,Global
+est_030,ser_1894,2009,91.68,Nacional
+est_003,ser_1895,1999,193.85,Nacional
+est_005,ser_1896,2016,194.07,Regional
+est_013,ser_1897,2010,24.63,Regional
+est_007,ser_1898,1993,28.7,Nacional
+est_016,ser_1899,2015,23.72,Nacional
+est_035,ser_1900,2022,127.62,Streaming exclusivo
+est_019,ser_1901,2011,171.51,Nacional
+est_033,ser_1902,2014,198.08,Regional
+est_021,ser_1903,2008,157.45,Regional
+est_015,ser_1904,2007,131.56,Global
+est_028,ser_1905,1995,40.03,Streaming exclusivo
+est_032,ser_1906,2009,49.34,Global
+est_036,ser_1907,1990,3.79,Nacional
+est_013,ser_1908,2022,190.63,Nacional
+est_035,ser_1909,2004,18.21,Nacional
+est_033,ser_1910,2001,137.09,Regional
+est_002,ser_1911,2014,168.37,Nacional
+est_028,ser_1912,1990,62.65,Regional
+est_005,ser_1913,2004,19.8,Global
+est_034,ser_1914,1990,161.88,Streaming exclusivo
+est_021,ser_1915,2021,189.62,Streaming exclusivo
+est_030,ser_1916,2020,164.55,Streaming exclusivo
+est_030,ser_1917,2020,61.25,Streaming exclusivo
+est_011,ser_1918,2003,130.61,Streaming exclusivo
+est_001,ser_1919,2004,130.06,Global
+est_006,ser_1920,1991,2.73,Global
+est_040,ser_1921,2017,118.9,Regional
+est_035,ser_1922,1998,153.89,Global
+est_037,ser_1923,2016,19.31,Global
+est_021,ser_1924,2007,173.95,Nacional
+est_010,ser_1925,2017,141.64,Streaming exclusivo
+est_025,ser_1926,2012,130.23,Global
+est_014,ser_1927,2023,62.65,Regional
+est_029,ser_1928,1998,199.46,Global
+est_001,ser_1929,1993,53.87,Nacional
+est_017,ser_1930,2010,185.02,Regional
+est_031,ser_1931,2017,16.11,Streaming exclusivo
+est_032,ser_1932,1990,94.5,Global
+est_029,ser_1933,2023,146.85,Nacional
+est_004,ser_1934,2002,11.85,Global
+est_005,ser_1935,2015,70.77,Regional
+est_028,ser_1936,2004,76.87,Global
+est_032,ser_1937,1991,151.67,Streaming exclusivo
+est_035,ser_1938,2006,53.86,Regional
+est_021,ser_1939,2015,43.12,Streaming exclusivo
+est_006,ser_1940,2008,18.61,Regional
+est_029,ser_1941,1993,184.29,Global
+est_020,ser_1942,2013,3.42,Streaming exclusivo
+est_012,ser_1943,2012,176.4,Regional
+est_034,ser_1944,1992,118.13,Regional
+est_007,ser_1945,2007,120.17,Regional
+est_022,ser_1946,1993,41.36,Regional
+est_032,ser_1947,2021,41.79,Regional
+est_009,ser_1948,2015,175.31,Streaming exclusivo
+est_005,ser_1949,2023,9.86,Regional
+est_035,ser_1950,1992,158.54,Nacional
+est_001,ser_1951,2012,74.6,Nacional
+est_038,ser_1952,2022,110.57,Nacional
+est_029,ser_1953,2011,176.65,Streaming exclusivo
+est_023,ser_1954,2001,125.34,Nacional
+est_032,ser_1955,2009,184.18,Global
+est_020,ser_1956,2019,91.09,Nacional
+est_019,ser_1957,1998,62.35,Nacional
+est_026,ser_1958,2018,148.15,Regional
+est_038,ser_1959,1993,63.59,Nacional
+est_009,ser_1960,2020,49.85,Global
+est_029,ser_1961,2008,164.61,Streaming exclusivo
+est_006,ser_1962,2000,51.69,Regional
+est_019,ser_1963,2002,87.91,Streaming exclusivo
+est_019,ser_1964,1990,62.84,Nacional
+est_030,ser_1965,1997,7.01,Streaming exclusivo
+est_024,ser_1966,1999,35.22,Global
+est_035,ser_1967,2006,71.54,Nacional
+est_012,ser_1968,2022,5.91,Streaming exclusivo
+est_022,ser_1969,2015,78.0,Global
+est_011,ser_1970,2008,100.41,Streaming exclusivo
+est_026,ser_1971,1999,173.19,Regional
+est_039,ser_1972,2008,122.63,Global
+est_011,ser_1973,2014,114.03,Streaming exclusivo
+est_039,ser_1974,2021,195.43,Global
+est_033,ser_1975,2016,103.19,Global
+est_027,ser_1976,1992,138.33,Streaming exclusivo
+est_029,ser_1977,2023,37.31,Global
+est_027,ser_1978,2011,190.6,Global
+est_038,ser_1979,1993,112.77,Global
+est_025,ser_1980,2016,153.63,Global
+est_003,ser_1981,2023,27.19,Global
+est_018,ser_1982,2012,143.75,Global
+est_024,ser_1983,2017,179.34,Regional
+est_039,ser_1984,2012,121.73,Nacional
+est_009,ser_1985,2022,138.59,Nacional
+est_006,ser_1986,1991,55.49,Regional
+est_023,ser_1987,2017,102.47,Global
+est_023,ser_1988,1995,41.21,Streaming exclusivo
+est_018,ser_1989,2010,187.09,Global
+est_023,ser_1990,2008,172.49,Global
+est_033,ser_1991,1994,140.9,Streaming exclusivo
+est_020,ser_1992,1998,16.96,Regional
+est_002,ser_1993,2018,58.77,Streaming exclusivo
+est_024,ser_1994,2001,172.91,Regional
+est_030,ser_1995,1993,65.52,Regional
+est_009,ser_1996,2021,27.9,Nacional
+est_007,ser_1997,2004,184.1,Nacional
+est_037,ser_1998,1991,115.34,Global
+est_031,ser_1999,2005,141.46,Streaming exclusivo
+est_007,ser_2000,1995,82.56,Streaming exclusivo
+est_024,ser_2001,2014,140.73,Streaming exclusivo
+est_005,ser_2002,1994,32.66,Nacional
+est_039,ser_2003,2007,190.02,Streaming exclusivo
+est_002,ser_2004,1991,13.57,Regional
+est_022,ser_2005,2003,128.2,Nacional
+est_016,ser_2006,2001,35.32,Regional
+est_008,ser_2007,2007,184.65,Global
+est_008,ser_2008,2004,116.34,Global
+est_016,ser_2009,2005,176.37,Nacional
+est_031,ser_2010,1992,20.01,Streaming exclusivo
+est_025,ser_2011,1996,157.2,Streaming exclusivo
+est_025,ser_2012,2011,57.28,Global
+est_028,ser_2013,1991,43.55,Nacional
+est_014,ser_2014,2021,8.27,Streaming exclusivo
+est_034,ser_2015,1995,26.11,Global
+est_038,ser_2016,2012,149.24,Regional
+est_023,ser_2017,2024,53.49,Regional
+est_033,ser_2018,2010,109.04,Streaming exclusivo
+est_015,ser_2019,2001,150.15,Global
+est_012,ser_2020,2005,189.29,Streaming exclusivo
+est_007,ser_2021,2024,37.33,Streaming exclusivo
+est_013,ser_2022,2023,115.77,Nacional
+est_013,ser_2023,2005,76.01,Regional
+est_039,ser_2024,2018,45.72,Streaming exclusivo
+est_029,ser_2025,2002,93.81,Nacional
+est_039,ser_2026,2000,108.45,Streaming exclusivo
+est_009,ser_2027,1997,88.43,Streaming exclusivo
+est_004,ser_2028,1999,76.16,Global
+est_018,ser_2029,2012,25.28,Nacional
+est_015,ser_2030,2001,61.79,Global
+est_006,ser_2031,1992,117.01,Streaming exclusivo
+est_011,ser_2032,2010,114.16,Nacional
+est_034,ser_2033,2019,134.69,Regional
+est_010,ser_2034,2022,67.99,Streaming exclusivo
+est_027,ser_2035,2005,48.15,Streaming exclusivo
+est_007,ser_2036,1992,123.32,Global
+est_003,ser_2037,2004,49.44,Nacional
+est_033,ser_2038,2019,115.45,Global
+est_032,ser_2039,1998,122.0,Regional
+est_008,ser_2040,2005,125.67,Global
+est_002,ser_2041,2009,144.21,Nacional
+est_019,ser_2042,2012,171.97,Regional
+est_005,ser_2043,2022,116.61,Global
+est_031,ser_2044,2021,47.67,Nacional
+est_005,ser_2045,2014,84.47,Streaming exclusivo
+est_017,ser_2046,2016,132.03,Nacional
+est_030,ser_2047,2020,147.89,Streaming exclusivo
+est_030,ser_2048,2020,195.89,Global
+est_037,ser_2049,2015,152.28,Global
+est_033,ser_2050,2000,145.88,Regional
+est_037,ser_2051,2014,125.97,Streaming exclusivo
+est_029,ser_2052,2000,79.23,Regional
+est_014,ser_2053,2018,49.03,Streaming exclusivo
+est_015,ser_2054,2008,144.67,Global
+est_006,ser_2055,1997,115.1,Streaming exclusivo
+est_024,ser_2056,2024,88.96,Regional
+est_027,ser_2057,1996,149.79,Streaming exclusivo
+est_018,ser_2058,2001,132.86,Streaming exclusivo
+est_034,ser_2059,2015,166.14,Regional
+est_003,ser_2060,2014,144.43,Streaming exclusivo
+est_012,ser_2061,2020,131.16,Global
+est_018,ser_2062,2020,159.27,Global
+est_021,ser_2063,2011,28.75,Global
+est_016,ser_2064,2011,170.58,Global
+est_012,ser_2065,2006,37.03,Global
+est_032,ser_2066,2015,72.66,Global
+est_040,ser_2067,2004,196.57,Nacional
+est_009,ser_2068,2011,18.23,Global
+est_022,ser_2069,2019,177.53,Streaming exclusivo
+est_017,ser_2070,2002,157.7,Regional
+est_022,ser_2071,2003,67.0,Global
+est_040,ser_2072,2020,110.07,Global
+est_039,ser_2073,2000,186.58,Global
+est_009,ser_2074,2008,64.12,Regional
+est_002,ser_2075,1990,68.06,Streaming exclusivo
+est_031,ser_2076,2017,182.25,Global
+est_021,ser_2077,2021,66.11,Streaming exclusivo
+est_003,ser_2078,2010,162.33,Regional
+est_021,ser_2079,2001,117.24,Nacional
+est_032,ser_2080,2001,180.53,Global
+est_023,ser_2081,2012,167.68,Streaming exclusivo
+est_017,ser_2082,2008,155.04,Nacional
+est_013,ser_2083,2023,74.07,Streaming exclusivo
+est_021,ser_2084,2023,136.55,Regional
+est_037,ser_2085,2001,59.62,Regional
+est_032,ser_2086,1991,70.55,Regional
+est_017,ser_2087,2010,21.23,Nacional
+est_025,ser_2088,2002,164.1,Regional
+est_039,ser_2089,2022,167.43,Nacional
+est_021,ser_2090,2017,32.46,Nacional
+est_016,ser_2091,1991,13.51,Regional
+est_026,ser_2092,2003,14.99,Global
+est_023,ser_2093,2017,36.81,Nacional
+est_032,ser_2094,2023,184.67,Streaming exclusivo
+est_014,ser_2095,2021,104.5,Global
+est_010,ser_2096,2018,141.56,Streaming exclusivo
+est_017,ser_2097,2010,7.28,Streaming exclusivo
+est_023,ser_2098,2005,195.93,Regional
+est_035,ser_2099,2004,153.59,Nacional
+est_040,ser_2100,2014,194.71,Regional
+est_033,ser_2101,2013,139.31,Streaming exclusivo
+est_011,ser_2102,2003,129.36,Global
+est_001,ser_2103,2009,3.22,Nacional
+est_014,ser_2104,2002,153.04,Regional
+est_006,ser_2105,2017,58.63,Nacional
+est_013,ser_2106,2021,70.48,Regional
+est_023,ser_2107,2019,127.17,Regional
+est_023,ser_2108,2019,23.43,Regional
+est_009,ser_2109,2007,143.7,Nacional
+est_016,ser_2110,2006,109.6,Nacional
+est_015,ser_2111,2001,97.78,Global
+est_033,ser_2112,1994,184.49,Regional
+est_025,ser_2113,2022,4.47,Nacional
+est_027,ser_2114,2010,150.09,Streaming exclusivo
+est_021,ser_2115,2009,178.64,Regional
+est_021,ser_2116,2015,150.77,Streaming exclusivo
+est_028,ser_2117,2013,116.83,Global
+est_021,ser_2118,2024,110.43,Streaming exclusivo
+est_027,ser_2119,2014,159.31,Global
+est_007,ser_2120,1995,126.07,Streaming exclusivo
+est_005,ser_2121,2009,23.42,Global
+est_012,ser_2122,1991,155.65,Streaming exclusivo
+est_005,ser_2123,2009,77.43,Regional
+est_024,ser_2124,2012,165.49,Regional
+est_018,ser_2125,2024,107.24,Nacional
+est_019,ser_2126,1993,58.01,Nacional
+est_011,ser_2127,2012,34.75,Global
+est_034,ser_2128,1998,190.57,Streaming exclusivo
+est_023,ser_2129,1996,59.72,Nacional
+est_038,ser_2130,2002,76.26,Nacional
+est_019,ser_2131,1993,90.96,Global
+est_022,ser_2132,2016,157.76,Regional
+est_010,ser_2133,1996,23.93,Regional
+est_005,ser_2134,2016,193.28,Global
+est_039,ser_2135,1995,99.07,Nacional
+est_021,ser_2136,1998,36.98,Global
+est_003,ser_2137,2000,79.08,Nacional
+est_016,ser_2138,1990,112.5,Streaming exclusivo
+est_001,ser_2139,2000,13.35,Global
+est_032,ser_2140,2021,165.3,Global
+est_006,ser_2141,2008,150.51,Nacional
+est_008,ser_2142,2015,124.22,Regional
+est_004,ser_2143,2012,57.51,Nacional
+est_002,ser_2144,1991,160.46,Streaming exclusivo
+est_007,ser_2145,2004,109.58,Regional
+est_006,ser_2146,1993,109.83,Global
+est_040,ser_2147,2014,143.49,Regional
+est_032,ser_2148,1990,62.93,Regional
+est_032,ser_2149,2000,51.18,Nacional
+est_032,ser_2150,1993,170.03,Regional
+est_002,ser_2151,2011,179.0,Streaming exclusivo
+est_005,ser_2152,2015,13.38,Nacional
+est_033,ser_2153,2023,133.07,Nacional
+est_009,ser_2154,2022,35.86,Streaming exclusivo
+est_019,ser_2155,1999,93.07,Streaming exclusivo
+est_010,ser_2156,2000,12.23,Nacional
+est_015,ser_2157,2023,63.11,Nacional
+est_034,ser_2158,1994,178.04,Global
+est_007,ser_2159,2017,138.77,Nacional
+est_032,ser_2160,2010,88.46,Streaming exclusivo
+est_012,ser_2161,2023,34.72,Regional
+est_027,ser_2162,2023,181.2,Global
+est_038,ser_2163,2015,51.24,Global
+est_036,ser_2164,1999,52.46,Streaming exclusivo
+est_001,ser_2165,2003,116.22,Regional
+est_009,ser_2166,1999,154.81,Regional
+est_015,ser_2167,1991,162.68,Global
+est_018,ser_2168,2001,100.01,Regional
+est_011,ser_2169,2007,107.86,Nacional
+est_002,ser_2170,1996,154.39,Regional
+est_019,ser_2171,2007,49.54,Regional
+est_030,ser_2172,2017,2.8,Nacional
+est_020,ser_2173,2013,45.87,Regional
+est_011,ser_2174,2024,199.45,Nacional
+est_031,ser_2175,2007,113.03,Nacional
+est_010,ser_2176,2019,14.7,Regional
+est_005,ser_2177,2006,157.66,Nacional
+est_016,ser_2178,1998,130.26,Nacional
+est_037,ser_2179,2009,110.43,Regional
+est_013,ser_2180,1999,137.4,Regional
+est_021,ser_2181,1996,51.1,Regional
+est_034,ser_2182,2000,44.87,Regional
+est_019,ser_2183,2021,102.15,Regional
+est_022,ser_2184,2014,197.26,Streaming exclusivo
+est_007,ser_2185,1992,124.25,Global
+est_016,ser_2186,1997,104.33,Nacional
+est_004,ser_2187,2017,163.44,Nacional
+est_007,ser_2188,1993,11.71,Streaming exclusivo
+est_040,ser_2189,1990,161.75,Regional
+est_024,ser_2190,2009,3.47,Streaming exclusivo
+est_031,ser_2191,2002,75.5,Regional
+est_002,ser_2192,1991,67.34,Streaming exclusivo
+est_028,ser_2193,2023,109.11,Regional
+est_016,ser_2194,2010,154.05,Regional
+est_014,ser_2195,2003,191.88,Streaming exclusivo
+est_031,ser_2196,1996,51.91,Global
+est_010,ser_2197,2002,186.73,Nacional
+est_023,ser_2198,1996,161.76,Streaming exclusivo
+est_011,ser_2199,2005,68.69,Streaming exclusivo
+est_006,ser_2200,1990,61.58,Streaming exclusivo
+est_033,ser_2201,1990,78.85,Nacional
+est_017,ser_2202,1999,115.45,Nacional
+est_027,ser_2203,2021,184.02,Streaming exclusivo
+est_031,ser_2204,2014,75.94,Nacional
+est_037,ser_2205,2015,41.02,Global
+est_014,ser_2206,2004,162.31,Regional
+est_018,ser_2207,1990,79.48,Streaming exclusivo
+est_040,ser_2208,1998,24.58,Global
+est_019,ser_2209,2002,166.84,Nacional
+est_018,ser_2210,2013,135.41,Regional
+est_030,ser_2211,1995,126.1,Global
+est_004,ser_2212,2020,143.17,Global
+est_024,ser_2213,1995,82.89,Streaming exclusivo
+est_007,ser_2214,2009,105.7,Streaming exclusivo
+est_019,ser_2215,1997,166.39,Streaming exclusivo
+est_001,ser_2216,2004,157.4,Streaming exclusivo
+est_004,ser_2217,2004,93.49,Streaming exclusivo
+est_003,ser_2218,2009,106.9,Nacional
+est_010,ser_2219,2013,46.77,Streaming exclusivo
+est_012,ser_2220,1993,127.41,Regional
+est_004,ser_2221,2003,137.28,Global
+est_001,ser_2222,2022,53.78,Nacional
+est_014,ser_2223,2014,108.28,Regional
+est_002,ser_2224,2020,77.92,Global
+est_039,ser_2225,2016,59.86,Global
+est_002,ser_2226,2001,78.4,Global
+est_018,ser_2227,1993,108.47,Nacional
+est_023,ser_2228,2014,97.83,Nacional
+est_020,ser_2229,2018,93.12,Streaming exclusivo
+est_019,ser_2230,2024,179.9,Global
+est_001,ser_2231,2000,158.85,Regional
+est_032,ser_2232,2024,111.06,Global
+est_007,ser_2233,1995,45.27,Streaming exclusivo
+est_038,ser_2234,2023,85.68,Nacional
+est_027,ser_2235,2015,134.67,Nacional
+est_013,ser_2236,1990,44.61,Streaming exclusivo
+est_013,ser_2237,1991,81.72,Nacional
+est_014,ser_2238,2009,98.11,Streaming exclusivo
+est_017,ser_2239,1994,159.73,Global
+est_034,ser_2240,1991,188.01,Streaming exclusivo
+est_009,ser_2241,1993,151.43,Nacional
+est_017,ser_2242,2002,198.57,Streaming exclusivo
+est_038,ser_2243,2003,69.03,Regional
+est_012,ser_2244,2015,144.13,Nacional
+est_034,ser_2245,1990,144.79,Nacional
+est_028,ser_2246,1994,198.37,Regional
+est_026,ser_2247,2018,99.37,Regional
+est_019,ser_2248,2022,48.56,Global
+est_021,ser_2249,2017,137.15,Streaming exclusivo
+est_034,ser_2250,2016,72.89,Regional
+est_024,ser_2251,2009,176.32,Nacional
+est_038,ser_2252,2000,142.61,Streaming exclusivo
+est_029,ser_2253,2000,27.84,Nacional
+est_003,ser_2254,2020,42.82,Streaming exclusivo
+est_022,ser_2255,2012,168.64,Streaming exclusivo
+est_021,ser_2256,2004,70.47,Regional
+est_006,ser_2257,1999,31.0,Nacional
+est_012,ser_2258,2006,142.31,Global
+est_017,ser_2259,2004,173.55,Global
+est_014,ser_2260,2000,91.0,Nacional
+est_038,ser_2261,2020,15.25,Regional
+est_026,ser_2262,2002,94.36,Regional
+est_028,ser_2263,2021,69.46,Streaming exclusivo
+est_023,ser_2264,2021,126.58,Nacional
+est_018,ser_2265,2007,79.83,Nacional
+est_010,ser_2266,2004,106.07,Nacional
+est_035,ser_2267,2007,26.23,Streaming exclusivo
+est_033,ser_2268,2001,47.31,Streaming exclusivo
+est_021,ser_2269,2000,32.27,Global
+est_034,ser_2270,1998,51.93,Regional
+est_019,ser_2271,2012,186.42,Global
+est_006,ser_2272,2011,195.51,Nacional
+est_026,ser_2273,1992,45.21,Global
+est_011,ser_2274,2021,166.83,Nacional
+est_006,ser_2275,2007,171.0,Global
+est_016,ser_2276,1992,89.04,Regional
+est_040,ser_2277,2018,81.5,Nacional
+est_019,ser_2278,1992,46.87,Regional
+est_020,ser_2279,2022,142.7,Regional
+est_038,ser_2280,1997,80.59,Streaming exclusivo
+est_029,ser_2281,2014,147.22,Streaming exclusivo
+est_008,ser_2282,1990,136.12,Streaming exclusivo
+est_006,ser_2283,1997,192.2,Global
+est_014,ser_2284,2004,159.36,Global
+est_024,ser_2285,2012,142.37,Global
+est_038,ser_2286,1992,99.31,Regional
+est_024,ser_2287,2012,182.97,Streaming exclusivo
+est_008,ser_2288,2012,150.81,Streaming exclusivo
+est_036,ser_2289,1996,21.93,Regional
+est_004,ser_2290,2020,155.13,Nacional
+est_007,ser_2291,2003,93.57,Global
+est_029,ser_2292,2020,10.32,Global
+est_025,ser_2293,2009,12.48,Regional
+est_020,ser_2294,2016,98.36,Streaming exclusivo
+est_006,ser_2295,2010,158.08,Global
+est_036,ser_2296,2008,32.03,Global
+est_034,ser_2297,2011,135.3,Global
+est_002,ser_2298,2021,29.39,Nacional
+est_025,ser_2299,2000,144.83,Nacional
+est_039,ser_2300,2019,70.28,Nacional
+est_037,ser_2301,2005,136.25,Nacional
+est_001,ser_2302,1998,154.15,Global
+est_012,ser_2303,2003,105.97,Regional
+est_016,ser_2304,2023,16.74,Nacional
+est_009,ser_2305,1997,10.36,Streaming exclusivo
+est_007,ser_2306,2022,41.58,Nacional
+est_018,ser_2307,2019,186.78,Nacional
+est_026,ser_2308,2007,49.33,Regional
+est_031,ser_2309,2018,88.4,Nacional
+est_029,ser_2310,1990,5.92,Streaming exclusivo
+est_004,ser_2311,1992,161.33,Nacional
+est_023,ser_2312,1996,78.19,Global
+est_011,ser_2313,2023,6.53,Streaming exclusivo
+est_006,ser_2314,2015,92.75,Streaming exclusivo
+est_002,ser_2315,2009,42.19,Regional
+est_017,ser_2316,2008,68.98,Global
+est_011,ser_2317,2009,175.7,Streaming exclusivo
+est_011,ser_2318,2001,134.34,Streaming exclusivo
+est_010,ser_2319,2017,173.2,Nacional
+est_005,ser_2320,2006,132.34,Global
+est_007,ser_2321,2014,121.77,Regional
+est_010,ser_2322,2020,112.21,Streaming exclusivo
+est_035,ser_2323,1998,36.22,Nacional
+est_036,ser_2324,2013,24.56,Regional
+est_010,ser_2325,2020,29.22,Nacional
+est_001,ser_2326,1993,56.78,Streaming exclusivo
+est_031,ser_2327,2002,80.17,Global
+est_008,ser_2328,1990,46.81,Regional
+est_027,ser_2329,2014,76.2,Regional
+est_008,ser_2330,2003,13.77,Nacional
+est_011,ser_2331,2005,92.62,Regional
+est_006,ser_2332,2023,116.18,Global
+est_007,ser_2333,2014,114.81,Global
+est_035,ser_2334,2002,89.71,Global
+est_015,ser_2335,2007,89.23,Global
+est_026,ser_2336,2024,4.91,Streaming exclusivo
+est_015,ser_2337,2005,146.73,Regional
+est_008,ser_2338,2022,16.66,Streaming exclusivo
+est_001,ser_2339,1991,170.4,Nacional
+est_027,ser_2340,2000,132.73,Regional
+est_038,ser_2341,1997,66.02,Streaming exclusivo
+est_033,ser_2342,2022,152.69,Global
+est_017,ser_2343,2021,163.36,Nacional
+est_031,ser_2344,2010,63.4,Nacional
+est_023,ser_2345,1994,142.13,Streaming exclusivo
+est_008,ser_2346,1996,56.12,Nacional
+est_002,ser_2347,1992,68.28,Global
+est_018,ser_2348,2004,170.28,Regional
+est_023,ser_2349,2024,151.8,Streaming exclusivo
+est_026,ser_2350,2018,198.48,Streaming exclusivo
+est_016,ser_2351,2017,122.82,Global
+est_040,ser_2352,1991,97.35,Global
+est_015,ser_2353,1998,15.61,Streaming exclusivo
+est_010,ser_2354,1998,95.75,Global
+est_027,ser_2355,1999,192.54,Regional
+est_007,ser_2356,1999,152.29,Streaming exclusivo
+est_008,ser_2357,2009,196.82,Nacional
+est_023,ser_2358,2024,105.37,Global
+est_006,ser_2359,1996,8.84,Streaming exclusivo
+est_037,ser_2360,2005,22.84,Regional
+est_024,ser_2361,2009,78.69,Streaming exclusivo
+est_025,ser_2362,2002,102.72,Regional
+est_016,ser_2363,2017,111.92,Global
+est_024,ser_2364,1995,116.92,Streaming exclusivo
+est_028,ser_2365,2024,190.99,Streaming exclusivo
+est_011,ser_2366,2008,21.59,Global
+est_007,ser_2367,2018,118.6,Nacional
+est_002,ser_2368,1999,137.07,Streaming exclusivo
+est_024,ser_2369,2012,4.59,Streaming exclusivo
+est_007,ser_2370,2001,162.82,Regional
+est_040,ser_2371,2019,80.45,Global
+est_022,ser_2372,2014,54.21,Global
+est_023,ser_2373,2015,163.52,Streaming exclusivo
+est_033,ser_2374,2015,121.85,Streaming exclusivo
+est_019,ser_2375,2009,142.17,Global
+est_032,ser_2376,1992,99.58,Global
+est_028,ser_2377,2009,50.39,Streaming exclusivo
+est_009,ser_2378,1993,185.85,Streaming exclusivo
+est_020,ser_2379,2018,136.4,Nacional
+est_010,ser_2380,2020,166.03,Nacional
+est_010,ser_2381,2018,5.23,Regional
+est_023,ser_2382,2024,126.24,Streaming exclusivo
+est_017,ser_2383,2016,68.77,Global
+est_009,ser_2384,1995,148.66,Regional
+est_020,ser_2385,2018,42.45,Regional
+est_017,ser_2386,2021,131.23,Regional
+est_036,ser_2387,2018,136.81,Global
+est_009,ser_2388,2013,60.0,Regional
+est_016,ser_2389,1995,8.67,Nacional
+est_001,ser_2390,1996,116.23,Nacional
+est_026,ser_2391,2008,195.13,Regional
+est_039,ser_2392,1998,94.5,Global
+est_006,ser_2393,1993,22.2,Regional
+est_028,ser_2394,1993,153.09,Regional
+est_032,ser_2395,1991,158.78,Global
+est_011,ser_2396,2003,4.05,Regional
+est_022,ser_2397,1994,124.83,Global
+est_017,ser_2398,2004,157.8,Streaming exclusivo
+est_014,ser_2399,2022,37.09,Nacional
+est_039,ser_2400,2010,154.0,Global
+est_026,ser_2401,2002,65.61,Global
+est_002,ser_2402,1993,147.6,Global
+est_017,ser_2403,2011,168.27,Global
+est_030,ser_2404,2020,186.44,Streaming exclusivo
+est_028,ser_2405,2019,98.32,Regional
+est_010,ser_2406,2014,78.59,Streaming exclusivo
+est_004,ser_2407,2015,76.22,Global
+est_025,ser_2408,2023,80.15,Global
+est_003,ser_2409,2005,33.08,Global
+est_036,ser_2410,2006,81.08,Regional
+est_012,ser_2411,1996,43.87,Regional
+est_024,ser_2412,1999,74.12,Nacional
+est_023,ser_2413,1990,174.16,Regional
+est_009,ser_2414,1990,33.85,Regional
+est_002,ser_2415,1992,191.19,Nacional
+est_003,ser_2416,2018,61.97,Global
+est_026,ser_2417,2012,168.2,Streaming exclusivo
+est_012,ser_2418,2018,104.69,Regional
+est_022,ser_2419,1995,44.95,Regional
+est_009,ser_2420,2007,126.17,Streaming exclusivo
+est_007,ser_2421,2000,8.44,Nacional
+est_025,ser_2422,1991,120.49,Streaming exclusivo
+est_009,ser_2423,1996,103.41,Streaming exclusivo
+est_023,ser_2424,2017,8.98,Streaming exclusivo
+est_023,ser_2425,2003,136.22,Global
+est_027,ser_2426,1992,37.13,Regional
+est_038,ser_2427,1998,29.7,Nacional
+est_040,ser_2428,1994,192.66,Regional
+est_001,ser_2429,1990,160.46,Global
+est_001,ser_2430,2017,79.86,Streaming exclusivo
+est_017,ser_2431,2001,50.25,Regional
+est_037,ser_2432,2005,78.9,Streaming exclusivo
+est_014,ser_2433,2003,18.27,Streaming exclusivo
+est_035,ser_2434,2023,190.88,Nacional
+est_020,ser_2435,1991,8.31,Nacional
+est_005,ser_2436,1993,111.46,Nacional
+est_008,ser_2437,2008,66.0,Regional
+est_008,ser_2438,2003,154.39,Regional
+est_032,ser_2439,2004,62.63,Nacional
+est_034,ser_2440,2023,104.56,Global
+est_003,ser_2441,2023,191.44,Global
+est_027,ser_2442,2005,51.19,Nacional
+est_039,ser_2443,2020,146.54,Nacional
+est_004,ser_2444,2014,19.07,Streaming exclusivo
+est_031,ser_2445,1995,163.99,Global
+est_010,ser_2446,2013,43.76,Nacional
+est_006,ser_2447,2011,70.18,Regional
+est_040,ser_2448,2004,56.4,Global
+est_006,ser_2449,1992,187.2,Regional
+est_014,ser_2450,2019,76.76,Global
+est_025,ser_2451,2015,3.89,Streaming exclusivo
+est_008,ser_2452,2017,42.9,Nacional
+est_006,ser_2453,2006,51.91,Nacional
+est_031,ser_2454,2003,87.76,Nacional
+est_022,ser_2455,2024,165.51,Nacional
+est_015,ser_2456,1992,163.0,Nacional
+est_022,ser_2457,1994,146.64,Nacional
+est_026,ser_2458,2008,86.62,Regional
+est_001,ser_2459,2005,42.37,Global
+est_021,ser_2460,1999,17.81,Nacional
+est_003,ser_2461,2001,170.14,Streaming exclusivo
+est_027,ser_2462,1993,89.55,Global
+est_003,ser_2463,2005,5.26,Streaming exclusivo
+est_013,ser_2464,2006,30.03,Nacional
+est_016,ser_2465,2010,145.33,Nacional
+est_002,ser_2466,1995,199.8,Global
+est_040,ser_2467,1990,69.02,Global
+est_009,ser_2468,2013,57.78,Regional
+est_006,ser_2469,1995,133.32,Streaming exclusivo
+est_022,ser_2470,1995,141.17,Nacional
+est_026,ser_2471,2000,76.07,Regional
+est_012,ser_2472,1997,169.69,Streaming exclusivo
+est_038,ser_2473,2003,189.11,Regional
+est_022,ser_2474,2009,2.16,Nacional
+est_030,ser_2475,2022,51.21,Streaming exclusivo
+est_028,ser_2476,2013,124.76,Regional
+est_028,ser_2477,1993,5.87,Nacional
+est_019,ser_2478,1994,100.76,Global
+est_007,ser_2479,2014,6.37,Regional
+est_012,ser_2480,2003,35.03,Nacional
+est_008,ser_2481,2021,68.82,Regional
+est_016,ser_2482,2003,83.58,Regional
+est_017,ser_2483,2008,43.64,Nacional
+est_040,ser_2484,1999,177.4,Regional
+est_016,ser_2485,2023,125.24,Streaming exclusivo
+est_019,ser_2486,1999,29.97,Nacional
+est_018,ser_2487,2013,22.41,Streaming exclusivo
+est_017,ser_2488,1998,152.81,Streaming exclusivo
+est_008,ser_2489,2015,25.3,Streaming exclusivo
+est_005,ser_2490,2006,22.76,Regional
+est_013,ser_2491,1994,42.38,Nacional
+est_005,ser_2492,2011,164.82,Nacional
+est_019,ser_2493,2014,175.63,Nacional
+est_033,ser_2494,2017,110.53,Nacional
+est_019,ser_2495,2020,31.88,Nacional
+est_003,ser_2496,2018,20.31,Streaming exclusivo
+est_030,ser_2497,2007,117.0,Global
+est_037,ser_2498,2011,147.1,Regional
+est_037,ser_2499,2014,190.99,Streaming exclusivo
+est_039,ser_2500,2016,5.35,Streaming exclusivo
+est_005,ser_2501,2000,43.98,Global
+est_031,ser_2502,1990,191.63,Nacional
+est_035,ser_2503,2009,62.57,Nacional
+est_013,ser_2504,2020,82.33,Global
+est_008,ser_2505,1993,163.97,Streaming exclusivo
+est_040,ser_2506,2007,130.15,Nacional
+est_036,ser_2507,1993,185.42,Global
+est_026,ser_2508,1993,147.41,Global
+est_007,ser_2509,1993,149.58,Regional
+est_009,ser_2510,2019,68.36,Regional
+est_039,ser_2511,2002,109.98,Streaming exclusivo
+est_028,ser_2512,2022,96.63,Regional
+est_018,ser_2513,2022,52.06,Global
+est_013,ser_2514,2024,15.59,Streaming exclusivo
+est_004,ser_2515,2011,74.4,Regional
+est_015,ser_2516,2022,78.5,Regional
+est_023,ser_2517,1992,192.88,Streaming exclusivo
+est_029,ser_2518,1993,78.05,Nacional
+est_015,ser_2519,2019,177.0,Regional
+est_004,ser_2520,2015,39.22,Regional
+est_008,ser_2521,1991,12.58,Global
+est_005,ser_2522,2021,4.47,Nacional
+est_021,ser_2523,2023,42.73,Regional
+est_035,ser_2524,2003,21.63,Streaming exclusivo
+est_013,ser_2525,2002,185.76,Nacional
+est_007,ser_2526,2007,94.97,Streaming exclusivo
+est_027,ser_2527,1996,45.69,Global
+est_004,ser_2528,2002,126.05,Global
+est_019,ser_2529,1992,80.14,Nacional
+est_033,ser_2530,2013,139.15,Global
+est_037,ser_2531,2015,3.57,Regional
+est_019,ser_2532,1999,58.54,Nacional
+est_004,ser_2533,1996,78.18,Global
+est_030,ser_2534,2006,50.6,Nacional
+est_012,ser_2535,2008,48.38,Streaming exclusivo
+est_024,ser_2536,1999,15.07,Streaming exclusivo
+est_037,ser_2537,2012,37.08,Global
+est_006,ser_2538,2015,99.15,Nacional
+est_034,ser_2539,2002,156.4,Regional
+est_035,ser_2540,2021,85.53,Global
+est_032,ser_2541,2009,53.1,Streaming exclusivo
+est_037,ser_2542,2010,139.67,Regional
+est_021,ser_2543,1995,38.48,Nacional
+est_004,ser_2544,2000,133.9,Global
+est_037,ser_2545,2023,47.15,Regional
+est_005,ser_2546,2011,163.16,Nacional
+est_023,ser_2547,1997,166.6,Global
+est_035,ser_2548,2010,162.97,Global
+est_008,ser_2549,2023,92.77,Regional
+est_032,ser_2550,2010,195.4,Streaming exclusivo
+est_039,ser_2551,2001,157.46,Regional
+est_017,ser_2552,2013,12.27,Global
+est_019,ser_2553,2017,147.73,Streaming exclusivo
+est_014,ser_2554,2004,75.11,Regional
+est_024,ser_2555,2013,33.79,Nacional
+est_012,ser_2556,1998,185.71,Regional
+est_009,ser_2557,2021,74.1,Nacional
+est_019,ser_2558,2004,30.61,Nacional
+est_016,ser_2559,1999,183.62,Nacional
+est_004,ser_2560,2014,82.98,Global
+est_026,ser_2561,2003,106.56,Global
+est_004,ser_2562,2016,193.33,Regional
+est_003,ser_2563,2005,168.81,Global
+est_013,ser_2564,2004,134.86,Global
+est_036,ser_2565,2012,174.44,Nacional
+est_001,ser_2566,1996,33.94,Regional
+est_005,ser_2567,1998,108.05,Regional
+est_017,ser_2568,2024,27.51,Global
+est_006,ser_2569,2016,112.55,Streaming exclusivo
+est_009,ser_2570,2021,83.08,Nacional
+est_031,ser_2571,1999,79.69,Streaming exclusivo
+est_011,ser_2572,2009,80.17,Regional
+est_004,ser_2573,2011,176.19,Nacional
+est_026,ser_2574,2002,116.98,Streaming exclusivo
+est_015,ser_2575,1999,46.45,Global
+est_018,ser_2576,2007,61.5,Global
+est_033,ser_2577,2019,195.13,Regional
+est_028,ser_2578,2022,74.69,Nacional
+est_002,ser_2579,2008,139.82,Regional
+est_012,ser_2580,2008,145.1,Nacional
+est_016,ser_2581,2023,105.78,Regional
+est_016,ser_2582,2022,104.36,Streaming exclusivo
+est_015,ser_2583,1994,143.3,Regional
+est_035,ser_2584,1992,23.99,Regional
+est_006,ser_2585,1997,173.09,Streaming exclusivo
+est_028,ser_2586,2019,58.22,Global
+est_029,ser_2587,2013,107.6,Regional
+est_004,ser_2588,1991,122.43,Streaming exclusivo
+est_029,ser_2589,2009,93.42,Regional
+est_032,ser_2590,2022,26.49,Regional
+est_012,ser_2591,2019,27.32,Nacional
+est_018,ser_2592,2006,53.28,Global
+est_006,ser_2593,2003,124.46,Nacional
+est_025,ser_2594,2019,35.16,Nacional
+est_002,ser_2595,2001,101.89,Nacional
+est_026,ser_2596,2017,168.75,Regional
+est_027,ser_2597,2024,161.23,Streaming exclusivo
+est_022,ser_2598,1995,97.51,Regional
+est_019,ser_2599,2006,191.8,Nacional
+est_032,ser_2600,1996,170.51,Global
+est_022,ser_2601,2006,25.73,Global
+est_029,ser_2602,2020,153.86,Global
+est_028,ser_2603,2012,174.71,Global
+est_016,ser_2604,2021,29.2,Regional
+est_039,ser_2605,2023,172.5,Global
+est_025,ser_2606,1990,120.5,Streaming exclusivo
+est_004,ser_2607,1991,126.68,Nacional
+est_018,ser_2608,2014,135.19,Regional
+est_021,ser_2609,1993,120.77,Regional
+est_029,ser_2610,2020,161.65,Regional
+est_002,ser_2611,1997,142.92,Nacional
+est_007,ser_2612,2017,136.0,Streaming exclusivo
+est_009,ser_2613,2020,106.27,Nacional
+est_011,ser_2614,2007,140.6,Nacional
+est_006,ser_2615,2017,187.86,Global
+est_026,ser_2616,2006,59.36,Regional
+est_028,ser_2617,2018,97.28,Streaming exclusivo
+est_026,ser_2618,2018,113.58,Nacional
+est_039,ser_2619,2005,192.49,Regional
+est_003,ser_2620,2004,78.88,Regional
+est_011,ser_2621,2001,24.46,Nacional
+est_003,ser_2622,2024,34.17,Regional
+est_016,ser_2623,2007,44.58,Global
+est_013,ser_2624,2011,169.8,Nacional
+est_017,ser_2625,2015,133.85,Nacional
+est_022,ser_2626,1991,62.82,Streaming exclusivo
+est_026,ser_2627,2003,31.41,Streaming exclusivo
+est_034,ser_2628,2019,111.16,Global
+est_025,ser_2629,2024,191.38,Nacional
+est_012,ser_2630,1997,53.15,Streaming exclusivo
+est_001,ser_2631,1994,55.43,Regional
+est_032,ser_2632,2007,92.23,Regional
+est_002,ser_2633,2002,138.1,Regional
+est_015,ser_2634,2008,189.73,Global
+est_006,ser_2635,1995,163.09,Nacional
+est_038,ser_2636,2010,66.91,Regional
+est_026,ser_2637,2017,154.05,Nacional
+est_010,ser_2638,1992,166.29,Global
+est_038,ser_2639,2000,126.19,Streaming exclusivo
+est_028,ser_2640,2001,2.84,Global
+est_023,ser_2641,1991,143.74,Global
+est_031,ser_2642,2009,74.33,Streaming exclusivo
+est_028,ser_2643,2023,147.87,Streaming exclusivo
+est_037,ser_2644,2013,84.77,Global
+est_008,ser_2645,2023,35.33,Streaming exclusivo
+est_038,ser_2646,2011,35.9,Nacional
+est_011,ser_2647,2008,8.04,Regional
+est_010,ser_2648,2008,117.73,Regional
+est_032,ser_2649,1999,96.6,Nacional
+est_031,ser_2650,1999,84.44,Streaming exclusivo
+est_032,ser_2651,1993,162.14,Streaming exclusivo
+est_019,ser_2652,1996,179.25,Streaming exclusivo
+est_034,ser_2653,2006,16.68,Regional
+est_002,ser_2654,2021,154.87,Streaming exclusivo
+est_015,ser_2655,2021,108.06,Regional
+est_009,ser_2656,2017,164.61,Regional
+est_021,ser_2657,2012,172.93,Regional
+est_007,ser_2658,1993,191.64,Global
+est_005,ser_2659,2005,94.03,Global
+est_021,ser_2660,2001,118.86,Nacional
+est_027,ser_2661,2017,26.23,Regional
+est_025,ser_2662,2018,140.92,Nacional
+est_001,ser_2663,2023,20.43,Streaming exclusivo
+est_007,ser_2664,1995,194.75,Regional
+est_021,ser_2665,2017,25.17,Streaming exclusivo
+est_031,ser_2666,2018,27.54,Streaming exclusivo
+est_009,ser_2667,2010,84.18,Streaming exclusivo
+est_008,ser_2668,1990,86.15,Regional
+est_004,ser_2669,2016,37.5,Nacional
+est_010,ser_2670,2005,44.24,Regional
+est_011,ser_2671,2004,32.32,Regional
+est_020,ser_2672,2016,107.71,Global
+est_018,ser_2673,2019,123.73,Global
+est_038,ser_2674,1998,162.7,Regional
+est_017,ser_2675,2017,94.35,Regional
+est_014,ser_2676,2022,104.16,Regional
+est_030,ser_2677,2013,124.78,Regional
+est_005,ser_2678,2002,144.43,Nacional
+est_015,ser_2679,1998,27.65,Nacional
+est_018,ser_2680,1994,111.85,Global
+est_001,ser_2681,2020,116.93,Nacional
+est_028,ser_2682,2003,155.72,Regional
+est_034,ser_2683,1994,190.58,Global
+est_008,ser_2684,2011,181.22,Regional
+est_027,ser_2685,1995,69.8,Regional
+est_023,ser_2686,2002,44.51,Regional
+est_011,ser_2687,1998,86.18,Regional
+est_032,ser_2688,2010,148.16,Global
+est_013,ser_2689,2004,148.69,Regional
+est_025,ser_2690,2002,32.37,Nacional
+est_018,ser_2691,2001,60.17,Streaming exclusivo
+est_035,ser_2692,2010,198.23,Global
+est_009,ser_2693,2005,126.53,Global
+est_014,ser_2694,2019,187.55,Nacional
+est_008,ser_2695,1990,56.1,Nacional
+est_032,ser_2696,2023,94.86,Nacional
+est_019,ser_2697,1995,118.7,Global
+est_022,ser_2698,2006,175.18,Nacional
+est_020,ser_2699,2013,39.12,Nacional
+est_012,ser_2700,1990,142.91,Streaming exclusivo
+est_009,ser_2701,2018,87.45,Streaming exclusivo
+est_038,ser_2702,1997,42.12,Streaming exclusivo
+est_036,ser_2703,2002,18.32,Regional
+est_040,ser_2704,2019,50.03,Global
+est_002,ser_2705,2017,32.45,Nacional
+est_038,ser_2706,1997,82.29,Streaming exclusivo
+est_022,ser_2707,2015,170.69,Global
+est_035,ser_2708,1996,18.27,Nacional
+est_034,ser_2709,2018,37.68,Nacional
+est_018,ser_2710,2001,56.38,Nacional
+est_018,ser_2711,1997,187.23,Nacional
+est_019,ser_2712,2023,128.23,Global
+est_037,ser_2713,2006,104.83,Streaming exclusivo
+est_015,ser_2714,2000,195.29,Streaming exclusivo
+est_016,ser_2715,2018,96.28,Regional
+est_027,ser_2716,2021,34.2,Streaming exclusivo
+est_005,ser_2717,1998,37.71,Nacional
+est_027,ser_2718,1994,199.95,Global
+est_006,ser_2719,2012,188.87,Streaming exclusivo
+est_035,ser_2720,2014,188.3,Streaming exclusivo
+est_019,ser_2721,2007,170.53,Nacional
+est_020,ser_2722,2006,56.18,Streaming exclusivo
+est_010,ser_2723,2022,189.92,Streaming exclusivo
+est_037,ser_2724,2005,178.93,Regional
+est_010,ser_2725,2013,199.17,Nacional
+est_036,ser_2726,2016,94.32,Streaming exclusivo
+est_013,ser_2727,1995,189.97,Streaming exclusivo
+est_038,ser_2728,1993,28.54,Nacional
+est_001,ser_2729,2000,148.08,Nacional
+est_029,ser_2730,2022,88.28,Regional
+est_036,ser_2731,2007,188.06,Nacional
+est_011,ser_2732,2017,72.6,Regional
+est_010,ser_2733,2001,41.82,Regional
+est_019,ser_2734,2003,84.83,Global
+est_005,ser_2735,1999,17.8,Nacional
+est_016,ser_2736,2015,66.41,Global
+est_012,ser_2737,1997,193.17,Nacional
+est_023,ser_2738,1997,21.45,Regional
+est_034,ser_2739,1990,134.28,Regional
+est_040,ser_2740,2024,155.5,Global
+est_012,ser_2741,1998,177.52,Nacional
+est_027,ser_2742,1994,91.62,Streaming exclusivo
+est_002,ser_2743,2008,177.4,Streaming exclusivo
+est_037,ser_2744,2001,186.53,Regional
+est_012,ser_2745,2019,8.59,Global
+est_009,ser_2746,2012,129.09,Nacional
+est_034,ser_2747,2001,97.34,Global
+est_021,ser_2748,2008,48.39,Nacional
+est_006,ser_2749,2016,78.88,Nacional
+est_040,ser_2750,1994,40.29,Nacional
+est_006,ser_2751,2011,199.39,Nacional
+est_006,ser_2752,1991,83.99,Global
+est_014,ser_2753,1990,131.26,Regional
+est_013,ser_2754,2016,39.0,Global
+est_033,ser_2755,2023,104.79,Regional
+est_024,ser_2756,2010,100.87,Regional
+est_032,ser_2757,2006,12.67,Streaming exclusivo
+est_001,ser_2758,1991,197.68,Global
+est_001,ser_2759,2020,77.94,Streaming exclusivo
+est_012,ser_2760,2016,90.78,Streaming exclusivo
+est_022,ser_2761,2011,135.61,Nacional
+est_001,ser_2762,1999,186.96,Global
+est_027,ser_2763,1994,160.29,Global
+est_016,ser_2764,2024,130.59,Streaming exclusivo
+est_032,ser_2765,2004,194.33,Streaming exclusivo
+est_022,ser_2766,1991,160.72,Regional
+est_004,ser_2767,2012,173.37,Nacional
+est_006,ser_2768,2013,122.84,Global
+est_040,ser_2769,2004,77.34,Regional
+est_039,ser_2770,2012,161.27,Regional
+est_038,ser_2771,2023,199.32,Nacional
+est_026,ser_2772,2008,102.7,Nacional
+est_018,ser_2773,2016,197.86,Nacional
+est_019,ser_2774,2006,169.62,Nacional
+est_007,ser_2775,2005,107.14,Nacional
+est_005,ser_2776,2020,142.17,Nacional
+est_002,ser_2777,2000,181.33,Nacional
+est_021,ser_2778,1995,87.31,Streaming exclusivo
+est_016,ser_2779,2013,20.62,Regional
+est_017,ser_2780,2012,49.61,Streaming exclusivo
+est_003,ser_2781,2003,97.26,Nacional
+est_003,ser_2782,1991,40.19,Streaming exclusivo
+est_015,ser_2783,1998,178.51,Regional
+est_038,ser_2784,1997,24.87,Streaming exclusivo
+est_006,ser_2785,2010,106.58,Nacional
+est_014,ser_2786,1996,35.34,Nacional
+est_003,ser_2787,2000,99.37,Nacional
+est_003,ser_2788,1998,11.88,Streaming exclusivo
+est_023,ser_2789,2006,163.17,Nacional
+est_015,ser_2790,2014,74.82,Streaming exclusivo
+est_010,ser_2791,2014,33.27,Nacional
+est_035,ser_2792,2000,172.29,Nacional
+est_017,ser_2793,2017,12.71,Global
+est_008,ser_2794,1998,21.54,Streaming exclusivo
+est_001,ser_2795,2022,124.31,Regional
+est_023,ser_2796,2012,182.25,Nacional
+est_001,ser_2797,2018,182.01,Streaming exclusivo
+est_023,ser_2798,1992,54.2,Global
+est_029,ser_2799,2000,65.08,Global
+est_022,ser_2800,2016,128.02,Streaming exclusivo
+est_025,ser_2801,2002,121.13,Regional
+est_003,ser_2802,2014,170.13,Global
+est_002,ser_2803,2020,93.21,Regional
+est_040,ser_2804,1994,6.81,Streaming exclusivo
+est_020,ser_2805,2003,12.48,Global
+est_011,ser_2806,2019,47.05,Streaming exclusivo
+est_025,ser_2807,1997,190.95,Regional
+est_038,ser_2808,2012,32.56,Regional
+est_034,ser_2809,1993,36.16,Streaming exclusivo
+est_016,ser_2810,2024,78.12,Global
+est_032,ser_2811,2011,17.16,Streaming exclusivo
+est_033,ser_2812,2005,115.0,Streaming exclusivo
+est_023,ser_2813,2024,36.03,Global
+est_020,ser_2814,1992,174.22,Nacional
+est_028,ser_2815,2018,142.5,Streaming exclusivo
+est_036,ser_2816,2018,145.77,Global
+est_026,ser_2817,2003,18.56,Regional
+est_026,ser_2818,2018,130.13,Streaming exclusivo
+est_034,ser_2819,2022,198.12,Nacional
+est_026,ser_2820,1994,89.02,Global
+est_030,ser_2821,2013,31.67,Global
+est_013,ser_2822,2024,130.41,Nacional
+est_020,ser_2823,2017,133.2,Regional
+est_013,ser_2824,1992,164.45,Streaming exclusivo
+est_004,ser_2825,2018,95.54,Regional
+est_021,ser_2826,2010,158.16,Nacional
+est_012,ser_2827,2006,172.98,Nacional
+est_014,ser_2828,2000,96.23,Nacional
+est_029,ser_2829,2008,192.73,Streaming exclusivo
+est_021,ser_2830,2004,106.0,Streaming exclusivo
+est_001,ser_2831,2012,87.8,Regional
+est_039,ser_2832,1994,16.46,Nacional
+est_011,ser_2833,1999,12.64,Nacional
+est_015,ser_2834,2013,98.8,Regional
+est_024,ser_2835,1992,169.1,Streaming exclusivo
+est_026,ser_2836,2015,152.53,Streaming exclusivo
+est_025,ser_2837,1998,4.65,Streaming exclusivo
+est_011,ser_2838,2006,126.12,Global
+est_040,ser_2839,2024,109.67,Global
+est_037,ser_2840,2024,101.17,Streaming exclusivo
+est_009,ser_2841,1998,170.12,Global
+est_028,ser_2842,2002,69.45,Streaming exclusivo
+est_027,ser_2843,2000,101.73,Nacional
+est_015,ser_2844,2007,170.11,Regional
+est_029,ser_2845,2002,150.46,Global
+est_007,ser_2846,2023,106.03,Global
+est_001,ser_2847,2009,133.89,Streaming exclusivo
+est_033,ser_2848,2006,15.57,Nacional
+est_033,ser_2849,2011,146.1,Nacional
+est_024,ser_2850,2021,165.75,Regional
+est_015,ser_2851,2018,192.43,Streaming exclusivo
+est_006,ser_2852,2014,127.37,Regional
+est_003,ser_2853,2003,12.51,Regional
+est_001,ser_2854,2022,36.69,Nacional
+est_002,ser_2855,1997,196.98,Regional
+est_030,ser_2856,1995,116.92,Streaming exclusivo
+est_019,ser_2857,2006,127.26,Global
+est_025,ser_2858,2006,187.88,Streaming exclusivo
+est_007,ser_2859,2018,88.64,Streaming exclusivo
+est_032,ser_2860,2011,16.43,Regional
+est_023,ser_2861,2005,182.64,Regional
+est_039,ser_2862,2016,43.21,Regional
+est_019,ser_2863,1997,63.14,Streaming exclusivo
+est_031,ser_2864,1992,29.27,Nacional
+est_014,ser_2865,2023,69.57,Regional
+est_034,ser_2866,2013,178.38,Regional
+est_009,ser_2867,2007,47.68,Global
+est_009,ser_2868,1991,159.09,Streaming exclusivo
+est_037,ser_2869,1999,102.12,Nacional
+est_027,ser_2870,1998,134.47,Nacional
+est_028,ser_2871,2024,180.15,Nacional
+est_040,ser_2872,2015,59.49,Streaming exclusivo
+est_005,ser_2873,2016,51.38,Global
+est_015,ser_2874,1999,181.6,Nacional
+est_023,ser_2875,2005,123.16,Nacional
+est_039,ser_2876,1993,189.12,Regional
+est_012,ser_2877,2023,97.48,Regional
+est_030,ser_2878,2024,23.48,Regional
+est_040,ser_2879,1994,76.58,Nacional
+est_003,ser_2880,2001,182.54,Nacional
+est_022,ser_2881,1994,113.49,Nacional
+est_017,ser_2882,2005,87.16,Streaming exclusivo
+est_019,ser_2883,1990,112.99,Regional
+est_006,ser_2884,1994,146.68,Nacional
+est_037,ser_2885,1992,46.62,Nacional
+est_030,ser_2886,2001,143.77,Streaming exclusivo
+est_001,ser_2887,2013,29.05,Streaming exclusivo
+est_013,ser_2888,2000,11.56,Regional
+est_028,ser_2889,2011,140.96,Global
+est_028,ser_2890,2003,19.98,Global
+est_023,ser_2891,2006,106.26,Global
+est_013,ser_2892,2022,191.31,Streaming exclusivo
+est_038,ser_2893,1990,198.43,Regional
+est_015,ser_2894,2013,6.48,Global
+est_017,ser_2895,1992,46.19,Global
+est_010,ser_2896,1995,193.29,Global
+est_038,ser_2897,1991,5.31,Nacional
+est_031,ser_2898,2021,146.08,Streaming exclusivo
+est_002,ser_2899,1992,36.47,Streaming exclusivo
+est_013,ser_2900,2018,70.5,Nacional
+est_031,ser_2901,2024,151.5,Streaming exclusivo
+est_030,ser_2902,2003,64.04,Global
+est_014,ser_2903,2024,180.6,Streaming exclusivo
+est_014,ser_2904,2012,132.4,Streaming exclusivo
+est_009,ser_2905,2005,156.97,Regional
+est_035,ser_2906,1998,156.6,Regional
+est_004,ser_2907,2003,134.75,Nacional
+est_028,ser_2908,2003,45.25,Global
+est_017,ser_2909,2006,2.27,Nacional
+est_021,ser_2910,2013,31.4,Regional
+est_002,ser_2911,2014,126.34,Nacional
+est_017,ser_2912,2003,19.68,Regional
+est_007,ser_2913,2001,151.6,Nacional
+est_023,ser_2914,1994,47.41,Regional
+est_019,ser_2915,1990,97.2,Global
+est_016,ser_2916,2016,190.22,Regional
+est_006,ser_2917,2021,96.38,Streaming exclusivo
+est_018,ser_2918,2012,21.38,Regional
+est_012,ser_2919,2016,136.14,Streaming exclusivo
+est_031,ser_2920,2006,181.69,Nacional
+est_019,ser_2921,2014,106.55,Streaming exclusivo
+est_021,ser_2922,2015,42.6,Nacional
+est_002,ser_2923,2020,123.91,Global
+est_001,ser_2924,1991,89.52,Streaming exclusivo
+est_035,ser_2925,1990,19.75,Regional
+est_031,ser_2926,2017,26.55,Regional
+est_003,ser_2927,1995,97.56,Nacional
+est_020,ser_2928,2004,119.53,Nacional
+est_021,ser_2929,1992,11.39,Streaming exclusivo
+est_011,ser_2930,2021,99.54,Nacional
+est_030,ser_2931,2008,12.08,Regional
+est_019,ser_2932,2003,6.14,Regional
+est_020,ser_2933,2023,140.52,Regional
+est_024,ser_2934,2020,42.5,Nacional
+est_006,ser_2935,2000,42.96,Nacional
+est_009,ser_2936,1999,189.11,Regional
+est_006,ser_2937,2004,192.16,Streaming exclusivo
+est_027,ser_2938,1993,170.74,Regional
+est_016,ser_2939,2016,67.43,Streaming exclusivo
+est_018,ser_2940,2011,102.7,Regional
+est_030,ser_2941,2012,143.08,Nacional
+est_006,ser_2942,2013,137.99,Streaming exclusivo
+est_031,ser_2943,1991,85.46,Nacional
+est_031,ser_2944,2018,128.8,Global
+est_024,ser_2945,2016,102.5,Global
+est_007,ser_2946,2012,193.81,Nacional
+est_031,ser_2947,1997,98.08,Global
+est_031,ser_2948,2012,13.68,Regional
+est_030,ser_2949,2006,149.7,Global
+est_019,ser_2950,2000,77.36,Nacional
+est_033,ser_2951,2021,23.54,Global
+est_006,ser_2952,1992,111.2,Streaming exclusivo
+est_007,ser_2953,2017,124.81,Nacional
+est_001,ser_2954,2010,108.1,Regional
+est_002,ser_2955,2015,14.71,Nacional
+est_027,ser_2956,1995,135.66,Nacional
+est_039,ser_2957,2014,25.84,Streaming exclusivo
+est_023,ser_2958,1997,156.22,Streaming exclusivo
+est_004,ser_2959,2006,92.13,Streaming exclusivo
+est_032,ser_2960,1994,63.01,Regional
+est_020,ser_2961,1995,69.49,Global
+est_007,ser_2962,1995,92.36,Streaming exclusivo
+est_022,ser_2963,2017,180.92,Nacional
+est_019,ser_2964,2020,133.77,Regional
+est_025,ser_2965,2020,147.48,Nacional
+est_029,ser_2966,2005,89.93,Streaming exclusivo
+est_024,ser_2967,1991,53.75,Global
+est_033,ser_2968,2011,45.53,Streaming exclusivo
+est_039,ser_2969,2007,47.35,Regional
+est_007,ser_2970,2016,171.15,Nacional
+est_031,ser_2971,1993,136.57,Regional
+est_034,ser_2972,2024,185.55,Regional
+est_020,ser_2973,2015,59.67,Nacional
+est_024,ser_2974,1998,72.28,Nacional
+est_023,ser_2975,2005,87.97,Regional
+est_035,ser_2976,2013,32.75,Nacional
+est_002,ser_2977,2023,73.18,Nacional
+est_001,ser_2978,2020,179.0,Streaming exclusivo
+est_031,ser_2979,2004,50.22,Streaming exclusivo
+est_015,ser_2980,2010,40.16,Streaming exclusivo
+est_010,ser_2981,2024,18.68,Global
+est_022,ser_2982,2000,75.32,Global
+est_022,ser_2983,2009,42.41,Regional
+est_017,ser_2984,2006,154.68,Regional
+est_030,ser_2985,2007,5.3,Nacional
+est_013,ser_2986,2002,135.07,Nacional
+est_001,ser_2987,2009,66.19,Nacional
+est_009,ser_2988,2016,65.95,Nacional
+est_020,ser_2989,2020,111.85,Global
+est_016,ser_2990,2001,67.92,Regional
+est_027,ser_2991,2022,132.19,Nacional
+est_027,ser_2992,2018,131.12,Nacional
+est_010,ser_2993,2023,193.69,Nacional
+est_004,ser_2994,2013,196.73,Global
+est_026,ser_2995,2023,94.4,Nacional
+est_004,ser_2996,1996,134.24,Global
+est_030,ser_2997,2024,111.05,Streaming exclusivo
+est_008,ser_2998,2006,17.81,Global
+est_039,ser_2999,2002,130.86,Nacional
+est_031,ser_3000,2007,4.42,Nacional

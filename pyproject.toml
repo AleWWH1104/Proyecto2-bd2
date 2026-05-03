@@ -1,0 +1,23 @@
+[project]
+name = "proyecto-series-neo4j"
+version = "1.0.0"
+description = "Motor de Recomendación de Series - Proyecto 2 Neo4j - CC3089 Base de Datos 2"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "neo4j>=5.25.0",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.9.0",
+    "python-multipart>=0.0.12",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.7.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

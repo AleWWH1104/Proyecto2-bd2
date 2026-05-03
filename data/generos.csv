@@ -1,0 +1,51 @@
+id,nombre,descripcion,popularidad,tendencia,anio
+gen_001,Drama,Series con narrativa profunda y desarrollo de personajes,7.16,True,1985
+gen_002,Comedia,Series para entretener y hacer reír,4.59,True,1963
+gen_003,Acción,Series con secuencias intensas y aventura,7.4,True,2004
+gen_004,Ciencia Ficción,Series futuristas y especulativas,3.21,True,1977
+gen_005,Fantasía,Mundos mágicos y elementos sobrenaturales,4.51,True,2021
+gen_006,Terror,Series de suspenso y miedo,4.29,False,1978
+gen_007,Misterio,Tramas con enigmas por resolver,5.92,False,1950
+gen_008,Crimen,Investigaciones criminales y thrillers,7.93,True,2004
+gen_009,Romance,Historias de amor y relaciones,5.21,True,1977
+gen_010,Aventura,Viajes y exploración,9.22,False,1963
+gen_011,Animación,Series animadas para todas las edades,3.6,True,1995
+gen_012,Documental,Contenido factual y educativo,8.51,False,1955
+gen_013,Histórico,Ambientadas en períodos históricos,7.74,True,1998
+gen_014,Guerra,Conflictos bélicos y militares,3.51,False,1996
+gen_015,Western,El viejo oeste americano,6.75,True,1955
+gen_016,Musical,Series con números musicales,7.3,False,1960
+gen_017,Deportes,Competencias y narrativas deportivas,8.56,True,1998
+gen_018,Biográfico,Vidas de personas reales,4.81,False,1970
+gen_019,Político,Tramas con poder y gobierno,5.41,True,1984
+gen_020,Sobrenatural,Elementos paranormales,7.56,True,1971
+gen_021,Adolescente,Dirigidas a público joven,6.47,True,1970
+gen_022,Familiar,Para toda la familia,6.0,False,2021
+gen_023,Médico,Ambientes hospitalarios,4.43,False,1957
+gen_024,Legal,Cortes y abogados,4.49,True,1990
+gen_025,Espionaje,Agentes secretos y conspiraciones,5.61,True,1977
+gen_026,Distopía,Sociedades opresivas del futuro,8.94,False,1977
+gen_027,Postapocalíptico,Después del fin del mundo,7.26,False,2008
+gen_028,Superhéroes,Personajes con poderes extraordinarios,3.93,True,1981
+gen_029,Cyberpunk,Tecnología y sociedad oscura,7.84,False,2024
+gen_030,Steampunk,Estética victoriana con tecnología vapor,5.78,False,1996
+gen_031,Slice of Life,Vida cotidiana,4.43,True,2015
+gen_032,Psicológico,Exploración de la mente humana,6.21,True,1964
+gen_033,Antología,Historias independientes por temporada,3.99,True,2004
+gen_034,Procedimental,Caso por episodio,6.88,False,1998
+gen_035,Sitcom,Comedia de situaciones,6.87,False,2017
+gen_036,Dramedia,Mezcla de drama y comedia,4.63,True,1964
+gen_037,Thriller,Suspenso intenso,7.43,False,1993
+gen_038,Reality,Contenido no ficcional,3.73,False,1970
+gen_039,Talk Show,Programas de entrevistas,5.95,False,2014
+gen_040,Variedades,Mezcla de formatos,7.95,True,1988
+gen_041,Educativo,Aprendizaje y conocimiento,8.47,True,1969
+gen_042,Infantil,Para niños,5.43,True,2019
+gen_043,Juvenil,Para adolescentes,9.2,True,1991
+gen_044,Adulto,Contenido para adultos,6.18,True,1996
+gen_045,Internacional,Producciones de varios países,8.71,False,1980
+gen_046,Independiente,Producción independiente,3.38,True,1960
+gen_047,Experimental,Formato innovador,7.76,True,2018
+gen_048,Noir,Estilo oscuro y cínico,7.98,True,2010
+gen_049,Neo-Noir,Versión moderna del noir,9.15,True,1983
+gen_050,Mockumentary,Falso documental,6.43,False,1977

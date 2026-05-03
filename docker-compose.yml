@@ -1,0 +1,32 @@
+services:
+  neo4j:
+    image: neo4j:5.15-community
+    container_name: neo4j-series
+    restart: unless-stopped
+    ports:
+      - "7474:7474"   # Neo4j Browser (interfaz web)
+      - "7687:7687"   # Bolt (conexión del driver)
+    environment:
+      # Usuario y contraseña (deben coincidir con el .env)
+      NEO4J_AUTH: neo4j/password123
+      # Memoria
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+      # Aceptar términos de licencia community
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
+      # Plugins (APOC para algoritmos extra)
+      NEO4J_PLUGINS: '["apoc"]'
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - ./data:/var/lib/neo4j/import   # Para LOAD CSV desde archivos locales
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
