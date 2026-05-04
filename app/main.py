@@ -4,23 +4,12 @@ Inicializa la app, conecta a Neo4j y registra todos los routers.
 Para correr: uv run uvicorn app.main:app --reload
 """
 
-from fastapi import FastAPI
 from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+
 from app.database import Neo4jDriver
-
-# ── Persona 1 ────────────────────────────────────────────────
-from app.routers import series
-from app.routers import generos
-from app.routers import plataformas
-from app.routers import relaciones
-from app.routers import consultas
-
-# ── Persona 2 & 3 (descomentar conforme avancen) ─────────────
-# from app.routers import usuarios
-# from app.routers import resenas
-# from app.routers import actores
-# from app.routers import estudios
-# from app.routers import admin
+from app.routers import consultas, generos, plataformas, relaciones, resenas, series, usuarios
 
 
 @asynccontextmanager
@@ -77,19 +66,13 @@ def health():
 
 
 # ============================================
-# ROUTERS — PERSONA 1
+# REGISTRO DE ROUTERS
 # ============================================
+
 app.include_router(series.router)
 app.include_router(generos.router)
 app.include_router(plataformas.router)
+app.include_router(usuarios.router)
 app.include_router(relaciones.router)
+app.include_router(resenas.router)
 app.include_router(consultas.router)
-
-# ============================================
-# ROUTERS — PERSONA 2 & 3 (pendientes)
-# ============================================
-# app.include_router(usuarios.router)
-# app.include_router(resenas.router)
-# app.include_router(actores.router)
-# app.include_router(estudios.router)
-# app.include_router(admin.router)

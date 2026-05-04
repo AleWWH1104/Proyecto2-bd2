@@ -1,42 +1,40 @@
-"""Router para Relaciones — Persona 1.
-
-Endpoints:
-    POST   /relaciones/pertenece-a/{serie_id}/{genero_id}    - Crear PERTENECE_A
-    PATCH  /relaciones/pertenece-a/{serie_id}/{genero_id}    - Actualizar PERTENECE_A
-    DELETE /relaciones/pertenece-a/{serie_id}/{genero_id}    - Eliminar PERTENECE_A
-    POST   /relaciones/transmite/{plataforma_id}/{serie_id}  - Crear TRANSMITE
-    POST   /relaciones/similar-a/{serie1_id}/{serie2_id}     - Crear SIMILAR_A
-"""
+"""Router para relaciones de Persona 1 y Persona 2."""
 
 from fastapi import APIRouter, HTTPException
+
 from app.models import (
+    EnListaCreate,
+    LeGustaCreate,
+    LeGustaEliminarMasivo,
+    OperacionMasivaResponse,
     PerteneceACreate,
     PerteneceAPatch,
-    TransmiteCreate,
+    RelacionResponse,
+    SigueACreate,
     SimilarACreate,
+    TransmiteCreate,
+    VioCreate,
+    VioMasivoUpdate,
 )
-from app import repositories
+from app.repositories import relaciones as relaciones_repo
 
-router = APIRouter(prefix="/relaciones", tags=["Relaciones"])
+
+router = APIRouter()
 
 
 # ============================================
-# PERTENECE_A
+# PERSONA 1 — RELACIONES DE SERIE
 # ============================================
 
 
 @router.post(
-    "/pertenece-a/{serie_id}/{genero_id}",
+    "/relaciones/pertenece-a/{serie_id}/{genero_id}",
     status_code=201,
+    tags=["Relaciones"],
     summary="Crear relación PERTENECE_A (Serie → Genero)",
 )
 def crear_pertenece_a(serie_id: str, genero_id: str, body: PerteneceACreate):
-    """Crea la relación PERTENECE_A con 3 propiedades.
-
-    Valida que Serie y Genero existan antes de crear la relación.
-    """
-    data = body.model_dump()
-    relacion = repositories.relaciones.crear_pertenece_a(serie_id, genero_id, data)
+    relacion = relaciones_repo.crear_pertenece_a(serie_id, genero_id, body.model_dump())
     if not relacion:
         raise HTTPException(
             status_code=404,
@@ -46,12 +44,12 @@ def crear_pertenece_a(serie_id: str, genero_id: str, body: PerteneceACreate):
 
 
 @router.patch(
-    "/pertenece-a/{serie_id}/{genero_id}",
-    summary="Actualizar propiedades de relación PERTENECE_A",
+    "/relaciones/pertenece-a/{serie_id}/{genero_id}",
+    tags=["Relaciones"],
+    summary="Actualizar propiedades de PERTENECE_A",
 )
 def actualizar_pertenece_a(serie_id: str, genero_id: str, body: PerteneceAPatch):
-    """Actualiza una o más propiedades de la relación PERTENECE_A."""
-    relacion = repositories.relaciones.actualizar_pertenece_a(serie_id, genero_id, body.propiedades)
+    relacion = relaciones_repo.actualizar_pertenece_a(serie_id, genero_id, body.propiedades)
     if not relacion:
         raise HTTPException(
             status_code=404,
@@ -61,12 +59,12 @@ def actualizar_pertenece_a(serie_id: str, genero_id: str, body: PerteneceAPatch)
 
 
 @router.delete(
-    "/pertenece-a/{serie_id}/{genero_id}",
+    "/relaciones/pertenece-a/{serie_id}/{genero_id}",
+    tags=["Relaciones"],
     summary="Eliminar relación PERTENECE_A",
 )
 def eliminar_pertenece_a(serie_id: str, genero_id: str):
-    """Elimina la relación PERTENECE_A entre una Serie y un Genero."""
-    ok = repositories.relaciones.eliminar_pertenece_a(serie_id, genero_id)
+    ok = relaciones_repo.eliminar_pertenece_a(serie_id, genero_id)
     if not ok:
         raise HTTPException(
             status_code=404,
@@ -75,23 +73,14 @@ def eliminar_pertenece_a(serie_id: str, genero_id: str):
     return {"mensaje": f"Relación PERTENECE_A entre '{serie_id}' y '{genero_id}' eliminada"}
 
 
-# ============================================
-# TRANSMITE
-# ============================================
-
-
 @router.post(
-    "/transmite/{plataforma_id}/{serie_id}",
+    "/relaciones/transmite/{plataforma_id}/{serie_id}",
     status_code=201,
+    tags=["Relaciones"],
     summary="Crear relación TRANSMITE (Plataforma → Serie)",
 )
 def crear_transmite(plataforma_id: str, serie_id: str, body: TransmiteCreate):
-    """Crea la relación TRANSMITE con 3 propiedades.
-
-    Valida que Plataforma y Serie existan antes de crear la relación.
-    """
-    data = body.model_dump()
-    relacion = repositories.relaciones.crear_transmite(plataforma_id, serie_id, data)
+    relacion = relaciones_repo.crear_transmite(plataforma_id, serie_id, body.model_dump())
     if not relacion:
         raise HTTPException(
             status_code=404,
@@ -100,26 +89,132 @@ def crear_transmite(plataforma_id: str, serie_id: str, body: TransmiteCreate):
     return relacion
 
 
-# ============================================
-# SIMILAR_A
-# ============================================
-
-
 @router.post(
-    "/similar-a/{serie1_id}/{serie2_id}",
+    "/relaciones/similar-a/{serie1_id}/{serie2_id}",
     status_code=201,
+    tags=["Relaciones"],
     summary="Crear relación SIMILAR_A (Serie → Serie)",
 )
 def crear_similar_a(serie1_id: str, serie2_id: str, body: SimilarACreate):
-    """Crea la relación SIMILAR_A entre dos Series con 3 propiedades.
-
-    Valida que ambas Series existan antes de crear la relación.
-    """
-    data = body.model_dump()
-    relacion = repositories.relaciones.crear_similar_a(serie1_id, serie2_id, data)
+    relacion = relaciones_repo.crear_similar_a(serie1_id, serie2_id, body.model_dump())
     if not relacion:
         raise HTTPException(
             status_code=404,
             detail=f"Serie '{serie1_id}' o Serie '{serie2_id}' no encontradas",
         )
     return relacion
+
+
+# ============================================
+# PERSONA 2 — RELACIONES DE USUARIO
+# ============================================
+
+
+@router.post(
+    "/usuarios/{usuario_id}/vio/{serie_id}",
+    response_model=RelacionResponse,
+    tags=["Relaciones Usuario→Serie"],
+    summary="Marcar serie como vista",
+)
+def marcar_vio(usuario_id: str, serie_id: str, datos: VioCreate):
+    rel = relaciones_repo.marcar_vio(
+        usuario_id=usuario_id,
+        serie_id=serie_id,
+        porcentajeVisto=datos.porcentajeVisto,
+        completada=datos.completada,
+        calificacion=datos.calificacion,
+    )
+    if rel is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Usuario {usuario_id} o Serie {serie_id} no encontrado",
+        )
+    return {"mensaje": "Relación VIO creada/actualizada", "relacion": rel}
+
+
+@router.patch(
+    "/usuarios/{usuario_id}/vio-masivo",
+    response_model=OperacionMasivaResponse,
+    tags=["Relaciones Usuario→Serie"],
+    summary="Actualizar varias VIO del usuario",
+)
+def actualizar_vio_masivo(usuario_id: str, datos: VioMasivoUpdate):
+    items = [item.model_dump() for item in datos.items]
+    afectados = relaciones_repo.actualizar_vio_masivo(usuario_id, items)
+    return {"mensaje": "Actualización masiva de VIO completada", "afectados": afectados}
+
+
+@router.post(
+    "/usuarios/{usuario_id}/le-gusta/{serie_id}",
+    response_model=RelacionResponse,
+    tags=["Relaciones Usuario→Serie"],
+    summary="Dar like a una serie",
+)
+def dar_like(usuario_id: str, serie_id: str, datos: LeGustaCreate):
+    rel = relaciones_repo.dar_like(
+        usuario_id=usuario_id,
+        serie_id=serie_id,
+        puntuacion=datos.puntuacion,
+        notificarx=datos.notificarx,
+    )
+    if rel is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Usuario {usuario_id} o Serie {serie_id} no encontrado",
+        )
+    return {"mensaje": "Relación LE_GUSTA creada/actualizada", "relacion": rel}
+
+
+@router.delete(
+    "/usuarios/{usuario_id}/le-gusta-masivo",
+    response_model=OperacionMasivaResponse,
+    tags=["Relaciones Usuario→Serie"],
+    summary="Quitar like a varias series",
+)
+def quitar_like_masivo(usuario_id: str, datos: LeGustaEliminarMasivo):
+    afectados = relaciones_repo.quitar_like_masivo(usuario_id, datos.serie_ids)
+    return {"mensaje": "Likes eliminados", "afectados": afectados}
+
+
+@router.post(
+    "/usuarios/{usuario_id}/en-lista/{serie_id}",
+    response_model=RelacionResponse,
+    tags=["Relaciones Usuario→Serie"],
+    summary="Agregar serie a la lista del usuario",
+)
+def agregar_a_lista(usuario_id: str, serie_id: str, datos: EnListaCreate):
+    rel = relaciones_repo.agregar_a_lista(
+        usuario_id=usuario_id,
+        serie_id=serie_id,
+        prioridad=datos.prioridad,
+        notificaciones=datos.notificaciones,
+    )
+    if rel is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Usuario {usuario_id} o Serie {serie_id} no encontrado",
+        )
+    return {"mensaje": "Relación EN_LISTA creada/actualizada", "relacion": rel}
+
+
+@router.post(
+    "/usuarios/{usuario_id}/sigue/{otro_usuario_id}",
+    response_model=RelacionResponse,
+    tags=["Relaciones Usuario→Usuario"],
+    summary="Seguir a otro usuario",
+)
+def seguir(usuario_id: str, otro_usuario_id: str, datos: SigueACreate):
+    if usuario_id == otro_usuario_id:
+        raise HTTPException(status_code=400, detail="Un usuario no puede seguirse a sí mismo")
+
+    rel = relaciones_repo.seguir(
+        usuario_id=usuario_id,
+        otro_usuario_id=otro_usuario_id,
+        notificaciones=datos.notificaciones,
+    )
+    if rel is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Usuario {usuario_id} o {otro_usuario_id} no encontrado",
+        )
+    return {"mensaje": "Relación SIGUE_A creada/actualizada", "relacion": rel}
