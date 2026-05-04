@@ -34,5 +34,11 @@ from app.models.resena import (
     ResenaResponse,
     ResenasListResponse,
 )
+from app.models.consultas import (
+    SerieRecomendada,
+    RecomendacionesResponse,
+    UsuarioInfluyente,
+    UsuariosInfluyentesResponse,
+)
 # Cuando se vayan agregando los demás:
 # from app.models.serie import SerieCreate, SerieResponse, ...
