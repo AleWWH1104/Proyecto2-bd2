@@ -7,10 +7,23 @@ En lugar de:
 Puedes hacer:
     from app.models import UsuarioCreate, SerieCreate
 """
+
 from app.models.common import (
     IdsRequest,
     PropiedadesRequest,
     EliminarPropiedadesRequest,
+)
+from app.models.serie import (
+    SerieCreate,
+    SeriePatch,
+    SerieResponse,
+    SerieDetalleResponse,
+    SerieListResponse,
+    SeriesMasivoPatchRequest,
+    GeneroCreate,
+    GeneroResponse,
+    PlataformaCreate,
+    PlataformaResponse,
 )
 from app.models.usuario import (
     UsuarioCreate,
@@ -19,6 +32,10 @@ from app.models.usuario import (
     UsuariosListResponse,
 )
 from app.models.relaciones import (
+    PerteneceACreate,
+    PerteneceAPatch,
+    TransmiteCreate,
+    SimilarACreate,
     VioCreate,
     VioMasivoItem,
     VioMasivoUpdate,
@@ -43,5 +60,3 @@ from app.models.consultas import (
     PesosUsados,
     RecomendacionesAvanzadasResponse,
 )
-# Cuando se vayan agregando los demás:
-# from app.models.serie import SerieCreate, SerieResponse, ...

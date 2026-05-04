@@ -1,28 +1,148 @@
-"""Repository para relaciones del Usuario.
+"""Repository para relaciones de Persona 1 y Persona 2."""
 
-Cypher para las relaciones:
-- Usuario→Serie:   VIO, LE_GUSTA, EN_LISTA
-- Usuario→Usuario: SIGUE_A
-
-Patrón general:
-- POST individual → MERGE (idempotente: si existe la actualiza)
-- PATCH masivo    → UNWIND + MATCH + SET
-- DELETE masivo   → MATCH + WHERE id IN [...] + DELETE
-"""
 from typing import Optional
 
 from app.database import get_session
 from app.repositories._helpers import to_native
 
 
+# ============================================
+# HELPERS PERSONA 2
+# ============================================
+
+
 def _filtrar_no_nulos(d: dict) -> dict:
-    """Quita las claves con valor None — para no sobrescribir con null en Neo4j."""
     return {k: v for k, v in d.items() if v is not None}
 
 
 # ============================================
-# Usuario -[VIO]-> Serie
+# PERSONA 1 — RELACIONES DE SERIE
 # ============================================
+
+
+def crear_pertenece_a(serie_id: str, genero_id: str, data: dict) -> Optional[dict]:
+    fecha = data.get("fechaAsignacion")
+    if hasattr(fecha, "isoformat"):
+        data["fechaAsignacion"] = fecha.isoformat()
+
+    query = """
+        MATCH (s:Serie {id: $serie_id})
+        MATCH (g:Genero {id: $genero_id})
+        CREATE (s)-[r:PERTENECE_A {
+            esPrincipal: $esPrincipal,
+            relevancia: $relevancia,
+            fechaAsignacion: date($fechaAsignacion)
+        }]->(g)
+        RETURN s.id AS serie_id, g.id AS genero_id,
+               r.esPrincipal AS esPrincipal,
+               r.relevancia AS relevancia,
+               r.fechaAsignacion AS fechaAsignacion
+    """
+    with get_session() as session:
+        record = session.run(query, serie_id=serie_id, genero_id=genero_id, **data).single()
+        if not record:
+            return None
+        row = dict(record)
+        return to_native(row)
+
+
+def actualizar_pertenece_a(serie_id: str, genero_id: str, propiedades: dict) -> Optional[dict]:
+    for k, v in propiedades.items():
+        if hasattr(v, "isoformat"):
+            propiedades[k] = v.isoformat()
+
+    set_parts = []
+    params = {"serie_id": serie_id, "genero_id": genero_id}
+    for key, value in propiedades.items():
+        if key == "fechaAsignacion":
+            set_parts.append(f"r.{key} = date(${key})")
+        else:
+            set_parts.append(f"r.{key} = ${key}")
+        params[key] = value
+
+    if not set_parts:
+        return None
+
+    query = f"""
+        MATCH (s:Serie {{id: $serie_id}})-[r:PERTENECE_A]->(g:Genero {{id: $genero_id}})
+        SET {", ".join(set_parts)}
+        RETURN s.id AS serie_id, g.id AS genero_id,
+               r.esPrincipal AS esPrincipal,
+               r.relevancia AS relevancia,
+               r.fechaAsignacion AS fechaAsignacion
+    """
+    with get_session() as session:
+        record = session.run(query, params).single()
+        if not record:
+            return None
+        return to_native(dict(record))
+
+
+def eliminar_pertenece_a(serie_id: str, genero_id: str) -> bool:
+    query = """
+        MATCH (s:Serie {id: $serie_id})-[r:PERTENECE_A]->(g:Genero {id: $genero_id})
+        DELETE r
+        RETURN count(r) AS eliminadas
+    """
+    with get_session() as session:
+        record = session.run(query, serie_id=serie_id, genero_id=genero_id).single()
+        return bool(record and record["eliminadas"] > 0)
+
+
+def crear_transmite(plataforma_id: str, serie_id: str, data: dict) -> Optional[dict]:
+    fecha = data.get("fechaDisponible")
+    if hasattr(fecha, "isoformat"):
+        data["fechaDisponible"] = fecha.isoformat()
+
+    query = """
+        MATCH (p:Plataforma {id: $plataforma_id})
+        MATCH (s:Serie {id: $serie_id})
+        CREATE (p)-[r:TRANSMITE {
+            fechaDisponible: date($fechaDisponible),
+            exclusiva: $exclusiva,
+            regiones: $regiones
+        }]->(s)
+        RETURN p.id AS plataforma_id, s.id AS serie_id,
+               r.fechaDisponible AS fechaDisponible,
+               r.exclusiva AS exclusiva,
+               r.regiones AS regiones
+    """
+    with get_session() as session:
+        record = session.run(query, plataforma_id=plataforma_id, serie_id=serie_id, **data).single()
+        if not record:
+            return None
+        return to_native(dict(record))
+
+
+def crear_similar_a(serie1_id: str, serie2_id: str, data: dict) -> Optional[dict]:
+    fecha = data.get("fechaCalculada")
+    if hasattr(fecha, "isoformat"):
+        data["fechaCalculada"] = fecha.isoformat()
+
+    query = """
+        MATCH (s1:Serie {id: $serie1_id})
+        MATCH (s2:Serie {id: $serie2_id})
+        CREATE (s1)-[r:SIMILAR_A {
+            puntuacionSimilitud: $puntuacionSimilitud,
+            algoritmo: $algoritmo,
+            fechaCalculada: date($fechaCalculada)
+        }]->(s2)
+        RETURN s1.id AS serie1_id, s2.id AS serie2_id,
+               r.puntuacionSimilitud AS puntuacionSimilitud,
+               r.algoritmo AS algoritmo,
+               r.fechaCalculada AS fechaCalculada
+    """
+    with get_session() as session:
+        record = session.run(query, serie1_id=serie1_id, serie2_id=serie2_id, **data).single()
+        if not record:
+            return None
+        return to_native(dict(record))
+
+
+# ============================================
+# PERSONA 2 — RELACIONES DE USUARIO
+# ============================================
+
 
 def marcar_vio(
     usuario_id: str,
@@ -31,15 +151,13 @@ def marcar_vio(
     completada: bool,
     calificacion: Optional[float] = None,
 ) -> Optional[dict]:
-    """MERGE de la relación VIO. Crea o actualiza.
-
-    Devuelve la relación serializada, o None si el usuario o la serie no existen.
-    """
-    props = _filtrar_no_nulos({
-        "porcentajeVisto": porcentajeVisto,
-        "completada": completada,
-        "calificacion": calificacion,
-    })
+    props = _filtrar_no_nulos(
+        {
+            "porcentajeVisto": porcentajeVisto,
+            "completada": completada,
+            "calificacion": calificacion,
+        }
+    )
     query = """
         MATCH (u:Usuario {id: $usuario_id})
         MATCH (s:Serie {id: $serie_id})
@@ -49,20 +167,13 @@ def marcar_vio(
         RETURN r
     """
     with get_session() as session:
-        record = session.run(
-            query, usuario_id=usuario_id, serie_id=serie_id, props=props
-        ).single()
+        record = session.run(query, usuario_id=usuario_id, serie_id=serie_id, props=props).single()
         if record is None:
             return None
         return to_native(dict(record["r"]))
 
 
 def actualizar_vio_masivo(usuario_id: str, items: list[dict]) -> int:
-    """Actualiza varias relaciones VIO del usuario en una sola transacción.
-
-    Cada item debe traer `serie_id` + las propiedades a actualizar.
-    Devuelve la cantidad de relaciones actualizadas.
-    """
     payload = []
     for item in items:
         serie_id = item.get("serie_id")
@@ -80,17 +191,12 @@ def actualizar_vio_masivo(usuario_id: str, items: list[dict]) -> int:
         return record["afectados"] if record else 0
 
 
-# ============================================
-# Usuario -[LE_GUSTA]-> Serie
-# ============================================
-
 def dar_like(
     usuario_id: str,
     serie_id: str,
     puntuacion: Optional[int] = None,
     notificarx: Optional[bool] = None,
 ) -> Optional[dict]:
-    """MERGE de LE_GUSTA. Crea o actualiza."""
     props = _filtrar_no_nulos({"puntuacion": puntuacion, "notificarx": notificarx})
     query = """
         MATCH (u:Usuario {id: $usuario_id})
@@ -101,31 +207,24 @@ def dar_like(
         RETURN r
     """
     with get_session() as session:
-        record = session.run(
-            query, usuario_id=usuario_id, serie_id=serie_id, props=props
-        ).single()
+        record = session.run(query, usuario_id=usuario_id, serie_id=serie_id, props=props).single()
         if record is None:
             return None
         return to_native(dict(record["r"]))
 
 
 def quitar_like_masivo(usuario_id: str, serie_ids: list[str]) -> int:
-    """Quita el LE_GUSTA del usuario sobre varias series. Devuelve cuántas se borraron."""
     query = """
         MATCH (u:Usuario {id: $usuario_id})-[r:LE_GUSTA]->(s:Serie)
         WHERE s.id IN $serie_ids
-        WITH r, count(r) AS _
-        DELETE r
-        RETURN count(_) AS afectados
+        WITH collect(r) AS rels
+        FOREACH (r IN rels | DELETE r)
+        RETURN size(rels) AS afectados
     """
     with get_session() as session:
         record = session.run(query, usuario_id=usuario_id, serie_ids=serie_ids).single()
         return record["afectados"] if record else 0
 
-
-# ============================================
-# Usuario -[EN_LISTA]-> Serie
-# ============================================
 
 def agregar_a_lista(
     usuario_id: str,
@@ -133,11 +232,7 @@ def agregar_a_lista(
     prioridad: Optional[int] = None,
     notificaciones: Optional[bool] = None,
 ) -> Optional[dict]:
-    """MERGE de EN_LISTA."""
-    props = _filtrar_no_nulos({
-        "prioridad": prioridad,
-        "notificaciones": notificaciones,
-    })
+    props = _filtrar_no_nulos({"prioridad": prioridad, "notificaciones": notificaciones})
     query = """
         MATCH (u:Usuario {id: $usuario_id})
         MATCH (s:Serie {id: $serie_id})
@@ -147,26 +242,19 @@ def agregar_a_lista(
         RETURN r
     """
     with get_session() as session:
-        record = session.run(
-            query, usuario_id=usuario_id, serie_id=serie_id, props=props
-        ).single()
+        record = session.run(query, usuario_id=usuario_id, serie_id=serie_id, props=props).single()
         if record is None:
             return None
         return to_native(dict(record["r"]))
 
-
-# ============================================
-# Usuario -[SIGUE_A]-> Usuario
-# ============================================
 
 def seguir(
     usuario_id: str,
     otro_usuario_id: str,
     notificaciones: Optional[bool] = None,
 ) -> Optional[dict]:
-    """MERGE de SIGUE_A. Si el otro ya sigue de vuelta, marca mutuo=true en ambas."""
     if usuario_id == otro_usuario_id:
-        return None  # un usuario no puede seguirse a sí mismo
+        return None
 
     props = _filtrar_no_nulos({"notificaciones": notificaciones})
     query = """

@@ -3,26 +3,18 @@
 Inicializa la app, conecta a Neo4j y registra todos los routers.
 Para correr: uv run uvicorn app.main:app --reload
 """
-from fastapi import FastAPI
-from contextlib import asynccontextmanager
-from app.database import Neo4jDriver
 
-# Importar routers (se irán agregando conforme se creen)
-from app.routers import usuarios, relaciones, resenas, consultas
-# from app.routers import (
-#     series,
-#     actores,
-#     generos,
-#     plataformas,
-#     estudios,
-#     admin,
-# )
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+
+from app.database import Neo4jDriver
+from app.routers import consultas, generos, plataformas, relaciones, resenas, series, usuarios
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Maneja el ciclo de vida de la app: conexión al iniciar, cierre al apagar."""
-    # Startup
     print("Iniciando aplicación...")
     if Neo4jDriver.verify_connectivity():
         print("Conectado a Neo4j correctamente")
@@ -31,7 +23,6 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    # Shutdown
     Neo4jDriver.close()
     print("Conexión a Neo4j cerrada")
 
@@ -47,18 +38,41 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+
+# ============================================
+# ENDPOINTS BASE
+# ============================================
+
+
+@app.get("/", tags=["Base"])
+def root():
+    """Mensaje de bienvenida y enlaces a la documentación."""
+    return {
+        "mensaje": "API funcionando correctamente",
+        "documentacion_swagger": "/docs",
+        "documentacion_redoc": "/redoc",
+        "health_check": "/health",
+    }
+
+
+@app.get("/health", tags=["Base"])
+def health():
+    """Health check de la API y la conexión a Neo4j."""
+    connected = Neo4jDriver.verify_connectivity()
+    return {
+        "status": "ok" if connected else "degraded",
+        "neo4j": "conectado" if connected else "sin conexión",
+    }
+
+
 # ============================================
 # REGISTRO DE ROUTERS
 # ============================================
-# Descomenta cada uno conforme se vayan creando
 
+app.include_router(series.router)
+app.include_router(generos.router)
+app.include_router(plataformas.router)
 app.include_router(usuarios.router)
 app.include_router(relaciones.router)
 app.include_router(resenas.router)
 app.include_router(consultas.router)
-# app.include_router(series.router)
-# app.include_router(actores.router)
-# app.include_router(generos.router)
-# app.include_router(plataformas.router)
-# app.include_router(estudios.router)
-# app.include_router(admin.router)

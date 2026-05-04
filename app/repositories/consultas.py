@@ -1,21 +1,89 @@
-"""Repository para consultas analíticas / de recomendación.
+"""Repository para consultas analíticas y de recomendación.
 
-Queries que combinan varios nodos y relaciones para responder preguntas
-de negocio (no son CRUD de una entidad puntual).
+Combina las consultas de Persona 1 y Persona 2.
 """
+
 from app.database import get_session
 
 
-def recomendaciones_para_usuario(usuario_id: str, limit: int = 10) -> list[dict]:
-    """Filtrado colaborativo: series que les gustan a usuarios que comparten
-    gustos con el usuario, excluyendo lo que el usuario ya conoce.
+# ============================================
+# PERSONA 1
+# ============================================
 
-    Lógica:
-    1. Buscar otros usuarios que también dieron LE_GUSTA a series que al usuario le gustan.
-    2. Tomar las series que les gustan a esos usuarios "similares".
-    3. Excluir las que el usuario ya VIO, le gustan o tiene EN_LISTA.
-    4. Rankear por cantidad de usuarios similares que las recomiendan.
+
+def series_mejor_calificadas_por_genero() -> list:
+    """Top series por género ordenadas por calificación promedio."""
+    query = """
+        MATCH (s:Serie)-[:PERTENECE_A]->(g:Genero)
+        WITH g, s
+        ORDER BY s.calificacion DESC
+        WITH g,
+             collect(s)[0..5] AS top_series,
+             avg(s.calificacion) AS promedio_calificacion,
+             count(s) AS cantidad_series
+        ORDER BY promedio_calificacion DESC
+        RETURN
+            g.id AS genero_id,
+            g.nombre AS genero,
+            [ts IN top_series | {id: ts.id, titulo: ts.titulo, calificacion: ts.calificacion}] AS top_series,
+            promedio_calificacion,
+            cantidad_series
     """
+    with get_session() as session:
+        result = session.run(query)
+        return [
+            {
+                "genero_id": record["genero_id"],
+                "genero": record["genero"],
+                "top_series": list(record["top_series"]),
+                "promedio_calificacion": record["promedio_calificacion"],
+                "cantidad_series": record["cantidad_series"],
+            }
+            for record in result
+        ]
+
+
+def plataformas_mas_exclusivas() -> list:
+    """Plataformas ordenadas por porcentaje de series exclusivas."""
+    query = """
+        MATCH (p:Plataforma)-[r:TRANSMITE]->(s:Serie)
+        WITH p,
+             count(s) AS total_series,
+             count(CASE WHEN r.exclusiva = true THEN 1 END) AS total_exclusivas
+        WHERE total_series > 0
+        WITH p,
+             total_series,
+             total_exclusivas,
+             round(100.0 * total_exclusivas / total_series, 2) AS porcentaje_exclusivas
+        ORDER BY porcentaje_exclusivas DESC, total_exclusivas DESC
+        RETURN
+            p.id AS plataforma_id,
+            p.nombre AS plataforma,
+            total_exclusivas,
+            total_series,
+            porcentaje_exclusivas
+    """
+    with get_session() as session:
+        result = session.run(query)
+        return [
+            {
+                "plataforma_id": record["plataforma_id"],
+                "plataforma": record["plataforma"],
+                "total_exclusivas": record["total_exclusivas"],
+                "total_series": record["total_series"],
+                "porcentaje_exclusivas": record["porcentaje_exclusivas"],
+            }
+            for record in result
+        ]
+
+
+# ============================================
+# PERSONA 2
+# ============================================
+
+
+def recomendaciones_para_usuario(usuario_id: str, limit: int = 10) -> list[dict]:
+    """Filtrado colaborativo básico."""
     query = """
         MATCH (u:Usuario {id: $usuario_id})-[:LE_GUSTA]->(:Serie)<-[:LE_GUSTA]-(otro:Usuario)
         WHERE otro.id <> u.id
@@ -39,7 +107,6 @@ def recomendaciones_para_usuario(usuario_id: str, limit: int = 10) -> list[dict]
 
 
 def usuario_existe(usuario_id: str) -> bool:
-    """Helper para distinguir 'usuario sin recomendaciones' de 'usuario inexistente'."""
     query = "MATCH (u:Usuario {id: $id}) RETURN u LIMIT 1"
     with get_session() as session:
         return session.run(query, id=usuario_id).single() is not None
@@ -54,39 +121,17 @@ def recomendaciones_avanzadas(
     w_popularidad: float = 0.2,
     w_novedad: float = 0.3,
 ) -> list[dict]:
-    """Sistema de recomendación HÍBRIDO con Jaccard Similarity.
-
-    Combina 5 señales en un score final por serie candidata:
-      1. score_jaccard  → suma de Jaccard(usuario, otro) para cada otro
-                           que likeó la serie. Jaccard = |A∩B| / |A∪B|.
-      2. bonus_genero   → cuántos géneros de la serie aparecen entre los
-                           géneros que ya le gustan al usuario.
-      3. bonus_social   → cuánta gente que sigue le dio like a la serie.
-      4. popularidad    → log(total_likes + 1), suaviza colas largas.
-      5. novedad        → exp(-años / 5), favorece series recientes.
-
-    El score final es una combinación lineal con pesos configurables:
-      score = Σ(w_i * señal_i)
-
-    Filtra series ya vistas/likeadas/en lista del usuario.
-
-    Cold-start: si el usuario no tiene likes, score_jaccard=0 y
-    bonus_genero=0 → la recomendación cae a popularidad + novedad
-    (fallback razonable para usuarios nuevos).
-    """
+    """Sistema de recomendación híbrido con Jaccard Similarity."""
     query = """
-        // 1. Perfil del usuario: sus likes
         MATCH (u:Usuario {id: $usuario_id})
         OPTIONAL MATCH (u)-[:LE_GUSTA]->(s_u:Serie)
         WITH u, collect(DISTINCT s_u) AS likes_u
 
-        // 2. Candidatos: series que el usuario aún no conoce
         MATCH (rec:Serie)
         WHERE NOT (u)-[:VIO]->(rec)
           AND NOT (u)-[:LE_GUSTA]->(rec)
           AND NOT (u)-[:EN_LISTA]->(rec)
 
-        // 3. Para cada otro usuario que likeó rec, calcular Jaccard(u, otro)
         OPTIONAL MATCH (otro:Usuario)-[:LE_GUSTA]->(rec)
         WHERE otro <> u
         OPTIONAL MATCH (otro)-[:LE_GUSTA]->(s_o:Serie)
@@ -101,39 +146,32 @@ def recomendaciones_avanzadas(
                      (size(likes_u) + size(likes_otro) - size(interseccion))
              END AS jaccard_uo
 
-        // 4. ¿u sigue a otro?  → bonus social
         WITH u, likes_u, rec, otro, jaccard_uo,
              CASE
                 WHEN otro IS NOT NULL AND exists((u)-[:SIGUE_A]->(otro)) THEN 1
                 ELSE 0
              END AS es_seguido
 
-        // 5. Agregar todas las contribuciones de "otros" en una sola fila por rec
         WITH u, likes_u, rec,
              sum(jaccard_uo) AS score_jaccard,
              sum(es_seguido) AS bonus_social,
-             count(otro)     AS coincidencias
+             count(otro) AS coincidencias
 
-        // 6. Bonus de género: géneros de rec que también están en los gustos
         OPTIONAL MATCH (rec)-[:PERTENECE_A]->(g:Genero)<-[:PERTENECE_A]-(s_match:Serie)
         WHERE s_match IN likes_u
         WITH rec, score_jaccard, bonus_social, coincidencias,
              count(DISTINCT g) AS bonus_genero
 
-        // 7. Popularidad de rec (cuántos likes en total)
         OPTIONAL MATCH (rec)<-[:LE_GUSTA]-(:Usuario)
         WITH rec, score_jaccard, bonus_social, coincidencias, bonus_genero,
              count(*) AS popularidad
 
-        // 8. Novedad: decay exponencial de años desde lanzamiento.
-        //     Series sin fechaLanzamiento → 0.5 (neutral, no se penalizan).
         WITH rec, score_jaccard, bonus_social, coincidencias, bonus_genero, popularidad,
              CASE
                 WHEN rec.fechaLanzamiento IS NULL THEN 0.5
                 ELSE exp(-toFloat(date().year - rec.fechaLanzamiento.year) / 5.0)
              END AS novedad
 
-        // 9. Score final = combinación lineal de señales
         WITH rec, score_jaccard, bonus_genero, bonus_social, coincidencias,
              popularidad, novedad,
              ($w_jaccard * score_jaccard) +
@@ -143,14 +181,14 @@ def recomendaciones_avanzadas(
              ($w_novedad * novedad) AS score
 
         WHERE score > 0
-        RETURN rec.id    AS serie_id,
+        RETURN rec.id AS serie_id,
                rec.titulo AS titulo,
-               round(score * 1000) / 1000.0          AS score,
-               round(score_jaccard * 1000) / 1000.0  AS score_jaccard,
+               round(score * 1000) / 1000.0 AS score,
+               round(score_jaccard * 1000) / 1000.0 AS score_jaccard,
                bonus_genero,
                bonus_social,
                popularidad,
-               round(novedad * 1000) / 1000.0        AS novedad,
+               round(novedad * 1000) / 1000.0 AS novedad,
                coincidencias
         ORDER BY score DESC
         LIMIT $limit
@@ -170,12 +208,7 @@ def recomendaciones_avanzadas(
 
 
 def usuarios_influyentes(limit: int = 10) -> list[dict]:
-    """Top de usuarios por influencia.
-
-    Influencia = seguidores * 2 + reseñas escritas.
-    Los seguidores pesan más que las reseñas (criterio editorial: tener audiencia
-    es más relevante que producir contenido para definir 'influencia').
-    """
+    """Top de usuarios por influencia."""
     query = """
         MATCH (u:Usuario)
         OPTIONAL MATCH (u)<-[:SIGUE_A]-(seguidor:Usuario)
