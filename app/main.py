@@ -3,29 +3,29 @@
 Inicializa la app, conecta a Neo4j y registra todos los routers.
 Para correr: uv run uvicorn app.main:app --reload
 """
+
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.database import Neo4jDriver, get_session
+from app.database import Neo4jDriver
 
-# Importar routers (se irán agregando conforme se creen)
-# from app.routers import (
-#     series,
-#     usuarios,
-#     actores,
-#     generos,
-#     plataformas,
-#     estudios,
-#     resenas,
-#     relaciones,
-#     consultas,
-#     admin,
-# )
+# ── Persona 1 ────────────────────────────────────────────────
+from app.routers import series
+from app.routers import generos
+from app.routers import plataformas
+from app.routers import relaciones
+from app.routers import consultas
+
+# ── Persona 2 & 3 (descomentar conforme avancen) ─────────────
+# from app.routers import usuarios
+# from app.routers import resenas
+# from app.routers import actores
+# from app.routers import estudios
+# from app.routers import admin
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Maneja el ciclo de vida de la app: conexión al iniciar, cierre al apagar."""
-    # Startup
     print("Iniciando aplicación...")
     if Neo4jDriver.verify_connectivity():
         print("Conectado a Neo4j correctamente")
@@ -34,7 +34,6 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    # Shutdown
     Neo4jDriver.close()
     print("Conexión a Neo4j cerrada")
 
@@ -55,6 +54,7 @@ app = FastAPI(
 # ENDPOINTS BASE
 # ============================================
 
+
 @app.get("/", tags=["Base"])
 def root():
     """Mensaje de bienvenida y enlaces a la documentación."""
@@ -66,18 +66,30 @@ def root():
     }
 
 
-# ============================================
-# REGISTRO DE ROUTERS
-# ============================================
-# Descomenta cada uno conforme se vayan creando
+@app.get("/health", tags=["Base"])
+def health():
+    """Health check de la API y la conexión a Neo4j."""
+    connected = Neo4jDriver.verify_connectivity()
+    return {
+        "status": "ok" if connected else "degraded",
+        "neo4j": "conectado" if connected else "sin conexión",
+    }
 
-# app.include_router(series.router)
+
+# ============================================
+# ROUTERS — PERSONA 1
+# ============================================
+app.include_router(series.router)
+app.include_router(generos.router)
+app.include_router(plataformas.router)
+app.include_router(relaciones.router)
+app.include_router(consultas.router)
+
+# ============================================
+# ROUTERS — PERSONA 2 & 3 (pendientes)
+# ============================================
 # app.include_router(usuarios.router)
-# app.include_router(actores.router)
-# app.include_router(generos.router)
-# app.include_router(plataformas.router)
-# app.include_router(estudios.router)
 # app.include_router(resenas.router)
-# app.include_router(relaciones.router)
-# app.include_router(consultas.router)
+# app.include_router(actores.router)
+# app.include_router(estudios.router)
 # app.include_router(admin.router)
