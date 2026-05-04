@@ -3,7 +3,7 @@
 Aquí van todos los modelos de datos que usa la API.
 Se llenarán conforme se vayan creando las entidades.
 """
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 from typing import Optional, List
 from datetime import date
 
