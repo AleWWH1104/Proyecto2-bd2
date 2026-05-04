@@ -39,6 +39,9 @@ from app.models.consultas import (
     RecomendacionesResponse,
     UsuarioInfluyente,
     UsuariosInfluyentesResponse,
+    SerieRecomendadaAvanzada,
+    PesosUsados,
+    RecomendacionesAvanzadasResponse,
 )
 # Cuando se vayan agregando los demás:
 # from app.models.serie import SerieCreate, SerieResponse, ...
