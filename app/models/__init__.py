@@ -29,6 +29,10 @@ from app.models.relaciones import (
     RelacionResponse,
     OperacionMasivaResponse,
 )
+from app.models.resena import (
+    ResenaCreate,
+    ResenaResponse,
+    ResenasListResponse,
+)
 # Cuando se vayan agregando los demás:
 # from app.models.serie import SerieCreate, SerieResponse, ...
-# from app.models.resena import ResenaCreate, ResenaResponse, ...
