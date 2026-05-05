@@ -162,6 +162,33 @@ def crear(nombre: str, email: str, edad: int, activo: bool = True) -> dict:
         return _serializar_usuario(record["u"])
 
 
+def actualizar(usuario_id: str, propiedades: dict) -> Optional[dict]:
+    """Agrega o actualiza propiedades de un usuario existente.
+
+    Devuelve el usuario actualizado o None si no existe.
+    Bloquea cambios sobre id y fechaRegistro para preservar integridad.
+    """
+    propiedades_filtradas = {
+        k: v for k, v in propiedades.items() if k not in ("id", "fechaRegistro")
+    }
+    if not propiedades_filtradas:
+        # Nada que actualizar: devolver el usuario tal cual si existe
+        return obtener_por_id(usuario_id)
+
+    query = """
+        MATCH (u:Usuario {id: $id})
+        SET u += $propiedades
+        RETURN u
+    """
+    with get_session() as session:
+        record = session.run(
+            query, id=usuario_id, propiedades=propiedades_filtradas
+        ).single()
+        if record is None:
+            return None
+        return _serializar_usuario(record["u"])
+
+
 def eliminar(usuario_id: str) -> bool:
     """Elimina un usuario y todas sus relaciones (DETACH DELETE).
 

@@ -48,6 +48,13 @@ class VioCreate(BaseModel):
     calificacion: Optional[float] = Field(default=None, ge=0, le=10)
 
 
+class VioPatch(BaseModel):
+    """Body para PATCH /usuarios/{uid}/vio/{sid}. Todos los campos son opcionales."""
+    porcentajeVisto: Optional[float] = Field(default=None, ge=0, le=100)
+    completada: Optional[bool] = None
+    calificacion: Optional[float] = Field(default=None, ge=0, le=10)
+
+
 class VioMasivoItem(BaseModel):
     serie_id: str
     porcentajeVisto: Optional[float] = Field(default=None, ge=0, le=100)

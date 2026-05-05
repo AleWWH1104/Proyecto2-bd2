@@ -12,6 +12,11 @@ class UsuarioCreate(BaseModel):
     activo: bool = Field(default=True)
 
 
+class UsuarioPatch(BaseModel):
+    """Body para PATCH /usuarios/{id}. Propiedades a agregar o actualizar."""
+    propiedades: dict = Field(..., description="Propiedades a agregar o actualizar")
+
+
 class UsuarioResponse(BaseModel):
     """Datos básicos de un usuario en respuestas."""
     id: str

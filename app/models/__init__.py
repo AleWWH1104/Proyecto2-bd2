@@ -27,6 +27,7 @@ from app.models.serie import (
 )
 from app.models.usuario import (
     UsuarioCreate,
+    UsuarioPatch,
     UsuarioResponse,
     UsuarioPerfilCompleto,
     UsuariosListResponse,
@@ -37,6 +38,7 @@ from app.models.relaciones import (
     TransmiteCreate,
     SimilarACreate,
     VioCreate,
+    VioPatch,
     VioMasivoItem,
     VioMasivoUpdate,
     LeGustaCreate,

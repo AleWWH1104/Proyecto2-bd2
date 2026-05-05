@@ -173,6 +173,53 @@ def marcar_vio(
         return to_native(dict(record["r"]))
 
 
+def actualizar_vio(
+    usuario_id: str,
+    serie_id: str,
+    porcentajeVisto: Optional[float] = None,
+    completada: Optional[bool] = None,
+    calificacion: Optional[float] = None,
+) -> Optional[dict]:
+    """Actualiza propiedades de una relación VIO existente.
+
+    Devuelve la relación actualizada o None si la relación no existe
+    (porque no se ha marcado la serie como vista todavía).
+    """
+    props = _filtrar_no_nulos(
+        {
+            "porcentajeVisto": porcentajeVisto,
+            "completada": completada,
+            "calificacion": calificacion,
+        }
+    )
+    query = """
+        MATCH (u:Usuario {id: $usuario_id})-[r:VIO]->(s:Serie {id: $serie_id})
+        SET r += $props
+        RETURN r
+    """
+    with get_session() as session:
+        record = session.run(
+            query, usuario_id=usuario_id, serie_id=serie_id, props=props
+        ).single()
+        if record is None:
+            return None
+        return to_native(dict(record["r"]))
+
+
+def eliminar_vio(usuario_id: str, serie_id: str) -> bool:
+    """Elimina la relación VIO entre un usuario y una serie."""
+    query = """
+        MATCH (u:Usuario {id: $usuario_id})-[r:VIO]->(s:Serie {id: $serie_id})
+        DELETE r
+        RETURN count(r) AS eliminadas
+    """
+    with get_session() as session:
+        record = session.run(
+            query, usuario_id=usuario_id, serie_id=serie_id
+        ).single()
+        return bool(record and record["eliminadas"] > 0)
+
+
 def actualizar_vio_masivo(usuario_id: str, items: list[dict]) -> int:
     payload = []
     for item in items:
@@ -213,6 +260,20 @@ def dar_like(
         return to_native(dict(record["r"]))
 
 
+def quitar_like(usuario_id: str, serie_id: str) -> bool:
+    """Elimina la relación LE_GUSTA entre un usuario y una serie."""
+    query = """
+        MATCH (u:Usuario {id: $usuario_id})-[r:LE_GUSTA]->(s:Serie {id: $serie_id})
+        DELETE r
+        RETURN count(r) AS eliminadas
+    """
+    with get_session() as session:
+        record = session.run(
+            query, usuario_id=usuario_id, serie_id=serie_id
+        ).single()
+        return bool(record and record["eliminadas"] > 0)
+
+
 def quitar_like_masivo(usuario_id: str, serie_ids: list[str]) -> int:
     query = """
         MATCH (u:Usuario {id: $usuario_id})-[r:LE_GUSTA]->(s:Serie)
@@ -248,6 +309,20 @@ def agregar_a_lista(
         return to_native(dict(record["r"]))
 
 
+def quitar_de_lista(usuario_id: str, serie_id: str) -> bool:
+    """Elimina la relación EN_LISTA entre un usuario y una serie (quitar de watchlist)."""
+    query = """
+        MATCH (u:Usuario {id: $usuario_id})-[r:EN_LISTA]->(s:Serie {id: $serie_id})
+        DELETE r
+        RETURN count(r) AS eliminadas
+    """
+    with get_session() as session:
+        record = session.run(
+            query, usuario_id=usuario_id, serie_id=serie_id
+        ).single()
+        return bool(record and record["eliminadas"] > 0)
+
+
 def seguir(
     usuario_id: str,
     otro_usuario_id: str,
@@ -280,3 +355,25 @@ def seguir(
         if record is None:
             return None
         return to_native(dict(record["r"]))
+
+
+def dejar_de_seguir(usuario_id: str, otro_usuario_id: str) -> bool:
+    """Elimina la relación SIGUE_A entre dos usuarios.
+
+    Si la relación inversa existe, actualiza su flag `mutuo` a false.
+    """
+    query = """
+        MATCH (u:Usuario {id: $usuario_id})-[r:SIGUE_A]->(o:Usuario {id: $otro_id})
+        WITH u, o, r
+        OPTIONAL MATCH (o)-[r2:SIGUE_A]->(u)
+        FOREACH (_ IN CASE WHEN r2 IS NOT NULL THEN [1] ELSE [] END |
+            SET r2.mutuo = false
+        )
+        DELETE r
+        RETURN count(r) AS eliminadas
+    """
+    with get_session() as session:
+        record = session.run(
+            query, usuario_id=usuario_id, otro_id=otro_usuario_id
+        ).single()
+        return bool(record and record["eliminadas"] > 0)
