@@ -49,6 +49,7 @@ def crear_resena(datos: ResenaCreate):
     resena = resenas_repo.crear(
         usuario_id=datos.usuario_id,
         serie_id=datos.serie_id,
+        titulo=datos.titulo,
         texto=datos.texto,
         puntuacion=datos.puntuacion,
         etiquetas=datos.etiquetas,

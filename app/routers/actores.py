@@ -1,6 +1,7 @@
 """Router para Actores.
 
 Endpoints:
+    GET    /actores                              - Listar actores
     POST   /actores                              - Crear actor (con multi-label si es_director=true)
     PATCH  /actores/{aid}/agregar-director       - Multi-label dinámico (agrega :Director)
     POST   /actores/{aid}/actua-en/{sid}         - Vincular actor a serie con propiedades
@@ -19,6 +20,11 @@ from app.repositories import actores as actores_repo
 
 
 router = APIRouter(prefix="/actores", tags=["Actores"])
+
+
+@router.get("", summary="Listar actores")
+def listar_actores():
+    return {"actores": actores_repo.listar()}
 
 
 @router.post(

@@ -16,6 +16,7 @@ class ResenaCreate(BaseModel):
     """Body para POST /resenas — crea nodo + ESCRIBIO + SOBRE."""
     usuario_id: str = Field(..., description="Autor de la reseña")
     serie_id: str = Field(..., description="Serie reseñada")
+    titulo: str = Field(..., min_length=1, max_length=200)
     texto: str = Field(..., min_length=1, max_length=5000)
     puntuacion: int = Field(..., ge=1, le=10)
     etiquetas: List[str] = Field(default_factory=list)
@@ -32,6 +33,7 @@ class ResenaCreate(BaseModel):
 class ResenaCreatePorSerie(BaseModel):
     """Body para POST /series/{id}/resenas — la serie viene del path."""
     usuario_id: str = Field(..., description="Autor de la reseña")
+    titulo: str = Field(..., min_length=1, max_length=200)
     texto: str = Field(..., min_length=1, max_length=5000)
     puntuacion: int = Field(..., ge=1, le=10)
     etiquetas: List[str] = Field(default_factory=list)
@@ -43,12 +45,13 @@ class ResenaCreatePorSerie(BaseModel):
 
 class ResenaPatch(BaseModel):
     """Body para PATCH /resenas/{id}. Propiedades del nodo Resena a actualizar."""
-    propiedades: dict = Field(..., description="Propiedades a actualizar (texto, puntuacion, etiquetas...)")
+    propiedades: dict = Field(..., description="Propiedades a actualizar (texto, puntuacion, etiquetas, titulo...)")
 
 
 class ResenaResponse(BaseModel):
     """Reseña con datos del autor y la serie a la que pertenece."""
     id: str
+    titulo: Optional[str] = None
     texto: str
     puntuacion: int
     fecha: date

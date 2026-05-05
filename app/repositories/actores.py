@@ -18,6 +18,18 @@ def _serializar_actor(record) -> dict:
     return to_native({**actor, "labels": list(record["labels"])})
 
 
+def listar() -> list[dict]:
+    """Lista todos los actores ordenados por nombre."""
+    query = """
+        MATCH (a:Actor)
+        RETURN a, labels(a) AS labels
+        ORDER BY a.nombre
+    """
+    with get_session() as session:
+        result = session.run(query)
+        return [_serializar_actor(r) for r in result]
+
+
 def crear(data: dict) -> dict:
     """Crea un Actor. Si data['es_director'] es True, se crea con multi-label.
 

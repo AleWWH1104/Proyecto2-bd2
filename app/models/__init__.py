@@ -20,10 +20,6 @@ from app.models.serie import (
     SerieDetalleResponse,
     SerieListResponse,
     SeriesMasivoPatchRequest,
-    GeneroCreate,
-    GeneroResponse,
-    PlataformaCreate,
-    PlataformaResponse,
 )
 from app.models.usuario import (
     UsuarioCreate,

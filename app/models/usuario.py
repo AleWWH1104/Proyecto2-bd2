@@ -34,6 +34,7 @@ class UsuarioPerfilCompleto(BaseModel):
     series_que_le_gustan: List[dict] = Field(default_factory=list)
     series_en_lista: List[dict] = Field(default_factory=list)
     usuarios_que_sigue: List[dict] = Field(default_factory=list)
+    resenas: List[dict] = Field(default_factory=list)
 
 
 class UsuariosListResponse(BaseModel):

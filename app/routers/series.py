@@ -1,4 +1,4 @@
-"""Router para Series — Persona 1.
+"""Router para Series.
 
 Endpoints:
     GET    /series                    - Listar con filtros y agregaciones
@@ -7,8 +7,11 @@ Endpoints:
     PATCH  /series/masivo             - Actualizar propiedades en varias series
     PATCH  /series/{id}               - Actualizar/agregar propiedades de 1 serie
     DELETE /series/{id}/propiedades   - Eliminar propiedades específicas
+    DELETE /series/masivo             - Eliminar múltiples series (DETACH DELETE masivo)
     DELETE /series/{id}               - Eliminar 1 serie (DETACH DELETE)
-    DELETE /series                    - Eliminar múltiples series (DETACH DELETE masivo)
+    GET    /series/{id}/similares     - Series similares (SIMILAR_A)
+    GET    /series/{id}/resenas       - Reseñas de una serie
+    POST   /series/{id}/resenas       - Crear reseña sobre una serie
 """
 
 from fastapi import APIRouter, HTTPException, Query
@@ -136,13 +139,6 @@ def eliminar_serie(serie_id: str):
     return {"mensaje": f"Serie '{serie_id}' eliminada correctamente"}
 
 
-@router.delete("", summary="Eliminar múltiples series")
-def eliminar_series(body: IdsRequest):
-    """Elimina múltiples Series y sus relaciones (DETACH DELETE masivo)."""
-    eliminadas = repositories.series.eliminar_series(body.ids)
-    return {"eliminadas": eliminadas, "ids": body.ids}
-
-
 # ============================================
 # SIMILARES DE UNA SERIE
 # ============================================
@@ -212,6 +208,7 @@ def crear_resena_de_serie(serie_id: str, datos: ResenaCreatePorSerie):
     resena = repositories.resenas.crear(
         usuario_id=datos.usuario_id,
         serie_id=serie_id,
+        titulo=datos.titulo,
         texto=datos.texto,
         puntuacion=datos.puntuacion,
         etiquetas=datos.etiquetas,

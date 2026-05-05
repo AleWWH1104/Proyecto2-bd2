@@ -38,13 +38,20 @@ class SerieDetalleResponse(SerieResponse):
     generos: list[dict] = Field(default_factory=list)
     plataformas: list[dict] = Field(default_factory=list)
     similares: list[dict] = Field(default_factory=list)
+    actores: list[dict] = Field(default_factory=list)
+    directores: list[dict] = Field(default_factory=list)
+    estudios: list[dict] = Field(default_factory=list)
 
 
 class SerieListItem(BaseModel):
     id: str
     titulo: str
+    sinopsis: str
     anio: int
     calificacion: float
+    numTemporadas: int
+    numEpisodios: int
+    estadoEmision: bool
     activa: bool
 
 
@@ -65,33 +72,3 @@ class SerieListResponse(BaseModel):
     agregaciones: SeriesAggregations
 
 
-class GeneroBase(BaseModel):
-    nombre: str
-    descripcion: str
-    popularidad: float
-    tendencia: bool
-    anio: int
-
-
-class GeneroCreate(GeneroBase):
-    pass
-
-
-class GeneroResponse(GeneroBase):
-    id: str
-
-
-class PlataformaBase(BaseModel):
-    nombre: str
-    pais: str
-    precio: float
-    fechaFundacion: date
-    suscriptores: int
-
-
-class PlataformaCreate(PlataformaBase):
-    pass
-
-
-class PlataformaResponse(PlataformaBase):
-    id: str

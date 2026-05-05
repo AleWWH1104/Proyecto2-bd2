@@ -97,6 +97,7 @@ def crear(
     contieneSpoilers: bool,
     temporadaAfectada: Optional[int],
     protagonista: bool,
+    titulo: Optional[str] = None,
 ) -> Optional[dict]:
     """Crea Resena + ESCRIBIO + SOBRE en una sola operación atómica.
 
@@ -110,6 +111,7 @@ def crear(
         MATCH (s:Serie {id: $serie_id})
         CREATE (r:Resena {
             id: $id,
+            titulo: $titulo,
             texto: $texto,
             puntuacion: $puntuacion,
             fecha: date($hoy),
@@ -143,6 +145,7 @@ def crear(
             contieneSpoilers=contieneSpoilers,
             temporadaAfectada=temporadaAfectada,
             protagonista=protagonista,
+            titulo=titulo,
         ).single()
         if record is None:
             return None

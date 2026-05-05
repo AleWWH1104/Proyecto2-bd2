@@ -133,8 +133,12 @@ def listar_series(
                 {
                     "id": s.get("id"),
                     "titulo": s.get("titulo"),
+                    "sinopsis": s.get("sinopsis", ""),
                     "anio": s.get("anio"),
                     "calificacion": s.get("calificacion"),
+                    "numTemporadas": s.get("numTemporadas"),
+                    "numEpisodios": s.get("numEpisodios"),
+                    "estadoEmision": s.get("estadoEmision"),
                     "activa": s.get("activa"),
                 }
             )
@@ -165,16 +169,22 @@ def listar_series(
 
 
 def obtener_serie_por_id(serie_id: str) -> Optional[dict]:
-    """Retorna una serie con sus relaciones (géneros, plataformas, similares)."""
+    """Retorna una serie con sus relaciones (géneros, plataformas, similares, actores, directores, estudios)."""
     query = """
         MATCH (s:Serie {id: $id})
         OPTIONAL MATCH (s)-[:PERTENECE_A]->(g:Genero)
         OPTIONAL MATCH (p:Plataforma)-[:TRANSMITE]->(s)
         OPTIONAL MATCH (s)-[:SIMILAR_A]->(sim:Serie)
+        OPTIONAL MATCH (a:Actor)-[rel:ACTUA_EN]->(s)
+        OPTIONAL MATCH (d:Director)-[rel_dir:DIRIGE]->(s)
+        OPTIONAL MATCH (e:EstudioProduccion)-[rel_prod:PRODUJO]->(s)
         RETURN s,
                collect(DISTINCT {id: g.id, nombre: g.nombre}) AS generos,
                collect(DISTINCT {id: p.id, nombre: p.nombre}) AS plataformas,
-               collect(DISTINCT {id: sim.id, titulo: sim.titulo}) AS similares
+               collect(DISTINCT {id: sim.id, titulo: sim.titulo}) AS similares,
+               collect(DISTINCT {id: a.id, nombre: a.nombre, personaje: rel.personaje, protagonista: rel.protagonista}) AS actores,
+               collect(DISTINCT {id: d.id, nombre: d.nombre, esPrincipal: rel_dir.esPrincipal}) AS directores,
+               collect(DISTINCT {id: e.id, nombre: e.nombre}) AS estudios
     """
     with get_session() as session:
         result = session.run(query, {"id": serie_id})
@@ -187,6 +197,9 @@ def obtener_serie_por_id(serie_id: str) -> Optional[dict]:
             "generos": [g for g in record["generos"] if g.get("id")],
             "plataformas": [p for p in record["plataformas"] if p.get("id")],
             "similares": [sim for sim in record["similares"] if sim.get("id")],
+            "actores": [a for a in record["actores"] if a.get("id")],
+            "directores": [d for d in record["directores"] if d.get("id")],
+            "estudios": [e for e in record["estudios"] if e.get("id")],
         }
 
 

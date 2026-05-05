@@ -86,13 +86,14 @@ def obtener_por_id(usuario_id: str) -> Optional[dict]:
 
 
 def obtener_perfil_completo(usuario_id: str) -> Optional[dict]:
-    """Obtiene un usuario con todas sus relaciones (vistas, likes, lista, sigue)."""
+    """Obtiene un usuario con todas sus relaciones (vistas, likes, lista, sigue, resenas)."""
     query = """
         MATCH (u:Usuario {id: $id})
         OPTIONAL MATCH (u)-[v:VIO]->(sv:Serie)
         OPTIONAL MATCH (u)-[lg:LE_GUSTA]->(sg:Serie)
         OPTIONAL MATCH (u)-[el:EN_LISTA]->(sl:Serie)
         OPTIONAL MATCH (u)-[sa:SIGUE_A]->(uo:Usuario)
+        OPTIONAL MATCH (u)-[:ESCRIBIO]->(r:Resena)-[:SOBRE]->(sr:Serie)
         RETURN u,
                collect(DISTINCT {
                    serie_id: sv.id, titulo: sv.titulo,
@@ -110,7 +111,11 @@ def obtener_perfil_completo(usuario_id: str) -> Optional[dict]:
                collect(DISTINCT {
                    usuario_id: uo.id, nombre: uo.nombre,
                    fechaSeguimiento: sa.fechaSeguimiento, mutuo: sa.mutuo
-               }) AS seguidos
+               }) AS seguidos,
+               collect(DISTINCT {
+                   id: r.id, titulo: r.titulo, texto: r.texto, puntuacion: r.puntuacion,
+                   fecha: r.fecha, serie_id: sr.id, serie_titulo: sr.titulo
+               }) AS resenas
     """
     with get_session() as session:
         record = session.run(query, id=usuario_id).single()
@@ -123,6 +128,7 @@ def obtener_perfil_completo(usuario_id: str) -> Optional[dict]:
         gustadas = [to_native(g) for g in record["gustadas"] if g["serie_id"] is not None]
         lista = [to_native(l) for l in record["lista"] if l["serie_id"] is not None]
         seguidos = [to_native(s) for s in record["seguidos"] if s["usuario_id"] is not None]
+        resenas = [to_native(r) for r in record["resenas"] if r["id"] is not None]
 
         return {
             "usuario": _serializar_usuario(record["u"]),
@@ -130,6 +136,7 @@ def obtener_perfil_completo(usuario_id: str) -> Optional[dict]:
             "series_que_le_gustan": gustadas,
             "series_en_lista": lista,
             "usuarios_que_sigue": seguidos,
+            "resenas": resenas,
         }
 
 
