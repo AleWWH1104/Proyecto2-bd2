@@ -125,6 +125,29 @@ def eliminar_series(body: IdsRequest):
 
 
 # ============================================
+# SIMILARES DE UNA SERIE
+# ============================================
+
+
+@router.get(
+    "/{serie_id}/similares",
+    summary="Series similares a esta",
+)
+def listar_series_similares(
+    serie_id: str,
+    limit: int = Query(10, ge=1, le=50),
+):
+    """Devuelve series similares según la relación SIMILAR_A.
+
+    Rúbrica: Consulta Cypher — series similares.
+    """
+    items = repositories.consultas.series_similares(serie_id, limit=limit)
+    if items is None:
+        raise HTTPException(status_code=404, detail=f"Serie '{serie_id}' no encontrada")
+    return {"serie_id": serie_id, "total": len(items), "items": items}
+
+
+# ============================================
 # RESEÑAS DE UNA SERIE
 # ============================================
 

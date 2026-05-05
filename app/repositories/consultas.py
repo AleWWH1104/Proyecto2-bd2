@@ -2,8 +2,10 @@
 
 Combina las consultas de Persona 1 y Persona 2.
 """
+from typing import Optional
 
 from app.database import get_session
+from app.repositories._helpers import to_native
 
 
 # ============================================
@@ -82,15 +84,50 @@ def plataformas_mas_exclusivas() -> list:
 # ============================================
 
 
-def recomendaciones_para_usuario(usuario_id: str, limit: int = 10) -> list[dict]:
-    """Filtrado colaborativo básico."""
-    query = """
-        MATCH (u:Usuario {id: $usuario_id})-[:LE_GUSTA]->(:Serie)<-[:LE_GUSTA]-(otro:Usuario)
-        WHERE otro.id <> u.id
+def recomendaciones_para_usuario(
+    usuario_id: str,
+    limit: int = 10,
+    genero: Optional[str] = None,
+    plataforma: Optional[str] = None,
+    anio: Optional[int] = None,
+) -> list[dict]:
+    """Filtrado colaborativo: usa likes + vistas + seguidos del usuario.
+
+    Filtros opcionales por nombre de género, nombre de plataforma o año.
+    """
+    extra_filtros = []
+    params: dict = {"usuario_id": usuario_id, "limit": limit}
+
+    if genero is not None:
+        extra_filtros.append(
+            "EXISTS { MATCH (rec)-[:PERTENECE_A]->(g:Genero) WHERE g.nombre = $genero }"
+        )
+        params["genero"] = genero
+    if plataforma is not None:
+        extra_filtros.append(
+            "EXISTS { MATCH (p:Plataforma {nombre: $plataforma})-[:TRANSMITE]->(rec) }"
+        )
+        params["plataforma"] = plataforma
+    if anio is not None:
+        extra_filtros.append("rec.anio = $anio")
+        params["anio"] = anio
+
+    extra_where = ("AND " + " AND ".join(extra_filtros)) if extra_filtros else ""
+
+    # Une 3 señales: usuarios afines (likes/vistas) + usuarios seguidos
+    query = f"""
+        MATCH (u:Usuario {{id: $usuario_id}})
+        OPTIONAL MATCH (u)-[:LE_GUSTA|VIO]->(:Serie)<-[:LE_GUSTA]-(afin:Usuario)
+        OPTIONAL MATCH (u)-[:SIGUE_A]->(seguido:Usuario)
+        WITH u, collect(DISTINCT afin) + collect(DISTINCT seguido) AS otros
+        UNWIND otros AS otro
+        WITH u, otro
+        WHERE otro IS NOT NULL AND otro.id <> u.id
         MATCH (otro)-[:LE_GUSTA]->(rec:Serie)
         WHERE NOT (u)-[:VIO]->(rec)
           AND NOT (u)-[:LE_GUSTA]->(rec)
           AND NOT (u)-[:EN_LISTA]->(rec)
+          {extra_where}
         WITH rec,
              count(DISTINCT otro) AS usuarios_similares,
              collect(DISTINCT otro.nombre)[0..5] AS muestra_usuarios
@@ -102,7 +139,7 @@ def recomendaciones_para_usuario(usuario_id: str, limit: int = 10) -> list[dict]
         LIMIT $limit
     """
     with get_session() as session:
-        result = session.run(query, usuario_id=usuario_id, limit=limit)
+        result = session.run(query, params)
         return [dict(record) for record in result]
 
 
@@ -227,3 +264,141 @@ def usuarios_influyentes(limit: int = 10) -> list[dict]:
     with get_session() as session:
         result = session.run(query, limit=limit)
         return [dict(record) for record in result]
+
+
+def top_series(genero: Optional[str] = None, limit: int = 10) -> list[dict]:
+    """Top de series por calificación, opcionalmente filtradas por género."""
+    if genero is not None:
+        query = """
+            MATCH (s:Serie)-[:PERTENECE_A]->(g:Genero {nombre: $genero})
+            WITH s
+            OPTIONAL MATCH (s)-[:PERTENECE_A]->(go:Genero)
+            RETURN s.id AS serie_id,
+                   s.titulo AS titulo,
+                   s.calificacion AS calificacion,
+                   s.anio AS anio,
+                   collect(DISTINCT go.nombre) AS generos
+            ORDER BY s.calificacion DESC, s.titulo ASC
+            LIMIT $limit
+        """
+        params = {"genero": genero, "limit": limit}
+    else:
+        query = """
+            MATCH (s:Serie)
+            OPTIONAL MATCH (s)-[:PERTENECE_A]->(g:Genero)
+            RETURN s.id AS serie_id,
+                   s.titulo AS titulo,
+                   s.calificacion AS calificacion,
+                   s.anio AS anio,
+                   collect(DISTINCT g.nombre) AS generos
+            ORDER BY s.calificacion DESC, s.titulo ASC
+            LIMIT $limit
+        """
+        params = {"limit": limit}
+
+    with get_session() as session:
+        result = session.run(query, params)
+        return [
+            {
+                "serie_id": r["serie_id"],
+                "titulo": r["titulo"],
+                "calificacion": r["calificacion"],
+                "anio": r["anio"],
+                "generos": list(r["generos"]),
+            }
+            for r in result
+        ]
+
+
+def top_actores(limit: int = 10) -> list[dict]:
+    """Top de actores por número de series y popularidad."""
+    query = """
+        MATCH (a:Actor)
+        OPTIONAL MATCH (a)-[:ACTUA_EN]->(s:Serie)
+        WITH a, count(DISTINCT s) AS series_count
+        RETURN a.id AS actor_id,
+               a.nombre AS nombre,
+               a.popularidad AS popularidad,
+               a.premios AS premios,
+               series_count,
+               'Director' IN labels(a) AS es_director
+        ORDER BY series_count DESC, a.popularidad DESC
+        LIMIT $limit
+    """
+    with get_session() as session:
+        result = session.run(query, limit=limit)
+        return [dict(record) for record in result]
+
+
+def actores_que_tambien_dirigen(limit: int = 20) -> list[dict]:
+    """Actores con multi-label :Director — actúan y además dirigen.
+
+    Demuestra el uso del multi-label en una consulta.
+    """
+    query = """
+        MATCH (a:Actor:Director)
+        OPTIONAL MATCH (a)-[:ACTUA_EN]->(serie_act:Serie)
+        OPTIONAL MATCH (a)-[:DIRIGE]->(serie_dir:Serie)
+        WITH a,
+             count(DISTINCT serie_act) AS series_actuadas,
+             count(DISTINCT serie_dir) AS series_dirigidas,
+             collect(DISTINCT serie_dir.titulo)[0..5] AS muestra_dirigidas
+        RETURN a.id AS actor_id,
+               a.nombre AS nombre,
+               a.nacionalidad AS nacionalidad,
+               series_actuadas,
+               series_dirigidas,
+               (series_actuadas + series_dirigidas) AS total,
+               muestra_dirigidas
+        ORDER BY total DESC, series_dirigidas DESC
+        LIMIT $limit
+    """
+    with get_session() as session:
+        result = session.run(query, limit=limit)
+        return [
+            {
+                "actor_id": r["actor_id"],
+                "nombre": r["nombre"],
+                "nacionalidad": r["nacionalidad"],
+                "series_actuadas": r["series_actuadas"],
+                "series_dirigidas": r["series_dirigidas"],
+                "total": r["total"],
+                "muestra_dirigidas": list(r["muestra_dirigidas"]),
+            }
+            for r in result
+        ]
+
+
+def series_similares(serie_id: str, limit: int = 10) -> Optional[list[dict]]:
+    """Series similares a una dada (relación SIMILAR_A).
+
+    Devuelve None si la serie no existe; lista (vacía o no) si existe.
+    """
+    existe_query = "MATCH (s:Serie {id: $id}) RETURN s LIMIT 1"
+    query = """
+        MATCH (s:Serie {id: $id})-[r:SIMILAR_A]->(sim:Serie)
+        OPTIONAL MATCH (sim)-[:PERTENECE_A]->(g:Genero)
+        RETURN sim.id AS serie_id,
+               sim.titulo AS titulo,
+               sim.calificacion AS calificacion,
+               r.puntuacionSimilitud AS puntuacion_similitud,
+               r.algoritmo AS algoritmo,
+               collect(DISTINCT g.nombre) AS generos
+        ORDER BY r.puntuacionSimilitud DESC
+        LIMIT $limit
+    """
+    with get_session() as session:
+        if session.run(existe_query, id=serie_id).single() is None:
+            return None
+        result = session.run(query, id=serie_id, limit=limit)
+        return [
+            {
+                "serie_id": r["serie_id"],
+                "titulo": r["titulo"],
+                "calificacion": r["calificacion"],
+                "puntuacion_similitud": r["puntuacion_similitud"],
+                "algoritmo": r["algoritmo"],
+                "generos": list(r["generos"]),
+            }
+            for r in result
+        ]
