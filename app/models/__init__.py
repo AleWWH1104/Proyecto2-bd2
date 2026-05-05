@@ -50,8 +50,16 @@ from app.models.relaciones import (
 )
 from app.models.resena import (
     ResenaCreate,
+    ResenaCreatePorSerie,
+    ResenaPatch,
     ResenaResponse,
     ResenasListResponse,
+)
+from app.models.actor import (
+    ActorCreate,
+    ActorResponse,
+    ActuaEnCreate,
+    ActuaEnPatch,
 )
 from app.models.consultas import (
     SerieRecomendada,

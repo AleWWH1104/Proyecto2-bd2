@@ -9,7 +9,16 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.database import Neo4jDriver
-from app.routers import consultas, generos, plataformas, relaciones, resenas, series, usuarios
+from app.routers import (
+    actores,
+    consultas,
+    generos,
+    plataformas,
+    relaciones,
+    resenas,
+    series,
+    usuarios,
+)
 
 
 @asynccontextmanager
@@ -75,4 +84,5 @@ app.include_router(plataformas.router)
 app.include_router(usuarios.router)
 app.include_router(relaciones.router)
 app.include_router(resenas.router)
+app.include_router(actores.router)
 app.include_router(consultas.router)

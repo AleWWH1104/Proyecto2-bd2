@@ -8,6 +8,7 @@ from typing import Optional
 
 from app.models import (
     ResenaCreate,
+    ResenaPatch,
     ResenaResponse,
     ResenasListResponse,
 )
@@ -61,6 +62,21 @@ def crear_resena(datos: ResenaCreate):
             status_code=404,
             detail=f"Usuario {datos.usuario_id} o Serie {datos.serie_id} no encontrado",
         )
+    return resena
+
+
+@router.patch(
+    "/{resena_id}", response_model=ResenaResponse, summary="Editar reseña propia"
+)
+def actualizar_resena(resena_id: str, datos: ResenaPatch):
+    """Actualiza propiedades del nodo Resena y marca ESCRIBIO.editada = true.
+
+    No permite cambiar `id` ni `fecha`.
+    Rúbrica: Gestión de propiedades de nodos — 1 nodo.
+    """
+    resena = resenas_repo.actualizar(resena_id, datos.propiedades)
+    if resena is None:
+        raise HTTPException(status_code=404, detail=f"Reseña {resena_id} no encontrada")
     return resena
 
 

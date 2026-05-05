@@ -22,6 +22,9 @@ from app.models import (
     SeriesMasivoPatchRequest,
     IdsRequest,
     EliminarPropiedadesRequest,
+    ResenaCreatePorSerie,
+    ResenaResponse,
+    ResenasListResponse,
 )
 from app import repositories
 
@@ -119,3 +122,65 @@ def eliminar_series(body: IdsRequest):
     """Elimina múltiples Series y sus relaciones (DETACH DELETE masivo)."""
     eliminadas = repositories.series.eliminar_series(body.ids)
     return {"eliminadas": eliminadas, "ids": body.ids}
+
+
+# ============================================
+# RESEÑAS DE UNA SERIE
+# ============================================
+
+
+@router.get(
+    "/{serie_id}/resenas",
+    response_model=ResenasListResponse,
+    summary="Ver reseñas de una serie",
+)
+def listar_resenas_de_serie(
+    serie_id: str,
+    puntuacion_min: Optional[int] = Query(None, ge=1, le=10),
+    puntuacion_max: Optional[int] = Query(None, ge=1, le=10),
+    contiene_spoilers: Optional[bool] = Query(None),
+    skip: int = Query(0, ge=0),
+    limit: int = Query(50, ge=1, le=200),
+):
+    """Lista las reseñas de una serie con filtros opcionales.
+
+    Rúbrica: Consultar muchos nodos + filtros.
+    """
+    return repositories.resenas.listar(
+        serie_id=serie_id,
+        puntuacion_min=puntuacion_min,
+        puntuacion_max=puntuacion_max,
+        contiene_spoilers=contiene_spoilers,
+        skip=skip,
+        limit=limit,
+    )
+
+
+@router.post(
+    "/{serie_id}/resenas",
+    response_model=ResenaResponse,
+    status_code=201,
+    summary="Escribir reseña sobre una serie",
+)
+def crear_resena_de_serie(serie_id: str, datos: ResenaCreatePorSerie):
+    """Crea Resena + relación ESCRIBIO + relación SOBRE en una sola operación.
+
+    Rúbrica: Crear nodo + relaciones.
+    """
+    resena = repositories.resenas.crear(
+        usuario_id=datos.usuario_id,
+        serie_id=serie_id,
+        texto=datos.texto,
+        puntuacion=datos.puntuacion,
+        etiquetas=datos.etiquetas,
+        visibilidad=datos.visibilidad,
+        contieneSpoilers=datos.contieneSpoilers,
+        temporadaAfectada=datos.temporadaAfectada,
+        protagonista=datos.protagonista,
+    )
+    if resena is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Usuario {datos.usuario_id} o Serie {serie_id} no encontrado",
+        )
+    return resena

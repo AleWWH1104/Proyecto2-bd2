@@ -149,6 +149,28 @@ def crear(
         return _serializar_resena_completa(record)
 
 
+def actualizar(resena_id: str, propiedades: dict) -> Optional[dict]:
+    """Actualiza propiedades del nodo Resena y marca ESCRIBIO.editada = true.
+
+    Bloquea cambios sobre id y fecha (la fecha original no debe mutar).
+    Devuelve la reseña actualizada o None si no existe.
+    """
+    props_filtradas = {
+        k: v for k, v in propiedades.items() if k not in ("id", "fecha")
+    }
+
+    query = """
+        MATCH (u:Usuario)-[escribio:ESCRIBIO]->(r:Resena {id: $id})-[sobre:SOBRE]->(s:Serie)
+        SET r += $propiedades, escribio.editada = true
+        RETURN r, escribio, sobre, u.id AS usuario_id, s.id AS serie_id
+    """
+    with get_session() as session:
+        record = session.run(query, id=resena_id, propiedades=props_filtradas).single()
+        if record is None:
+            return None
+        return _serializar_resena_completa(record)
+
+
 def eliminar(resena_id: str) -> bool:
     """DETACH DELETE de la reseña — borra el nodo y sus relaciones ESCRIBIO/SOBRE.
 

@@ -29,6 +29,23 @@ class ResenaCreate(BaseModel):
     protagonista: bool = Field(default=False)
 
 
+class ResenaCreatePorSerie(BaseModel):
+    """Body para POST /series/{id}/resenas — la serie viene del path."""
+    usuario_id: str = Field(..., description="Autor de la reseña")
+    texto: str = Field(..., min_length=1, max_length=5000)
+    puntuacion: int = Field(..., ge=1, le=10)
+    etiquetas: List[str] = Field(default_factory=list)
+    visibilidad: str = Field(default="publica", description="publica | privada | amigos")
+    contieneSpoilers: bool = Field(default=False)
+    temporadaAfectada: Optional[int] = Field(default=None, ge=1)
+    protagonista: bool = Field(default=False)
+
+
+class ResenaPatch(BaseModel):
+    """Body para PATCH /resenas/{id}. Propiedades del nodo Resena a actualizar."""
+    propiedades: dict = Field(..., description="Propiedades a actualizar (texto, puntuacion, etiquetas...)")
+
+
 class ResenaResponse(BaseModel):
     """Reseña con datos del autor y la serie a la que pertenece."""
     id: str
