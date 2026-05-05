@@ -149,7 +149,7 @@ export function Recomendaciones({ user, onNavigate }) {
     finally { setLoading(false) }
   }
 
-  useEffect(() => { if (user) load() }, [user])
+  useEffect(() => { if (user?.id) load() }, [user?.id])
 
   if (!user) return (
     <div style={{ padding: '28px 32px' }}>

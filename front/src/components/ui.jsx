@@ -188,55 +188,80 @@ export function ModalFooter({ children }) {
 }
 
 /* ── SERIES CARD (big, lifestyle) ── */
+// Pick a shade from the green palette based on the title
+const GREEN_STOPS = [
+  { bg: '#232a23', accent: '#9bab9f' }, // g700
+  { bg: '#3a463e', accent: '#d0d7d2' }, // g600
+  { bg: '#4c5951', accent: '#e3e8e4' }, // g500
+  { bg: '#2d3d30', accent: '#9bab9f' }, // deep forest
+  { bg: '#1e2b1e', accent: '#809385' }, // darkest
+]
+
 export function SerieCard({ serie, onClick }) {
   const [hov, setHov] = useState(false)
   const rating = parseFloat(serie.calificacion) || 0
-  const hue = Math.floor((serie.titulo?.charCodeAt(0) || 65) * 3.5) % 360
+  const idx = (serie.titulo?.charCodeAt(0) || 65) % GREEN_STOPS.length
+  const { bg, accent } = GREEN_STOPS[idx]
+
   return (
     <div
       onClick={onClick}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
-        background: 'var(--white)', borderRadius: var_radius,
-        border: '1.5px solid var(--border)',
-        overflow: 'hidden', cursor: 'pointer',
-        transform: hov ? 'translateY(-4px)' : 'none',
-        boxShadow: hov ? 'var(--shadow-md)' : 'var(--shadow)',
+        background: 'var(--white)', borderRadius: 'var(--radius)',
+        border: hov ? '1.5px solid var(--g300)' : '1.5px solid var(--border)',
+        overflow: 'hidden', cursor: onClick ? 'pointer' : 'default',
+        transform: hov && onClick ? 'translateY(-3px)' : 'none',
+        boxShadow: hov && onClick ? 'var(--shadow-md)' : 'var(--shadow)',
         transition: 'all .2s',
       }}>
-      {/* Color header instead of image */}
+      {/* Green palette header */}
       <div style={{
-        height: 100, background: `linear-gradient(135deg, hsl(${hue},25%,${hov?'28':'32'}%) 0%, hsl(${(hue+40)%360},18%,22%) 100%)`,
-        display: 'flex', alignItems: 'flex-end', padding: '12px 16px',
-        transition: 'background .3s',
+        height: 88,
+        background: bg,
+        display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
+        padding: '14px 16px',
+        position: 'relative', overflow: 'hidden',
       }}>
-        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-          {serie.activa === true || serie.activa === 'True'
-            ? <Badge color="green">Activa</Badge>
-            : <Badge color="gray">Inactiva</Badge>}
+        {/* Decorative circle */}
+        <div style={{
+          position: 'absolute', right: -20, top: -20,
+          width: 90, height: 90, borderRadius: '50%',
+          background: accent, opacity: .08,
+        }} />
+        <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', position: 'relative' }}>
           {(serie.estadoEmision === true || serie.estadoEmision === 'True') &&
-            <Badge color="blue">En emisión</Badge>}
+            <span style={{ background: 'rgba(255,255,255,.15)', color: '#fff', fontSize: 10.5, fontWeight: 600, padding: '2px 8px', borderRadius: 20, letterSpacing: '.04em' }}>EN EMISIÓN</span>}
+          {(serie.activa !== true && serie.activa !== 'True') &&
+            <span style={{ background: 'rgba(0,0,0,.25)', color: 'rgba(255,255,255,.6)', fontSize: 10.5, fontWeight: 600, padding: '2px 8px', borderRadius: 20 }}>INACTIVA</span>}
+        </div>
+        {/* Rating chip */}
+        <div style={{ background: 'rgba(0,0,0,.3)', backdropFilter: 'blur(4px)', borderRadius: 8, padding: '4px 9px', position: 'relative' }}>
+          <span style={{ color: accent, fontSize: 13, fontWeight: 700 }}>★ {rating.toFixed(1)}</span>
         </div>
       </div>
-      <div style={{ padding: '16px 18px 18px' }}>
-        <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 15.5, lineHeight: 1.25, marginBottom: 5 }}>
+
+      <div style={{ padding: '14px 16px 16px' }}>
+        <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 15, lineHeight: 1.25, marginBottom: 5, color: 'var(--text)' }}>
           {serie.titulo}
         </div>
-        <div style={{ fontSize: 12.5, color: 'var(--text-xs)', marginBottom: 10 }}>
+        <div style={{ fontSize: 12, color: 'var(--text-xs)', marginBottom: 9 }}>
           {serie.anio} · {serie.numTemporadas} temp. · {serie.numEpisodios} ep.
         </div>
-        <div style={{ fontSize: 12.5, color: 'var(--text-sm)', lineHeight: 1.5, marginBottom: 12,
-          display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <div style={{
+          fontSize: 12.5, color: 'var(--text-sm)', lineHeight: 1.5, marginBottom: 12,
+          display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+        }}>
           {serie.sinopsis || 'Sin sinopsis disponible.'}
         </div>
-        <RatingBar value={rating} />
+        <div style={{ height: 3, background: 'var(--g100)', borderRadius: 2, overflow: 'hidden' }}>
+          <div style={{ width: `${rating * 10}%`, height: '100%', background: bg, borderRadius: 2, transition: 'width .3s' }} />
+        </div>
       </div>
     </div>
   )
 }
-// helper to avoid babel issue
-const var_radius = 'var(--radius)'
 
 /* ── PAGE HEADER ── */
 export function PageHeader({ title, subtitle, action }) {
