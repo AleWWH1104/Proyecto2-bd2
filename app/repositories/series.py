@@ -29,10 +29,15 @@ def listar_series(
     estadoEmision: Optional[bool] = None,
     genero_id: Optional[str] = None,
     plataforma_id: Optional[str] = None,
+    genero: Optional[str] = None,
+    plataforma: Optional[str] = None,
     limit: int = 20,
     skip: int = 0,
 ) -> dict:
-    """Lista series con filtros opcionales y devuelve agregaciones."""
+    """Lista series con filtros opcionales y devuelve agregaciones.
+
+    Acepta filtros por id (`genero_id`, `plataforma_id`) o por nombre (`genero`, `plataforma`).
+    """
     conditions = []
     params: dict = {"limit": limit, "skip": skip}
 
@@ -60,6 +65,12 @@ def listar_series(
     if plataforma_id:
         conditions.append("EXISTS { MATCH (p2:Plataforma {id: $plataforma_id})-[:TRANSMITE]->(s) }")
         params["plataforma_id"] = plataforma_id
+    if genero:
+        conditions.append("EXISTS { MATCH (s)-[:PERTENECE_A]->(g3:Genero {nombre: $genero}) }")
+        params["genero"] = genero
+    if plataforma:
+        conditions.append("EXISTS { MATCH (p3:Plataforma {nombre: $plataforma})-[:TRANSMITE]->(s) }")
+        params["plataforma"] = plataforma
 
     where_clause = ""
     if conditions:

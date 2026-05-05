@@ -43,10 +43,15 @@ def listar_series(
     estadoEmision: Optional[bool] = Query(None, description="Filtrar por estado de emisión"),
     genero_id: Optional[str] = Query(None, description="ID del género para filtrar"),
     plataforma_id: Optional[str] = Query(None, description="ID de la plataforma para filtrar"),
+    genero: Optional[str] = Query(None, description="Nombre del género para filtrar"),
+    plataforma: Optional[str] = Query(None, description="Nombre de la plataforma para filtrar"),
     limit: int = Query(20, ge=1, le=100, description="Máximo de resultados"),
     skip: int = Query(0, ge=0, description="Desplazamiento para paginación"),
 ):
-    """Lista series con filtros opcionales + bloque de agregaciones."""
+    """Lista series con filtros opcionales + bloque de agregaciones.
+
+    Acepta filtros por id (`genero_id`, `plataforma_id`) o por nombre (`genero`, `plataforma`).
+    """
     return repositories.series.listar_series(
         titulo=titulo,
         anio=anio,
@@ -56,6 +61,8 @@ def listar_series(
         estadoEmision=estadoEmision,
         genero_id=genero_id,
         plataforma_id=plataforma_id,
+        genero=genero,
+        plataforma=plataforma,
         limit=limit,
         skip=skip,
     )
@@ -106,6 +113,18 @@ def eliminar_propiedades_serie(serie_id: str, body: EliminarPropiedadesRequest):
     if not serie:
         raise HTTPException(status_code=404, detail=f"Serie '{serie_id}' no encontrada")
     return {"mensaje": "Propiedades eliminadas", "serie": serie}
+
+
+# IMPORTANTE: /masivo debe ir ANTES de /{serie_id} para que FastAPI no
+# interprete "masivo" como un serie_id.
+@router.delete("/masivo", summary="Eliminar múltiples series")
+def eliminar_series_masivo(body: IdsRequest):
+    """Elimina múltiples Series y sus relaciones (DETACH DELETE masivo).
+
+    Rúbrica: Eliminar múltiples nodos.
+    """
+    eliminadas = repositories.series.eliminar_series(body.ids)
+    return {"eliminadas": eliminadas, "ids": body.ids}
 
 
 @router.delete("/{serie_id}", summary="Eliminar una serie")
