@@ -1,31 +1,19 @@
-"""Entry point de la aplicación FastAPI.
-
-Inicializa la app, conecta a Neo4j y registra todos los routers.
-Para correr: uv run uvicorn app.main:app --reload
-"""
-
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
 from app.database import Neo4jDriver
 from app.routers import consultas, generos, plataformas, relaciones, resenas, series, usuarios
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Maneja el ciclo de vida de la app: conexión al iniciar, cierre al apagar."""
     print("Iniciando aplicación...")
     if Neo4jDriver.verify_connectivity():
         print("Conectado a Neo4j correctamente")
     else:
         print("ADVERTENCIA: no se pudo conectar a Neo4j. Verifica tu .env")
-
     yield
-
     Neo4jDriver.close()
     print("Conexión a Neo4j cerrada")
-
 
 app = FastAPI(
     title="Motor de Recomendación de Series",
@@ -38,15 +26,21 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# ============================================
+# CORS
+# ============================================
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ============================================
 # ENDPOINTS BASE
 # ============================================
-
-
 @app.get("/", tags=["Base"])
 def root():
-    """Mensaje de bienvenida y enlaces a la documentación."""
     return {
         "mensaje": "API funcionando correctamente",
         "documentacion_swagger": "/docs",
@@ -54,21 +48,17 @@ def root():
         "health_check": "/health",
     }
 
-
 @app.get("/health", tags=["Base"])
 def health():
-    """Health check de la API y la conexión a Neo4j."""
     connected = Neo4jDriver.verify_connectivity()
     return {
         "status": "ok" if connected else "degraded",
         "neo4j": "conectado" if connected else "sin conexión",
     }
 
-
 # ============================================
 # REGISTRO DE ROUTERS
 # ============================================
-
 app.include_router(series.router)
 app.include_router(generos.router)
 app.include_router(plataformas.router)
