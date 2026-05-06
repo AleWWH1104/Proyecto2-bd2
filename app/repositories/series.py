@@ -108,7 +108,7 @@ def listar_series(
         MATCH (s:Serie)
         {where_clause}
         OPTIONAL MATCH (s)-[:PERTENECE_A]->(g:Genero)
-        WHERE g IS NOT NULL
+        WHERE g IS NOT NULL AND g.nombre IS NOT NULL
         RETURN g.nombre AS nombre, count(DISTINCT s) AS total
         ORDER BY total DESC
     """
@@ -118,7 +118,7 @@ def listar_series(
         MATCH (s:Serie)
         {where_clause}
         OPTIONAL MATCH (p:Plataforma)-[:TRANSMITE]->(s)
-        WHERE p IS NOT NULL
+        WHERE p IS NOT NULL AND p.nombre IS NOT NULL
         RETURN p.nombre AS nombre, count(DISTINCT s) AS total
         ORDER BY total DESC
     """
@@ -151,11 +151,11 @@ def listar_series(
 
         # Conteo por genero
         gen_result = session.run(genero_count_query, params)
-        por_genero = [{"nombre": r["nombre"], "total": r["total"]} for r in gen_result]
+        por_genero = [{"nombre": r["nombre"], "total": r["total"]} for r in gen_result if r["nombre"] is not None]
 
         # Conteo por plataforma
         plat_result = session.run(plataforma_count_query, params)
-        por_plataforma = [{"nombre": r["nombre"], "total": r["total"]} for r in plat_result]
+        por_plataforma = [{"nombre": r["nombre"], "total": r["total"]} for r in plat_result if r["nombre"] is not None]
 
     return {
         "series": series,
