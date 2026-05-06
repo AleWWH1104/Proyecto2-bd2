@@ -92,3 +92,14 @@ class RelacionResponse(BaseModel):
 class OperacionMasivaResponse(BaseModel):
     mensaje: str
     afectados: int
+
+
+class EliminarPropiedadesRelacionRequest(BaseModel):
+    """Para eliminar propiedades de 1 relación VIO."""
+    nombres: list[str] = Field(..., min_length=1, description="Propiedades a eliminar")
+
+
+class EliminarPropiedadesRelacionMasivoRequest(BaseModel):
+    """Para eliminar propiedades de múltiples relaciones VIO."""
+    serie_ids: list[str] = Field(..., min_length=1)
+    nombres: list[str] = Field(..., min_length=1, description="Propiedades a eliminar")

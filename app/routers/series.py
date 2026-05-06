@@ -25,6 +25,7 @@ from app.models import (
     SeriesMasivoPatchRequest,
     IdsRequest,
     EliminarPropiedadesRequest,
+    EliminarPropiedadesMasivoRequest,
     ResenaCreatePorSerie,
     ResenaResponse,
     ResenasListResponse,
@@ -107,6 +108,20 @@ def actualizar_serie(serie_id: str, body: SeriePatch):
     if not serie:
         raise HTTPException(status_code=404, detail=f"Serie '{serie_id}' no encontrada")
     return serie
+
+
+@router.delete("/masivo/propiedades", summary="Eliminar propiedades de múltiples series")
+def eliminar_propiedades_series_masivo(body: EliminarPropiedadesMasivoRequest):
+    """Elimina propiedades específicas de varias Series a la vez (UNWIND + REMOVE).
+
+    Rúbrica: Gestión de propiedades de nodos — eliminar masivo.
+    """
+    afectadas = repositories.series.eliminar_propiedades_series_masivo(body.ids, body.nombres)
+    return {
+        "afectadas": afectadas,
+        "ids": body.ids,
+        "propiedades_eliminadas": body.nombres,
+    }
 
 
 @router.delete("/{serie_id}/propiedades", summary="Eliminar propiedades específicas de una serie")

@@ -274,6 +274,22 @@ def eliminar_propiedades_serie(serie_id: str, nombres: list) -> Optional[dict]:
         return dict(record["s"])
 
 
+def eliminar_propiedades_series_masivo(ids: list, nombres: list) -> int:
+    """Elimina propiedades específicas de múltiples Series a la vez."""
+    remove_parts = [f"s.`{nombre}`" for nombre in nombres]
+    remove_clause = "REMOVE " + ", ".join(remove_parts)
+    query = f"""
+        UNWIND $ids AS serie_id
+        MATCH (s:Serie {{id: serie_id}})
+        {remove_clause}
+        RETURN count(s) AS afectadas
+    """
+    with get_session() as session:
+        result = session.run(query, {"ids": ids})
+        record = result.single()
+        return record["afectadas"] if record else 0
+
+
 def eliminar_serie(serie_id: str) -> bool:
     """Elimina una Serie y todas sus relaciones (DETACH DELETE)."""
     query = """

@@ -16,3 +16,9 @@ class PropiedadesRequest(BaseModel):
 class EliminarPropiedadesRequest(BaseModel):
     """Para eliminar propiedades específicas."""
     nombres: List[str] = Field(..., description="Nombres de propiedades a eliminar")
+
+
+class EliminarPropiedadesMasivoRequest(BaseModel):
+    """Para eliminar propiedades de múltiples nodos a la vez."""
+    ids: List[str] = Field(..., description="IDs de los nodos")
+    nombres: List[str] = Field(..., description="Nombres de propiedades a eliminar")

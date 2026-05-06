@@ -161,7 +161,7 @@ def recomendaciones_avanzadas(
     """Sistema de recomendación híbrido con Jaccard Similarity."""
     query = """
         MATCH (u:Usuario {id: $usuario_id})
-        OPTIONAL MATCH (u)-[:LE_GUSTA]->(s_u:Serie)
+        OPTIONAL MATCH (u)-[:LE_GUSTA|VIO]->(s_u:Serie)
         WITH u, collect(DISTINCT s_u) AS likes_u
 
         MATCH (rec:Serie)
@@ -169,9 +169,9 @@ def recomendaciones_avanzadas(
           AND NOT (u)-[:LE_GUSTA]->(rec)
           AND NOT (u)-[:EN_LISTA]->(rec)
 
-        OPTIONAL MATCH (otro:Usuario)-[:LE_GUSTA]->(rec)
+        OPTIONAL MATCH (otro:Usuario)-[:LE_GUSTA|VIO]->(rec)
         WHERE otro <> u
-        OPTIONAL MATCH (otro)-[:LE_GUSTA]->(s_o:Serie)
+        OPTIONAL MATCH (otro)-[:LE_GUSTA|VIO]->(s_o:Serie)
         WITH u, likes_u, rec, otro, collect(DISTINCT s_o) AS likes_otro
 
         WITH u, likes_u, rec, otro, likes_otro,
@@ -205,8 +205,9 @@ def recomendaciones_avanzadas(
 
         WITH rec, score_jaccard, bonus_social, coincidencias, bonus_genero, popularidad,
              CASE
-                WHEN rec.fechaLanzamiento IS NULL THEN 0.5
-                ELSE exp(-toFloat(date().year - rec.fechaLanzamiento.year) / 5.0)
+                WHEN rec.anio IS NULL THEN 0.5
+                WHEN rec.anio >= date().year THEN 1.0
+                ELSE exp(-toFloat(date().year - rec.anio) / 5.0)
              END AS novedad
 
         WITH rec, score_jaccard, bonus_genero, bonus_social, coincidencias,

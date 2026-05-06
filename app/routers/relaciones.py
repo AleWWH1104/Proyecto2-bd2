@@ -4,6 +4,8 @@ from fastapi import APIRouter, HTTPException
 
 from app.models import (
     EnListaCreate,
+    EliminarPropiedadesRelacionRequest,
+    EliminarPropiedadesRelacionMasivoRequest,
     LeGustaCreate,
     LeGustaEliminarMasivo,
     OperacionMasivaResponse,
@@ -180,6 +182,46 @@ def actualizar_vio(usuario_id: str, serie_id: str, datos: VioPatch):
             detail=f"Relación VIO entre usuario {usuario_id} y serie {serie_id} no encontrada",
         )
     return {"mensaje": "Relación VIO actualizada", "relacion": rel}
+
+
+@router.delete(
+    "/usuarios/{usuario_id}/vio/masivo/propiedades",
+    response_model=OperacionMasivaResponse,
+    tags=["Relaciones Usuario→Serie"],
+    summary="Eliminar propiedades de múltiples relaciones VIO",
+)
+def eliminar_propiedades_vio_masivo(
+    usuario_id: str, datos: EliminarPropiedadesRelacionMasivoRequest
+):
+    """Elimina propiedades de varias relaciones VIO en una sola operación (UNWIND + REMOVE).
+
+    Rúbrica: Gestión de relaciones — eliminar props múltiples relaciones.
+    """
+    afectadas = relaciones_repo.eliminar_propiedades_vio_masivo(
+        usuario_id, datos.serie_ids, datos.nombres
+    )
+    return {"mensaje": "Propiedades eliminadas de relaciones VIO", "afectados": afectadas}
+
+
+@router.delete(
+    "/usuarios/{usuario_id}/vio/{serie_id}/propiedades",
+    tags=["Relaciones Usuario→Serie"],
+    summary="Eliminar propiedades de una relación VIO",
+)
+def eliminar_propiedades_vio(
+    usuario_id: str, serie_id: str, datos: EliminarPropiedadesRelacionRequest
+):
+    """Elimina propiedades específicas de la relación VIO (no borra la relación).
+
+    Rúbrica: Gestión de relaciones — eliminar props de 1 relación.
+    """
+    rel = relaciones_repo.eliminar_propiedades_vio(usuario_id, serie_id, datos.nombres)
+    if rel is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Relación VIO entre {usuario_id} y {serie_id} no encontrada",
+        )
+    return {"mensaje": "Propiedades eliminadas de VIO", "relacion": rel}
 
 
 @router.delete(

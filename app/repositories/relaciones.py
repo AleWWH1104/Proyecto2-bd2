@@ -238,6 +238,37 @@ def actualizar_vio_masivo(usuario_id: str, items: list[dict]) -> int:
         return record["afectados"] if record else 0
 
 
+def eliminar_propiedades_vio(usuario_id: str, serie_id: str, nombres: list) -> Optional[dict]:
+    """Elimina propiedades específicas de una relación VIO (no borra la relación)."""
+    remove_parts = [f"r.`{nombre}`" for nombre in nombres]
+    remove_clause = "REMOVE " + ", ".join(remove_parts)
+    query = f"""
+        MATCH (u:Usuario {{id: $usuario_id}})-[r:VIO]->(s:Serie {{id: $serie_id}})
+        {remove_clause}
+        RETURN r
+    """
+    with get_session() as session:
+        record = session.run(query, usuario_id=usuario_id, serie_id=serie_id).single()
+        if record is None:
+            return None
+        return to_native(dict(record["r"]))
+
+
+def eliminar_propiedades_vio_masivo(usuario_id: str, serie_ids: list, nombres: list) -> int:
+    """Elimina propiedades de múltiples relaciones VIO en una sola operación."""
+    remove_parts = [f"r.`{nombre}`" for nombre in nombres]
+    remove_clause = "REMOVE " + ", ".join(remove_parts)
+    query = f"""
+        MATCH (u:Usuario {{id: $usuario_id}})-[r:VIO]->(s:Serie)
+        WHERE s.id IN $serie_ids
+        {remove_clause}
+        RETURN count(r) AS afectadas
+    """
+    with get_session() as session:
+        record = session.run(query, usuario_id=usuario_id, serie_ids=serie_ids).single()
+        return record["afectadas"] if record else 0
+
+
 def dar_like(
     usuario_id: str,
     serie_id: str,

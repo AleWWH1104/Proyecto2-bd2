@@ -12,6 +12,7 @@ from app.models.common import (
     IdsRequest,
     PropiedadesRequest,
     EliminarPropiedadesRequest,
+    EliminarPropiedadesMasivoRequest,
 )
 from app.models.serie import (
     SerieCreate,
@@ -43,6 +44,8 @@ from app.models.relaciones import (
     SigueACreate,
     RelacionResponse,
     OperacionMasivaResponse,
+    EliminarPropiedadesRelacionRequest,
+    EliminarPropiedadesRelacionMasivoRequest,
 )
 from app.models.resena import (
     ResenaCreate,
